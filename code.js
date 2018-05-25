@@ -64,7 +64,7 @@ d3.csv("data/beepopulation.csv", function(data) {
                 var jsonRegion = json.features[j].properties.name; // References name property in GeoJSON data
 
                 // If the name on the GeoJSON matches the name for the region, assign current bee population data to GeoJSON feature
-                if (dataRegion == jsonRegion) {
+                if (dataState == jsonRegion) {
 
                     //Copy the data value into the JSON for Population 
                     json.features[j].properties.Population = dataBeePopulation;
