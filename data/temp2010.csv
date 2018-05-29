@@ -1,0 +1,49 @@
+ST,STATE,AVG,MAX,MIN
+AL,Alabama,62.5,73.3,51.7
+AZ,Arizona,60.8,75.1,46.5
+AR,Arkansas,59.8,69.8,49.7
+CA,California,58.7,71.4,46.0
+CO,Colorado,45.0,58.6,31.4
+CT,Connecticut,49.3,58.9,39.7
+DE,Delaware,55.6,65.0,46.3
+FL,Florida,70.8,81.2,60.3
+GA,Georgia,63.0,73.9,52.1
+ID,Idaho,43.1,54.8,31.3
+IL,Illinois,51.5,61.0,42.0
+IN,Indiana,51.5,61.2,41.8
+IA,Iowa,46.7,56.6,36.8
+KS,Kansas,53.2,65.3,41.3
+KY,Kentucky,55.4,65.6,45.1
+LA,Louisiana,66.4,76.6,56.3
+ME,Maine,41.9,51.7,32.1
+MD,Maryland,54.8,64.4,45.2
+MA,Massachusetts,48.2,57.8,38.7
+MI,Michigan,44.5,54.2,34.8
+MN,Minnesota,40.7,50.6,30.7
+MS,Mississippi,63.3,74.0,52.5
+MO,Missouri,53.8,63.8,43.8
+MT,Montana,41.1,53.2,29.0
+NE,Nebraska,47.3,59.3,35.4
+NV,Nevada,50.2,63.9,36.6
+NH,New Hampshire,43.7,54.1,33.3
+NJ,New Jersey,53.1,62.5,43.6
+NM,New Mexico,53.9,69.1,38.7
+NY,New York,45.6,55.3,35.8
+NC,North Carolina,58.7,69.3,48.2
+ND,North Dakota,38.9,49.5,28.3
+OH,Ohio,50.9,60.8,41.0
+OK,Oklahoma,59.2,70.9,47.6
+OR,Oregon,47.5,59.0,36.0
+PA,Pennsylvania,48.9,58.7,39.0
+RI,Rhode Island,50.2,59.1,41.3
+SC,South Carolina,62.4,73.3,51.4
+SD,South Dakota,43.4,54.7,32.1
+TN,Tennessee,57.4,67.8,47.0
+TX,Texas,65.5,78.0,52.9
+UT,Utah,48.2,61.2,35.2
+VT,Vermont,43.0,53.0,33.1
+VA,Virginia,55.2,65.6,44.8
+WA,Washington,46.9,56.7,37.1
+WV,West Virginia,51.8,62.1,41.4
+WI,Wisconsin,43.1,53.3,33.0
+WY,Wyoming,40.8,53.7,28.0
