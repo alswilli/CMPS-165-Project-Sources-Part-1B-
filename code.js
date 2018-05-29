@@ -92,7 +92,7 @@ var svgTemp = d3.select("body")
     colorBeeData.domain([
         d3.min(data, function(d) {
 //             console.log(d.numColonies)
-            return d.numColonies; }), // Population divided by area gives you population density for the region
+            return (d.numColonies); }), // Population divided by area gives you population density for the region
         
         d3.max(data, function(d) {    //console.log(d.numColonies)
             return (d.numColonies); })  
@@ -236,9 +236,8 @@ d3.csv(tempCsv, function(data) {
     
      //Set input domain for pop. density color scale
     colorTempData.domain([
-        d3.min(data, function(d) {return d.AVG; }), // Population divided by area gives you population density for the region
-        d3.max(data, function(d) { console.log(d.AVG);
-            return (d.AVG); })  
+        d3.min(data, function(d) {return (d.AVG); }), // Population divided by area gives you population density for the region
+        d3.max(data, function(d) {return (d.AVG); })  
     ]);
     
     //Load in GeoJSON data for U.S. (lv1 GeoJSON attributes -> 48 states of U.S.)
@@ -277,10 +276,10 @@ d3.csv(tempCsv, function(data) {
                 if (dataState == jsonRegion) {
 
                     //Copy the data value into the JSON for Population density and fertility rate
-                    json.features[j].properties.abbrev = dataAbbrev;
-                    json.features[j].properties.avg = dataAvgTemp;
-                    json.features[j].properties.min = dataMinTemp;
-                    json.features[j].properties.max = dataMaxTemp;
+                    json.features[j].properties.ST = dataAbbrev;
+                    json.features[j].properties.AVG = dataAvgTemp;
+                    json.features[j].properties.MIN = dataMinTemp;
+                    json.features[j].properties.MAX = dataMaxTemp;
 
                     //Stop looking through the JSON
                     break;
