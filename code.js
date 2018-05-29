@@ -249,7 +249,7 @@ d3.csv(tempCsv, function(data) {
         for (var i = 0; i < data.length; i++) {
             
             //Grab abbreviation of state name
-            var dataAbbrev = data[i].abbrev;
+            var dataAbbrev = data[i].st;
 //            console.log(dataAbbrev);
 
             //Grab state name
