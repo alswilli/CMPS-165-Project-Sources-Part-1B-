@@ -249,23 +249,23 @@ d3.csv(tempCsv, function(data) {
         for (var i = 0; i < data.length; i++) {
             
             //Grab abbreviation of state name
-            var dataAbbrev = data[i].st;
+            var dataAbbrev = data[i].ST;
 //            console.log(dataAbbrev);
 
             //Grab state name
-            var dataState = data[i].state;
+            var dataState = data[i].STATE;
 //            console.log(dataState);
 
             //Grab average population
-            var dataAvgTemp = parseFloat(+data[i].avg);
+            var dataAvgTemp = parseFloat(+data[i].AVG);
 //            console.log(dataAvgTemp);
             
             //Grab min temperature
-            var dataMinTemp= parseFloat(+data[i].min);
+            var dataMinTemp= parseFloat(+data[i].MIN);
 //            console.log(dataMinTemp);
             
             //Grab max temperature
-            var dataMaxTemp= parseFloat(+data[i].max);
+            var dataMaxTemp= parseFloat(+data[i].MAX);
 //            console.log(dataMaxTemp);
 
             //Find the corresponding region inside the GeoJSON
