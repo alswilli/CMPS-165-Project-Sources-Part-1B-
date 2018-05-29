@@ -236,9 +236,9 @@ d3.csv(tempCsv, function(data) {
     
      //Set input domain for pop. density color scale
     colorTempData.domain([
-        d3.min(data, function(d) {return d.avg; }), // Population divided by area gives you population density for the region
-        d3.max(data, function(d) { console.log(d.avg);
-            return (d.avg); })  
+        d3.min(data, function(d) {return d.AVG; }), // Population divided by area gives you population density for the region
+        d3.max(data, function(d) { console.log(d.AVG);
+            return (d.AVG); })  
     ]);
     
     //Load in GeoJSON data for U.S. (lv1 GeoJSON attributes -> 48 states of U.S.)
@@ -315,7 +315,7 @@ d3.csv(tempCsv, function(data) {
                 .attr('stroke', function(d) { return 'white'; })
                .style("fill", function(d) {
                     //Get data value
-                    var value = d.properties.avg;
+                    var value = d.properties.AVG;
 //                    console.log(d)
                       console.log("POOP4")
 
