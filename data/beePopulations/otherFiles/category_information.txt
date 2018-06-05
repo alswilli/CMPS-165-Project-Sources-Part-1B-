@@ -1,0 +1,21 @@
+State
+
+Abbreviation
+
+Honey Producing Colonies
+1,000
+
+Yield per Colony
+Pounds
+
+Production
+1,000
+
+Stocks Dec 15 2/
+Pounds
+
+Average Price Per Pound
+Cents
+
+Value of Production
+1000 Dollars
