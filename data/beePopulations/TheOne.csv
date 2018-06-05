@@ -1,1162 +1,1773 @@
-date,beePop,state
-1976,43,arizona
-1976,385,california
-1976,31,colorado
-1976,136,florida
-1976,70,georgia
-1976,93,idaho
-1976,10,illinois
-1976,36,iowa
-1976,105,michigan
-1976,123,nebraska
-1976,54,new york
-1976,7,north carolina
-1976,75,north dakota
-1976,23,oregon
-1976,138,south dakota
-1976,100,texas
-1976,75,washington
-1976,52,wisconsin
-1977,44,arizona
-1977,390,california
-1977,138,florida
-1977,74,georgia
-1977,96,idaho
-1977,9,illinois
-1977,40,iowa
-1977,54,michigan
-1977,118,minnesota
-1977,92,montana
-1977,137,nebraska
-1977,52,new york
-1977,9,north carolina
-1977,118,north dakota
-1977,26,oregon
-1977,150,south dakota
-1977,106,texas
-1977,65,washington
-1977,83,wisconsin
-1978,55,arizona
-1978,405,california
-1978,30,colorado
-1978,220,florida
-1978,115,georgia
-1978,90,idaho
-1978,6,illinois
-1978,36,iowa
-1978,55,michigan
-1978,91,montana
-1978,130,nebraska
-1978,47,new york
-1978,9,north carolina
-1978,155,north dakota
-1978,35,oregon
-1978,168,south dakota
-1978,90,texas
-1978,66,washington
-1978,80,wisconsin
-1979,41,arizona
-1979,385,california
-1979,30,colorado
-1979,204,florida
-1979,120,georgia
-1979,90,idaho
-1979,7,illinois
-1979,39,iowa
-1979,52,michigan
-1979,125,minnesota
-1979,94,montana
-1979,115,nebraska
-1979,53,new york
-1979,12,north carolina
-1979,182,north dakota
-1979,32,oregon
-1979,190,south dakota
-1979,100,texas
-1979,67,washington
-1979,95,wisconsin
-1980,44,arizona
-1980,385,california
-1980,30,colorado
-1980,208,florida
-1980,120,georgia
-1980,90,idaho
-1980,7,illinois
-1980,39,iowa
-1980,52,michigan
-1980,125,minnesota
-1980,97,montana
-1980,120,nebraska
-1980,52,new york
-1980,11,north carolina
-1980,182,north dakota
-1980,29,oregon
-1980,197,south dakota
-1980,100,texas
-1980,67,washington
-1980,95,wisconsin
-1981,47,alabama
-1981,64,arizona
-1981,31,arkansas
-1981,500,california
-1981,41,colorado
-1981,8,connecticut
-1981,4,delaware
-1981,360,florida
-1981,145,georgia
-1981,7,hawaii
-1981,108,idaho
-1981,41,illinois
-1981,76,indiana
-1981,88,iowa
-1981,40,kansas
-1981,56,kentucky
-1981,37,louisiana
-1981,8,maine
-1981,15,maryland
-1981,11,massachusetts
-1981,98,michigan
-1981,190,minnesota
-1981,41,mississippi
-1981,128,missouri
-1981,108,montana
-1981,122,nebraska
-1981,12,nevada
-1981,4,new hampshire
-1981,38,new jersey
-1981,14,new mexico
-1981,115,new york
-1981,187,north carolina
-1981,265,north dakota
-1981,85,ohio
-1981,48,oklahoma
-1981,59,oregon
-1981,85,pennsylvania
-1981,1,rhode island
-1981,52,south carolina
-1981,180,south dakota
-1981,150,tennessee
-1981,190,texas
-1981,46,utah
-1981,9,vermont
-1981,77,virginia
-1981,87,washington
-1981,67,west virginia
-1981,125,wisconsin
-1981,44,wyoming
-1982,-1,alabama
-1982,-1,alaska
-1982,-1,arizona
-1982,-1,arkansas
-1982,-1,california
-1982,-1,colorado
-1982,-1,connecticut
-1982,-1,delaware
-1982,-1,florida
-1982,-1,georgia
-1982,-1,hawaii
-1982,-1,idaho
-1982,-1,illinois
-1982,-1,indiana
-1982,-1,iowa
-1982,-1,kansas
-1982,-1,kentucky
-1982,-1,louisiana
-1982,-1,maine
-1982,-1,maryland
-1982,-1,massachusetts
-1982,-1,michigan
-1982,-1,minnesota
-1982,-1,mississippi
-1982,-1,missouri
-1982,-1,montana
-1982,-1,nebraska
-1982,-1,nevada
-1982,-1,new hampshire
-1982,-1,new jersey
-1982,-1,new mexico
-1982,-1,new york
-1982,-1,north carolina
-1982,-1,north dakota
-1982,-1,ohio
-1982,-1,oklahoma
-1982,-1,oregon
-1982,-1,pennsylvania
-1982,-1,rhode island
-1982,-1,south carolina
-1982,-1,south dakota
-1982,-1,tennessee
-1982,-1,texas
-1982,-1,utah
-1982,-1,vermont
-1982,-1,virginia
-1982,-1,washington
-1982,-1,west virginia
-1982,-1,wisconsin
-1982,-1,wyoming
-1983,-1,alabama
-1983,-1,alaska
-1983,-1,arizona
-1983,-1,arkansas
-1983,-1,california
-1983,-1,colorado
-1983,-1,connecticut
-1983,-1,delaware
-1983,-1,florida
-1983,-1,georgia
-1983,-1,hawaii
-1983,-1,idaho
-1983,-1,illinois
-1983,-1,indiana
-1983,-1,iowa
-1983,-1,kansas
-1983,-1,kentucky
-1983,-1,louisiana
-1983,-1,maine
-1983,-1,maryland
-1983,-1,massachusetts
-1983,-1,michigan
-1983,-1,minnesota
-1983,-1,mississippi
-1983,-1,missouri
-1983,-1,montana
-1983,-1,nebraska
-1983,-1,nevada
-1983,-1,new hampshire
-1983,-1,new jersey
-1983,-1,new mexico
-1983,-1,new york
-1983,-1,north carolina
-1983,-1,north dakota
-1983,-1,ohio
-1983,-1,oklahoma
-1983,-1,oregon
-1983,-1,pennsylvania
-1983,-1,rhode island
-1983,-1,south carolina
-1983,-1,south dakota
-1983,-1,tennessee
-1983,-1,texas
-1983,-1,utah
-1983,-1,vermont
-1983,-1,virginia
-1983,-1,washington
-1983,-1,west virginia
-1983,-1,wisconsin
-1983,-1,wyoming
-1984,-1,alabama
-1984,-1,alaska
-1984,-1,arizona
-1984,-1,arkansas
-1984,-1,california
-1984,-1,colorado
-1984,-1,connecticut
-1984,-1,delaware
-1984,-1,florida
-1984,-1,georgia
-1984,-1,hawaii
-1984,-1,idaho
-1984,-1,illinois
-1984,-1,indiana
-1984,-1,iowa
-1984,-1,kansas
-1984,-1,kentucky
-1984,-1,louisiana
-1984,-1,maine
-1984,-1,maryland
-1984,-1,massachusetts
-1984,-1,michigan
-1984,-1,minnesota
-1984,-1,mississippi
-1984,-1,missouri
-1984,-1,montana
-1984,-1,nebraska
-1984,-1,nevada
-1984,-1,new hampshire
-1984,-1,new jersey
-1984,-1,new mexico
-1984,-1,new york
-1984,-1,north carolina
-1984,-1,north dakota
-1984,-1,ohio
-1984,-1,oklahoma
-1984,-1,oregon
-1984,-1,pennsylvania
-1984,-1,rhode island
-1984,-1,south carolina
-1984,-1,south dakota
-1984,-1,tennessee
-1984,-1,texas
-1984,-1,utah
-1984,-1,vermont
-1984,-1,virginia
-1984,-1,washington
-1984,-1,west virginia
-1984,-1,wisconsin
-1984,-1,wyoming
-1985,-1,alabama
-1985,-1,alaska
-1985,-1,arizona
-1985,-1,arkansas
-1985,-1,california
-1985,-1,colorado
-1985,-1,connecticut
-1985,-1,delaware
-1985,-1,florida
-1985,-1,georgia
-1985,-1,hawaii
-1985,-1,idaho
-1985,-1,illinois
-1985,-1,indiana
-1985,-1,iowa
-1985,-1,kansas
-1985,-1,kentucky
-1985,-1,louisiana
-1985,-1,maine
-1985,-1,maryland
-1985,-1,massachusetts
-1985,-1,michigan
-1985,-1,minnesota
-1985,-1,mississippi
-1985,-1,missouri
-1985,-1,montana
-1985,-1,nebraska
-1985,-1,nevada
-1985,-1,new hampshire
-1985,-1,new jersey
-1985,-1,new mexico
-1985,-1,new york
-1985,-1,north carolina
-1985,-1,north dakota
-1985,-1,ohio
-1985,-1,oklahoma
-1985,-1,oregon
-1985,-1,pennsylvania
-1985,-1,rhode island
-1985,-1,south carolina
-1985,-1,south dakota
-1985,-1,tennessee
-1985,-1,texas
-1985,-1,utah
-1985,-1,vermont
-1985,-1,virginia
-1985,-1,washington
-1985,-1,west virginia
-1985,-1,wisconsin
-1985,-1,wyoming
-1986,-1,alabama
-1986,-1,alaska
-1986,-1,arizona
-1986,-1,arkansas
-1986,-1,california
-1986,-1,colorado
-1986,-1,connecticut
-1986,-1,delaware
-1986,-1,florida
-1986,-1,georgia
-1986,-1,hawaii
-1986,-1,idaho
-1986,-1,illinois
-1986,-1,indiana
-1986,-1,iowa
-1986,-1,kansas
-1986,-1,kentucky
-1986,-1,louisiana
-1986,-1,maine
-1986,-1,maryland
-1986,-1,massachusetts
-1986,-1,michigan
-1986,-1,minnesota
-1986,-1,mississippi
-1986,-1,missouri
-1986,-1,montana
-1986,-1,nebraska
-1986,-1,nevada
-1986,-1,new hampshire
-1986,-1,new jersey
-1986,-1,new mexico
-1986,-1,new york
-1986,-1,north carolina
-1986,-1,north dakota
-1986,-1,ohio
-1986,-1,oklahoma
-1986,-1,oregon
-1986,-1,pennsylvania
-1986,-1,rhode island
-1986,-1,south carolina
-1986,-1,south dakota
-1986,-1,tennessee
-1986,-1,texas
-1986,-1,utah
-1986,-1,vermont
-1986,-1,virginia
-1986,-1,washington
-1986,-1,west virginia
-1986,-1,wisconsin
-1986,-1,wyoming
-1987,41,alabama
-1987,77,arizona
-1987,21,arkansas
-1987,520,california
-1987,41,colorado
-1987,3,connecticut
-1987,1,delaware
-1987,290,florida
-1987,115,georgia
-1987,9,hawaii
-1987,100,idaho
-1987,30,illinois
-1987,27,indiana
-1987,40,iowa
-1987,47,kansas
-1987,15,kentucky
-1987,35,louisiana
-1987,9,maine
-1987,8,maryland
-1987,10,massachusetts
-1987,80,michigan
-1987,136,minnesota
-1987,23,mississippi
-1987,30,missouri
-1987,110,montana
-1987,100,nebraska
-1987,9,nevada
-1987,1,new hampshire
-1987,16,new jersey
-1987,19,new mexico
-1987,18,new york
-1987,290,north carolina
-1987,92,north dakota
-1987,59,ohio
-1987,15,oklahoma
-1987,59,oregon
-1987,50,pennsylvania
-1987,1,rhode island
-1987,15,south carolina
-1987,201,south dakota
-1987,36,tennessee
-1987,117,texas
-1987,35,utah
-1987,7,vermont
-1987,30,virginia
-1987,75,washington
-1987,85,west virginia
-1987,17,wisconsin
-1987,40,wyoming
-1988,42,alabama
-1988,73,arizona
-1988,35,arkansas
-1988,520,california
-1988,48,colorado
-1988,2,connecticut
-1988,1,delaware
-1988,240,florida
-1988,115,georgia
-1988,9,hawaii
-1988,112,idaho
-1988,28,illinois
-1988,29,indiana
-1988,49,iowa
-1988,42,kansas
-1988,12,kentucky
-1988,38,louisiana
-1988,14,maine
-1988,7,maryland
-1988,15,massachusetts
-1988,83,michigan
-1988,150,minnesota
-1988,21,mississippi
-1988,30,missouri
-1988,105,montana
-1988,113,nebraska
-1988,9,nevada
-1988,1,new hampshire
-1988,30,new jersey
-1988,21,new mexico
-1988,94,new york
-1988,21,north carolina
-1988,230,north dakota
-1988,50,ohio
-1988,10,oklahoma
-1988,60,oregon
-1988,45,pennsylvania
-1988,1,rhode island
-1988,14,south carolina
-1988,245,south dakota
-1988,35,tennessee
-1988,114,texas
-1988,36,utah
-1988,7,vermont
-1988,24,virginia
-1988,65,washington
-1988,30,west virginia
-1988,82,wisconsin
-1988,39,wyoming
-1989,41,alabama
-1989,71,arizona
-1989,34,arkansas
-1989,535,california
-1989,50,colorado
-1989,2,connecticut
-1989,1,delaware
-1989,235,florida
-1989,116,georgia
-1989,9,hawaii
-1989,105,idaho
-1989,29,illinois
-1989,28,indiana
-1989,61,iowa
-1989,35,kansas
-1989,12,kentucky
-1989,35,louisiana
-1989,17,maine
-1989,9,maryland
-1989,8,massachusetts
-1989,93,michigan
-1989,155,minnesota
-1989,24,mississippi
-1989,33,missouri
-1989,100,montana
-1989,119,nebraska
-1989,15,nevada
-1989,1,new hampshire
-1989,25,new jersey
-1989,22,new mexico
-1989,94,new york
-1989,25,north carolina
-1989,290,north dakota
-1989,53,ohio
-1989,9,oklahoma
-1989,63,oregon
-1989,41,pennsylvania
-1989,1,rhode island
-1989,15,south carolina
-1989,230,south dakota
-1989,25,tennessee
-1989,134,texas
-1989,43,utah
-1989,6,vermont
-1989,23,virginia
-1989,66,washington
-1989,32,west virginia
-1989,101,wisconsin
-1989,40,wyoming
-1990,29,alabama
-1990,0.45,alaska
-1990,67,arizona
-1990,31,arkansas
-1990,480,california
-1990,55,colorado
-1990,2,connecticut
-1990,1,delaware
-1990,220,florida
-1990,111,georgia
-1990,10,hawaii
-1990,140,idaho
-1990,19,illinois
-1990,22,indiana
-1990,70,iowa
-1990,36,kansas
-1990,8,kentucky
-1990,38,louisiana
-1990,18,maine
-1990,7,maryland
-1990,15,massachusetts
-1990,100,michigan
-1990,170,minnesota
-1990,24,mississippi
-1990,30,missouri
-1990,95,montana
-1990,118,nebraska
-1990,17,nevada
-1990,1,new hampshire
-1990,15,new jersey
-1990,29,new mexico
-1990,81,new york
-1990,20,north carolina
-1990,210,north dakota
-1990,40,ohio
-1990,9,oklahoma
-1990,61,oregon
-1990,41,pennsylvania
-1990,1,rhode island
-1990,12,south carolina
-1990,245,south dakota
-1990,19,tennessee
-1990,140,texas
-1990,47,utah
-1990,6,vermont
-1990,16,virginia
-1990,80,washington
-1990,30,west virginia
-1990,112,wisconsin
-1990,40,wyoming
-1991,20,alabama
-1991,75,arizona
-1991,47,arkansas
-1991,520,california
-1991,50,colorado
-1991,225,florida
-1991,102,georgia
-1991,10,hawaii
-1991,140,idaho
-1991,21,illinois
-1991,21,indiana
-1991,92,iowa
-1991,35,kansas
-1991,7,kentucky
-1991,40,louisiana
-1991,13,maine
-1991,7,maryland
-1991,105,michigan
-1991,180,minnesota
-1991,28,mississippi
-1991,28,missouri
-1991,86,montana
-1991,108,nebraska
-1991,15,nevada
-1991,11,new jersey
-1991,20,new mexico
-1991,77,new york
-1991,18,north carolina
-1991,215,north dakota
-1991,48,ohio
-1991,9,oklahoma
-1991,56,oregon
-1991,40,pennsylvania
-1991,11,south carolina
-1991,225,south dakota
-1991,14,tennessee
-1991,140,texas
-1991,45,utah
-1991,6,vermont
-1991,16,virginia
-1991,85,washington
-1991,26,west virginia
-1991,110,wisconsin
-1991,41,wyoming
-1992,25,alabama
-1992,79,arizona
-1992,45,arkansas
-1992,479,california
-1992,52,colorado
-1992,220,florida
-1992,85,georgia
-1992,9,hawaii
-1992,135,idaho
-1992,16,illinois
-1992,15,indiana
-1992,56,iowa
-1992,28,kansas
-1992,4,kentucky
-1992,45,louisiana
-1992,15,maine
-1992,6,maryland
-1992,95,michigan
-1992,190,minnesota
-1992,25,mississippi
-1992,25,missouri
-1992,87,montana
-1992,96,nebraska
-1992,15,nevada
-1992,8,new jersey
-1992,18,new mexico
-1992,70,new york
-1992,15,north carolina
-1992,240,north dakota
-1992,43,ohio
-1992,9,oklahoma
-1992,52,oregon
-1992,30,pennsylvania
-1992,11,south carolina
-1992,240,south dakota
-1992,7,tennessee
-1992,125,texas
-1992,47,utah
-1992,6,vermont
-1992,13,virginia
-1992,80,washington
-1992,23,west virginia
-1992,105,wisconsin
-1992,41,wyoming
-1993,19,alabama
-1993,55,arizona
-1993,50,arkansas
-1993,500,california
-1993,53,colorado
-1993,200,florida
-1993,80,georgia
-1993,9,hawaii
-1993,133,idaho
-1993,15,illinois
-1993,12,indiana
-1993,60,iowa
-1993,23,kansas
-1993,4,kentucky
-1993,47,louisiana
-1993,15,maine
-1993,7,maryland
-1993,90,michigan
-1993,180,minnesota
-1993,17,mississippi
-1993,24,missouri
-1993,87,montana
-1993,83,nebraska
-1993,14,nevada
-1993,9,new jersey
-1993,18,new mexico
-1993,65,new york
-1993,15,north carolina
-1993,220,north dakota
-1993,35,ohio
-1993,6,oklahoma
-1993,53,oregon
-1993,28,pennsylvania
-1993,11,south carolina
-1993,240,south dakota
-1993,8,tennessee
-1993,105,texas
-1993,42,utah
-1993,6,vermont
-1993,10,virginia
-1993,60,washington
-1993,20,west virginia
-1993,100,wisconsin
-1993,34,wyoming
-1994,18,alabama
-1994,47,alaska
-1994,50,arizona
-1994,400,california
-1994,45,colorado
-1994,230,florida
-1994,80,georgia
-1994,11,hawaii
-1994,127,idaho
-1994,13,illinois
-1994,13,indiana
-1994,55,iowa
-1994,19,kansas
-1994,3,kentucky
-1994,35,louisiana
-1994,8,maine
-1994,7,maryland
-1994,90,michigan
-1994,170,minnesota
-1994,19,mississippi
-1994,25,missouri
-1994,119,montana
-1994,72,nebraska
-1994,14,nevada
-1994,9,new jersey
-1994,19,new mexico
-1994,68,new york
-1994,15,north carolina
-1994,235,north dakota
-1994,27,ohio
-1994,5,oklahoma
-1994,50,oregon
-1994,27,pennsylvania
-1994,10,south carolina
-1994,260,south dakota
-1994,6,tennessee
-1994,103,texas
-1994,43,utah
-1994,5,vermont
-1994,11,virginia
-1994,60,washington
-1994,20,west virginia
-1994,75,wisconsin
-1994,46,wyoming
-1995,19,alabama
-1995,55,arizona
-1995,50,arkansas
-1995,500,california
-1995,53,colorado
-1995,200,florida
-1995,80,georgia
-1995,9,hawaii
-1995,133,idaho
-1995,15,illinois
-1995,12,indiana
-1995,60,iowa
-1995,23,kansas
-1995,4,kentucky
-1995,47,louisiana
-1995,13,maine
-1995,7,maryland
-1995,90,michigan
-1995,180,minnesota
-1995,17,mississippi
-1995,24,missouri
-1995,95,montana
-1995,83,nebraska
-1995,14,nevada
-1995,9,new hampshire
-1995,18,new mexico
-1995,65,new york
-1995,15,north carolina
-1995,220,north dakota
-1995,30,ohio
-1995,6,oklahoma
-1995,53,oregon
-1995,28,pennsylvania
-1995,11,south carolina
-1995,245,south dakota
-1995,8,tennessee
-1995,105,texas
-1995,42,utah
-1995,6,vermont
-1995,10,virginia
-1995,60,washington
-1995,20,west virginia
-1995,100,wisconsin
-1995,34,wyoming
-1996,18,Alabama
-1996,47,Alaska
-1996,50,Arizona
-1996,400,California
-1996,45,Colorado
-1996,230,Florida
-1996,80,Georgia
-1996,11,Hawaii
-1996,127,Idaho
-1996,13,Illinois
-1996,13,Indiana
-1996,55,Iowa
-1996,19,Kansas
-1996,3,Kentucky
-1996,35,Louisiana
-1996,8,Maine
-1996,7,Maryland
-1996,90,Michigan
-1996,170,Minnesota
-1996,19,Mississippi
-1996,25,Missouri
-1996,119,Montana
-1996,72,Nebraska
-1996,14,Nevada
-1996,9,New Jersey
-1996,19,New Mexico
-1996,68,New York
-1996,15,North Carolina
-1996,235,North Dakota
-1996,27,Ohio
-1996,5,Oklahoma
-1996,50,Oregon
-1996,27,Pennsylvania
-1996,10,South Carolina
-1996,260,South Dakota
-1996,6,Tennessee
-1996,103,Texas
-1996,43,Utah
-1996,5,Vermont
-1996,11,Virginia
-1996,60,Washington
-1996,20,West Virginia
-1996,75,Wisconsin
-1996,46,Wyoming
-1997,18,Alabama
-1997,47,Alaska
-1997,50,Arizona
-1997,400,California
-1997,45,Colorado
-1997,230,Florida
-1997,80,Georgia
-1997,11,Hawaii
-1997,127,Idaho
-1997,13,Illinois
-1997,13,Indiana
-1997,55,Iowa
-1997,19,Kansas
-1997,3,Kentucky
-1997,35,Louisiana
-1997,8,Maine
-1997,7,Maryland
-1997,90,Michigan
-1997,170,Minnesota
-1997,19,Mississippi
-1997,25,Missouri
-1997,119,Montana
-1997,72,Nebraska
-1997,14,Nevada
-1997,9,New Jersey
-1997,19,New Mexico
-1997,68,New York
-1997,15,North Carolina
-1997,235,North Dakota
-1997,27,Ohio
-1997,5,Oklahoma
-1997,50,Oregon
-1997,27,Pennsylvania
-1997,10,South Carolina
-1997,260,South Dakota
-1997,6,Tennessee
-1997,103,Texas
-1997,43,Utah
-1997,5,Vermont
-1997,11,Virginia
-1997,60,Washington
-1997,20,West Virginia
-1997,75,Wisconsin
-1997,46,Wyoming
-1998,15,Alabama
-1998,32,Alaska
-1998,40,Arizona
-1998,390,California
-1998,30,Colorado
-1998,240,Florida
-1998,75,Georgia
-1998,8,Hawaii
-1998,110,Idaho
-1998,11,Illinois
-1998,9,Indiana
-1998,58,Iowa
-1998,16,Kansas
-1998,3,Kentucky
-1998,37,Louisiana
-1998,9,Maine
-1998,7,Maryland
-1998,90,Michigan
-1998,150,Minnesota
-1998,17,Mississippi
-1998,22,Missouri
-1998,117,Montana
-1998,65,Nebraska
-1998,14,Nevada
-1998,5,New Jersey
-1998,15,New Mexico
-1998,68,New York
-1998,12,North Carolina
-1998,230,North Dakota
-1998,24,Ohio
-1998,4,Oklahoma
-1998,55,Oregon
-1998,23,Pennsylvania
-1998,9,South Carolina
-1998,240,South Dakota
-1998,5,Tennessee
-1998,82,Texas
-1998,34,Utah
-1998,4,Vermont
-1998,7,Virginia
-1998,57,Washington
-1998,10,West Virginia
-1998,69,Wisconsin
-1998,40,Wyoming
-1999,14,Alabama
-1999,42,Arizona
-1999,50,Arkansas
-1999,420,California
-1999,35,Colorado
-1999,240,Florida
-1999,75,Georgia
-1999,9,Hawaii
-1999,120,Idaho
-1999,7,Illinois
-1999,8,Indiana
-1999,45,Iowa
-1999,17,Kansas
-1999,3,Kentucky
-1999,44,Louisiana
-1999,8,Maine
-1999,6,Maryland
-1999,85,Michigan
-1999,145,Minnesota
-1999,19,Mississippi
-1999,24,Missouri
-1999,107,Montana
-1999,61,Nebraska
-1999,14,Nevada
-1999,10,New Jersey
-1999,15,New Mexico
-1999,72,New York
-1999,8,North Carolina
-1999,245,North Dakota
-1999,22,Ohio
-1999,4,Oklahoma
-1999,50,Oregon
-1999,22,Pennsylvania
-1999,240,South Dakota
-1999,7,Tennessee
-1999,94,Texas
-1999,32,Utah
-1999,5,Vermont
-1999,8,Virginia
-1999,60,Washington
-1999,8,West Virginia
-1999,79,Wisconsin
-1999,38,Wyoming
-2000,16,Alabama
-2000,55,Arizona
-2000,53,Arkansas
-2000,450,California
-2000,27,Colorado
-2000,230,Florida
-2000,75,Georgia
-2000,8,Hawaii
-2000,120,Idaho
-2000,9,Illinois
-2000,9,Indiana
-2000,50,Iowa
-2000,16,Kansas
-2000,3,Kentucky
-2000,41,Louisiana
-2000,10,Maine
-2000,7,Maryland
-2000,80,Michigan
-2000,140,Minnesota
-2000,18,Mississippi
-2000,23,Missouri
-2000,115,Montana
-2000,64,Nebraska
-2000,10,Nevada
-2000,11,New Jersey
-2000,14,New Mexico
-2000,65,New York
-2000,8,North Carolina
-2000,230,North Dakota
-2000,18,Ohio
-2000,4,Oklahoma
-2000,50,Oregon
-2000,23,Pennsylvania
-2000,225,South Dakota
-2000,7,Tennessee
-2000,91,Texas
-2000,30,Utah
-2000,6,Vermont
-2000,8,Virginia
-2000,58,Washington
-2000,6,West Virginia
-2000,89,Wisconsin
-2000,46,Wyoming
-2001,17,Alabama
-2001,52,Arizona
-2001,52,Arkansas
-2001,505,California
-2001,27,Colorado
-2001,228,Florida
-2001,65,Georgia
-2001,8,Hawaii
-2001,120,Idaho
-2001,9,Illinois
-2001,10,Indiana
-2001,40,Iowa
-2001,13,Kansas
-2001,3,Kentucky
-2001,48,Louisiana
-2001,14,Maine
-2001,6,Maryland
-2001,73,Michigan
-2001,145,Minnesota
-2001,18,Mississippi
-2001,24,Missouri
-2001,122,Montana
-2001,58,Nebraska
-2001,9,Nevada
-2001,10,New Jersey
-2001,15,New Mexico
-2001,69,New York
-2001,9,North Carolina
-2001,255,North Dakota
-2001,20,Ohio
-2001,6,Oklahoma
-2001,45,Oregon
-2001,25,Pennsylvania
-2001,224,South Dakota
-2001,8,Tennessee
-2001,108,Texas
-2001,26,Utah
-2001,6,Vermont
-2001,7,Virginia
-2001,52,Washington
-2001,6,West Virginia
-2001,80,Wisconsin
-2001,37,Wyoming
-2002,16,Alabama
-2002,40,Arizona
-2002,55,Arkansas
-2002,440,California
-2002,29,Colorado
-2002,232,Florida
-2002,55,Georgia
-2002,7,Hawaii
-2002,100,Idaho
-2002,8,Illinois
-2002,8,Indiana
-2002,30,Iowa
-2002,15,Kansas
-2002,3,Kentucky
-2002,43,Louisiana
-2002,11,Maine
-2002,6,Maryland
-2002,72,Michigan
-2002,150,Minnesota
-2002,17,Mississippi
-2002,23,Missouri
-2002,124,Montana
-2002,50,Nebraska
-2002,10,Nevada
-2002,11,New Jersey
-2002,15,New Mexico
-2002,58,New York
-2002,11,North Carolina
-2002,300,North Dakota
-2002,18,Ohio
-2002,7,Oklahoma
-2002,48,Oregon
-2002,22,Pennsylvania
-2002,235,South Dakota
-2002,9,Tennessee
-2002,105,Texas
-2002,24,Utah
-2002,7,Vermont
-2002,7,Virginia
-2002,52,Washington
-2002,7,West Virginia
-2002,84,Wisconsin
-2002,39,Wyoming
-2003,14,Alabama
-2003,43,Arizona
-2003,58,Arkansas
-2003,425,California
-2003,26,Colorado
-2003,220,Florida
-2003,55,Georgia
-2003,8,Hawaii
-2003,100,Idaho
-2003,6,Illinois
-2003,7,Indiana
-2003,33,Iowa
-2003,13,Kansas
-2003,3,Kentucky
-2003,45,Louisiana
-2003,11,Maine
-2003,4,Maryland
-2003,76,Massachusetts
-2003,135,Minnesota
-2003,17,Mississippi
-2003,25,Missouri
-2003,136,Montana
-2003,43,Nebraska
-2003,9,Nevada
-2003,11,New Jersey
-2003,10,New Mexico
-2003,53,New York
-2003,13,North Carolina
-2003,280,North Dakota
-2003,16,Ohio
-2003,4,Oklahoma
-2003,44,Oregon
-2003,17,Pennsylvania
-2003,7,South Carolina
-2003,235,South Dakota
-2003,8,Tennessee
-2003,97,Texas
-2003,23,Utah
-2003,7,Vermont
-2003,9,Virginia
-2003,42,Washington
-2003,7,West Virginia
-2003,67,Wisconsin
-2003,38,Wyoming
-2004,,
+date,beePop,state,
+1976,43,arizona,
+1976,385,california,
+1976,31,colorado,
+1976,136,florida,
+1976,70,georgia,
+1976,93,idaho,
+1976,10,illinois,
+1976,36,iowa,
+1976,105,michigan,
+1976,123,nebraska,
+1976,54,new york,
+1976,7,north carolina,
+1976,75,north dakota,
+1976,23,oregon,
+1976,138,south dakota,
+1976,100,texas,
+1976,75,washington,
+1976,52,wisconsin,
+1977,44,arizona,
+1977,390,california,
+1977,138,florida,
+1977,74,georgia,
+1977,96,idaho,
+1977,9,illinois,
+1977,40,iowa,
+1977,54,michigan,
+1977,118,minnesota,
+1977,92,montana,
+1977,137,nebraska,
+1977,52,new york,
+1977,9,north carolina,
+1977,118,north dakota,
+1977,26,oregon,
+1977,150,south dakota,
+1977,106,texas,
+1977,65,washington,
+1977,83,wisconsin,
+1978,55,arizona,
+1978,405,california,
+1978,30,colorado,
+1978,220,florida,
+1978,115,georgia,
+1978,90,idaho,
+1978,6,illinois,
+1978,36,iowa,
+1978,55,michigan,
+1978,91,montana,
+1978,130,nebraska,
+1978,47,new york,
+1978,9,north carolina,
+1978,155,north dakota,
+1978,35,oregon,
+1978,168,south dakota,
+1978,90,texas,
+1978,66,washington,
+1978,80,wisconsin,
+1979,41,arizona,
+1979,385,california,
+1979,30,colorado,
+1979,204,florida,
+1979,120,georgia,
+1979,90,idaho,
+1979,7,illinois,
+1979,39,iowa,
+1979,52,michigan,
+1979,125,minnesota,
+1979,94,montana,
+1979,115,nebraska,
+1979,53,new york,
+1979,12,north carolina,
+1979,182,north dakota,
+1979,32,oregon,
+1979,190,south dakota,
+1979,100,texas,
+1979,67,washington,
+1979,95,wisconsin,
+1980,44,arizona,
+1980,385,california,
+1980,30,colorado,
+1980,208,florida,
+1980,120,georgia,
+1980,90,idaho,
+1980,7,illinois,
+1980,39,iowa,
+1980,52,michigan,
+1980,125,minnesota,
+1980,97,montana,
+1980,120,nebraska,
+1980,52,new york,
+1980,11,north carolina,
+1980,182,north dakota,
+1980,29,oregon,
+1980,197,south dakota,
+1980,100,texas,
+1980,67,washington,
+1980,95,wisconsin,
+1981,47,alabama,
+1981,64,arizona,
+1981,31,arkansas,
+1981,500,california,
+1981,41,colorado,
+1981,8,connecticut,
+1981,4,delaware,
+1981,360,florida,
+1981,145,georgia,
+1981,7,hawaii,
+1981,108,idaho,
+1981,41,illinois,
+1981,76,indiana,
+1981,88,iowa,
+1981,40,kansas,
+1981,56,kentucky,
+1981,37,louisiana,
+1981,8,maine,
+1981,15,maryland,
+1981,11,massachusetts,
+1981,98,michigan,
+1981,190,minnesota,
+1981,41,mississippi,
+1981,128,missouri,
+1981,108,montana,
+1981,122,nebraska,
+1981,12,nevada,
+1981,4,new hampshire,
+1981,38,new jersey,
+1981,14,new mexico,
+1981,115,new york,
+1981,187,north carolina,
+1981,265,north dakota,
+1981,85,ohio,
+1981,48,oklahoma,
+1981,59,oregon,
+1981,85,pennsylvania,
+1981,1,rhode island,
+1981,52,south carolina,
+1981,180,south dakota,
+1981,150,tennessee,
+1981,190,texas,
+1981,46,utah,
+1981,9,vermont,
+1981,77,virginia,
+1981,87,washington,
+1981,67,west virginia,
+1981,125,wisconsin,
+1981,44,wyoming,
+1982,-1,alabama,
+1982,-1,alaska,
+1982,-1,arizona,
+1982,-1,arkansas,
+1982,-1,california,
+1982,-1,colorado,
+1982,-1,connecticut,
+1982,-1,delaware,
+1982,-1,florida,
+1982,-1,georgia,
+1982,-1,hawaii,
+1982,-1,idaho,
+1982,-1,illinois,
+1982,-1,indiana,
+1982,-1,iowa,
+1982,-1,kansas,
+1982,-1,kentucky,
+1982,-1,louisiana,
+1982,-1,maine,
+1982,-1,maryland,
+1982,-1,massachusetts,
+1982,-1,michigan,
+1982,-1,minnesota,
+1982,-1,mississippi,
+1982,-1,missouri,
+1982,-1,montana,
+1982,-1,nebraska,
+1982,-1,nevada,
+1982,-1,new hampshire,
+1982,-1,new jersey,
+1982,-1,new mexico,
+1982,-1,new york,
+1982,-1,north carolina,
+1982,-1,north dakota,
+1982,-1,ohio,
+1982,-1,oklahoma,
+1982,-1,oregon,
+1982,-1,pennsylvania,
+1982,-1,rhode island,
+1982,-1,south carolina,
+1982,-1,south dakota,
+1982,-1,tennessee,
+1982,-1,texas,
+1982,-1,utah,
+1982,-1,vermont,
+1982,-1,virginia,
+1982,-1,washington,
+1982,-1,west virginia,
+1982,-1,wisconsin,
+1982,-1,wyoming,
+1983,-1,alabama,
+1983,-1,alaska,
+1983,-1,arizona,
+1983,-1,arkansas,
+1983,-1,california,
+1983,-1,colorado,
+1983,-1,connecticut,
+1983,-1,delaware,
+1983,-1,florida,
+1983,-1,georgia,
+1983,-1,hawaii,
+1983,-1,idaho,
+1983,-1,illinois,
+1983,-1,indiana,
+1983,-1,iowa,
+1983,-1,kansas,
+1983,-1,kentucky,
+1983,-1,louisiana,
+1983,-1,maine,
+1983,-1,maryland,
+1983,-1,massachusetts,
+1983,-1,michigan,
+1983,-1,minnesota,
+1983,-1,mississippi,
+1983,-1,missouri,
+1983,-1,montana,
+1983,-1,nebraska,
+1983,-1,nevada,
+1983,-1,new hampshire,
+1983,-1,new jersey,
+1983,-1,new mexico,
+1983,-1,new york,
+1983,-1,north carolina,
+1983,-1,north dakota,
+1983,-1,ohio,
+1983,-1,oklahoma,
+1983,-1,oregon,
+1983,-1,pennsylvania,
+1983,-1,rhode island,
+1983,-1,south carolina,
+1983,-1,south dakota,
+1983,-1,tennessee,
+1983,-1,texas,
+1983,-1,utah,
+1983,-1,vermont,
+1983,-1,virginia,
+1983,-1,washington,
+1983,-1,west virginia,
+1983,-1,wisconsin,
+1983,-1,wyoming,
+1984,-1,alabama,
+1984,-1,alaska,
+1984,-1,arizona,
+1984,-1,arkansas,
+1984,-1,california,
+1984,-1,colorado,
+1984,-1,connecticut,
+1984,-1,delaware,
+1984,-1,florida,
+1984,-1,georgia,
+1984,-1,hawaii,
+1984,-1,idaho,
+1984,-1,illinois,
+1984,-1,indiana,
+1984,-1,iowa,
+1984,-1,kansas,
+1984,-1,kentucky,
+1984,-1,louisiana,
+1984,-1,maine,
+1984,-1,maryland,
+1984,-1,massachusetts,
+1984,-1,michigan,
+1984,-1,minnesota,
+1984,-1,mississippi,
+1984,-1,missouri,
+1984,-1,montana,
+1984,-1,nebraska,
+1984,-1,nevada,
+1984,-1,new hampshire,
+1984,-1,new jersey,
+1984,-1,new mexico,
+1984,-1,new york,
+1984,-1,north carolina,
+1984,-1,north dakota,
+1984,-1,ohio,
+1984,-1,oklahoma,
+1984,-1,oregon,
+1984,-1,pennsylvania,
+1984,-1,rhode island,
+1984,-1,south carolina,
+1984,-1,south dakota,
+1984,-1,tennessee,
+1984,-1,texas,
+1984,-1,utah,
+1984,-1,vermont,
+1984,-1,virginia,
+1984,-1,washington,
+1984,-1,west virginia,
+1984,-1,wisconsin,
+1984,-1,wyoming,
+1985,-1,alabama,
+1985,-1,alaska,
+1985,-1,arizona,
+1985,-1,arkansas,
+1985,-1,california,
+1985,-1,colorado,
+1985,-1,connecticut,
+1985,-1,delaware,
+1985,-1,florida,
+1985,-1,georgia,
+1985,-1,hawaii,
+1985,-1,idaho,
+1985,-1,illinois,
+1985,-1,indiana,
+1985,-1,iowa,
+1985,-1,kansas,
+1985,-1,kentucky,
+1985,-1,louisiana,
+1985,-1,maine,
+1985,-1,maryland,
+1985,-1,massachusetts,
+1985,-1,michigan,
+1985,-1,minnesota,
+1985,-1,mississippi,
+1985,-1,missouri,
+1985,-1,montana,
+1985,-1,nebraska,
+1985,-1,nevada,
+1985,-1,new hampshire,
+1985,-1,new jersey,
+1985,-1,new mexico,
+1985,-1,new york,
+1985,-1,north carolina,
+1985,-1,north dakota,
+1985,-1,ohio,
+1985,-1,oklahoma,
+1985,-1,oregon,
+1985,-1,pennsylvania,
+1985,-1,rhode island,
+1985,-1,south carolina,
+1985,-1,south dakota,
+1985,-1,tennessee,
+1985,-1,texas,
+1985,-1,utah,
+1985,-1,vermont,
+1985,-1,virginia,
+1985,-1,washington,
+1985,-1,west virginia,
+1985,-1,wisconsin,
+1985,-1,wyoming,
+1986,-1,alabama,
+1986,-1,alaska,
+1986,-1,arizona,
+1986,-1,arkansas,
+1986,-1,california,
+1986,-1,colorado,
+1986,-1,connecticut,
+1986,-1,delaware,
+1986,-1,florida,
+1986,-1,georgia,
+1986,-1,hawaii,
+1986,-1,idaho,
+1986,-1,illinois,
+1986,-1,indiana,
+1986,-1,iowa,
+1986,-1,kansas,
+1986,-1,kentucky,
+1986,-1,louisiana,
+1986,-1,maine,
+1986,-1,maryland,
+1986,-1,massachusetts,
+1986,-1,michigan,
+1986,-1,minnesota,
+1986,-1,mississippi,
+1986,-1,missouri,
+1986,-1,montana,
+1986,-1,nebraska,
+1986,-1,nevada,
+1986,-1,new hampshire,
+1986,-1,new jersey,
+1986,-1,new mexico,
+1986,-1,new york,
+1986,-1,north carolina,
+1986,-1,north dakota,
+1986,-1,ohio,
+1986,-1,oklahoma,
+1986,-1,oregon,
+1986,-1,pennsylvania,
+1986,-1,rhode island,
+1986,-1,south carolina,
+1986,-1,south dakota,
+1986,-1,tennessee,
+1986,-1,texas,
+1986,-1,utah,
+1986,-1,vermont,
+1986,-1,virginia,
+1986,-1,washington,
+1986,-1,west virginia,
+1986,-1,wisconsin,
+1986,-1,wyoming,
+1987,41,alabama,
+1987,77,arizona,
+1987,21,arkansas,
+1987,520,california,
+1987,41,colorado,
+1987,3,connecticut,
+1987,1,delaware,
+1987,290,florida,
+1987,115,georgia,
+1987,9,hawaii,
+1987,100,idaho,
+1987,30,illinois,
+1987,27,indiana,
+1987,40,iowa,
+1987,47,kansas,
+1987,15,kentucky,
+1987,35,louisiana,
+1987,9,maine,
+1987,8,maryland,
+1987,10,massachusetts,
+1987,80,michigan,
+1987,136,minnesota,
+1987,23,mississippi,
+1987,30,missouri,
+1987,110,montana,
+1987,100,nebraska,
+1987,9,nevada,
+1987,1,new hampshire,
+1987,16,new jersey,
+1987,19,new mexico,
+1987,18,new york,
+1987,290,north carolina,
+1987,92,north dakota,
+1987,59,ohio,
+1987,15,oklahoma,
+1987,59,oregon,
+1987,50,pennsylvania,
+1987,1,rhode island,
+1987,15,south carolina,
+1987,201,south dakota,
+1987,36,tennessee,
+1987,117,texas,
+1987,35,utah,
+1987,7,vermont,
+1987,30,virginia,
+1987,75,washington,
+1987,85,west virginia,
+1987,17,wisconsin,
+1987,40,wyoming,
+1988,42,alabama,
+1988,73,arizona,
+1988,35,arkansas,
+1988,520,california,
+1988,48,colorado,
+1988,2,connecticut,
+1988,1,delaware,
+1988,240,florida,
+1988,115,georgia,
+1988,9,hawaii,
+1988,112,idaho,
+1988,28,illinois,
+1988,29,indiana,
+1988,49,iowa,
+1988,42,kansas,
+1988,12,kentucky,
+1988,38,louisiana,
+1988,14,maine,
+1988,7,maryland,
+1988,15,massachusetts,
+1988,83,michigan,
+1988,150,minnesota,
+1988,21,mississippi,
+1988,30,missouri,
+1988,105,montana,
+1988,113,nebraska,
+1988,9,nevada,
+1988,1,new hampshire,
+1988,30,new jersey,
+1988,21,new mexico,
+1988,94,new york,
+1988,21,north carolina,
+1988,230,north dakota,
+1988,50,ohio,
+1988,10,oklahoma,
+1988,60,oregon,
+1988,45,pennsylvania,
+1988,1,rhode island,
+1988,14,south carolina,
+1988,245,south dakota,
+1988,35,tennessee,
+1988,114,texas,
+1988,36,utah,
+1988,7,vermont,
+1988,24,virginia,
+1988,65,washington,
+1988,30,west virginia,
+1988,82,wisconsin,
+1988,39,wyoming,
+1989,41,alabama,
+1989,71,arizona,
+1989,34,arkansas,
+1989,535,california,
+1989,50,colorado,
+1989,2,connecticut,
+1989,1,delaware,
+1989,235,florida,
+1989,116,georgia,
+1989,9,hawaii,
+1989,105,idaho,
+1989,29,illinois,
+1989,28,indiana,
+1989,61,iowa,
+1989,35,kansas,
+1989,12,kentucky,
+1989,35,louisiana,
+1989,17,maine,
+1989,9,maryland,
+1989,8,massachusetts,
+1989,93,michigan,
+1989,155,minnesota,
+1989,24,mississippi,
+1989,33,missouri,
+1989,100,montana,
+1989,119,nebraska,
+1989,15,nevada,
+1989,1,new hampshire,
+1989,25,new jersey,
+1989,22,new mexico,
+1989,94,new york,
+1989,25,north carolina,
+1989,290,north dakota,
+1989,53,ohio,
+1989,9,oklahoma,
+1989,63,oregon,
+1989,41,pennsylvania,
+1989,1,rhode island,
+1989,15,south carolina,
+1989,230,south dakota,
+1989,25,tennessee,
+1989,134,texas,
+1989,43,utah,
+1989,6,vermont,
+1989,23,virginia,
+1989,66,washington,
+1989,32,west virginia,
+1989,101,wisconsin,
+1989,40,wyoming,
+1990,29,alabama,
+1990,0.45,alaska,
+1990,67,arizona,
+1990,31,arkansas,
+1990,480,california,
+1990,55,colorado,
+1990,2,connecticut,
+1990,1,delaware,
+1990,220,florida,
+1990,111,georgia,
+1990,10,hawaii,
+1990,140,idaho,
+1990,19,illinois,
+1990,22,indiana,
+1990,70,iowa,
+1990,36,kansas,
+1990,8,kentucky,
+1990,38,louisiana,
+1990,18,maine,
+1990,7,maryland,
+1990,15,massachusetts,
+1990,100,michigan,
+1990,170,minnesota,
+1990,24,mississippi,
+1990,30,missouri,
+1990,95,montana,
+1990,118,nebraska,
+1990,17,nevada,
+1990,1,new hampshire,
+1990,15,new jersey,
+1990,29,new mexico,
+1990,81,new york,
+1990,20,north carolina,
+1990,210,north dakota,
+1990,40,ohio,
+1990,9,oklahoma,
+1990,61,oregon,
+1990,41,pennsylvania,
+1990,1,rhode island,
+1990,12,south carolina,
+1990,245,south dakota,
+1990,19,tennessee,
+1990,140,texas,
+1990,47,utah,
+1990,6,vermont,
+1990,16,virginia,
+1990,80,washington,
+1990,30,west virginia,
+1990,112,wisconsin,
+1990,40,wyoming,
+1991,20,alabama,
+1991,75,arizona,
+1991,47,arkansas,
+1991,520,california,
+1991,50,colorado,
+1991,225,florida,
+1991,102,georgia,
+1991,10,hawaii,
+1991,140,idaho,
+1991,21,illinois,
+1991,21,indiana,
+1991,92,iowa,
+1991,35,kansas,
+1991,7,kentucky,
+1991,40,louisiana,
+1991,13,maine,
+1991,7,maryland,
+1991,105,michigan,
+1991,180,minnesota,
+1991,28,mississippi,
+1991,28,missouri,
+1991,86,montana,
+1991,108,nebraska,
+1991,15,nevada,
+1991,11,new jersey,
+1991,20,new mexico,
+1991,77,new york,
+1991,18,north carolina,
+1991,215,north dakota,
+1991,48,ohio,
+1991,9,oklahoma,
+1991,56,oregon,
+1991,40,pennsylvania,
+1991,11,south carolina,
+1991,225,south dakota,
+1991,14,tennessee,
+1991,140,texas,
+1991,45,utah,
+1991,6,vermont,
+1991,16,virginia,
+1991,85,washington,
+1991,26,west virginia,
+1991,110,wisconsin,
+1991,41,wyoming,
+1992,25,alabama,
+1992,79,arizona,
+1992,45,arkansas,
+1992,479,california,
+1992,52,colorado,
+1992,220,florida,
+1992,85,georgia,
+1992,9,hawaii,
+1992,135,idaho,
+1992,16,illinois,
+1992,15,indiana,
+1992,56,iowa,
+1992,28,kansas,
+1992,4,kentucky,
+1992,45,louisiana,
+1992,15,maine,
+1992,6,maryland,
+1992,95,michigan,
+1992,190,minnesota,
+1992,25,mississippi,
+1992,25,missouri,
+1992,87,montana,
+1992,96,nebraska,
+1992,15,nevada,
+1992,8,new jersey,
+1992,18,new mexico,
+1992,70,new york,
+1992,15,north carolina,
+1992,240,north dakota,
+1992,43,ohio,
+1992,9,oklahoma,
+1992,52,oregon,
+1992,30,pennsylvania,
+1992,11,south carolina,
+1992,240,south dakota,
+1992,7,tennessee,
+1992,125,texas,
+1992,47,utah,
+1992,6,vermont,
+1992,13,virginia,
+1992,80,washington,
+1992,23,west virginia,
+1992,105,wisconsin,
+1992,41,wyoming,
+1993,19,alabama,
+1993,55,arizona,
+1993,50,arkansas,
+1993,500,california,
+1993,53,colorado,
+1993,200,florida,
+1993,80,georgia,
+1993,9,hawaii,
+1993,133,idaho,
+1993,15,illinois,
+1993,12,indiana,
+1993,60,iowa,
+1993,23,kansas,
+1993,4,kentucky,
+1993,47,louisiana,
+1993,15,maine,
+1993,7,maryland,
+1993,90,michigan,
+1993,180,minnesota,
+1993,17,mississippi,
+1993,24,missouri,
+1993,87,montana,
+1993,83,nebraska,
+1993,14,nevada,
+1993,9,new jersey,
+1993,18,new mexico,
+1993,65,new york,
+1993,15,north carolina,
+1993,220,north dakota,
+1993,35,ohio,
+1993,6,oklahoma,
+1993,53,oregon,
+1993,28,pennsylvania,
+1993,11,south carolina,
+1993,240,south dakota,
+1993,8,tennessee,
+1993,105,texas,
+1993,42,utah,
+1993,6,vermont,
+1993,10,virginia,
+1993,60,washington,
+1993,20,west virginia,
+1993,100,wisconsin,
+1993,34,wyoming,
+1994,18,alabama,
+1994,47,alaska,
+1994,50,arizona,
+1994,400,california,
+1994,45,colorado,
+1994,230,florida,
+1994,80,georgia,
+1994,11,hawaii,
+1994,127,idaho,
+1994,13,illinois,
+1994,13,indiana,
+1994,55,iowa,
+1994,19,kansas,
+1994,3,kentucky,
+1994,35,louisiana,
+1994,8,maine,
+1994,7,maryland,
+1994,90,michigan,
+1994,170,minnesota,
+1994,19,mississippi,
+1994,25,missouri,
+1994,119,montana,
+1994,72,nebraska,
+1994,14,nevada,
+1994,9,new jersey,
+1994,19,new mexico,
+1994,68,new york,
+1994,15,north carolina,
+1994,235,north dakota,
+1994,27,ohio,
+1994,5,oklahoma,
+1994,50,oregon,
+1994,27,pennsylvania,
+1994,10,south carolina,
+1994,260,south dakota,
+1994,6,tennessee,
+1994,103,texas,
+1994,43,utah,
+1994,5,vermont,
+1994,11,virginia,
+1994,60,washington,
+1994,20,west virginia,
+1994,75,wisconsin,
+1994,46,wyoming,
+1995,19,alabama,
+1995,55,arizona,
+1995,50,arkansas,
+1995,500,california,
+1995,53,colorado,
+1995,200,florida,
+1995,80,georgia,
+1995,9,hawaii,
+1995,133,idaho,
+1995,15,illinois,
+1995,12,indiana,
+1995,60,iowa,
+1995,23,kansas,
+1995,4,kentucky,
+1995,47,louisiana,
+1995,13,maine,
+1995,7,maryland,
+1995,90,michigan,
+1995,180,minnesota,
+1995,17,mississippi,
+1995,24,missouri,
+1995,95,montana,
+1995,83,nebraska,
+1995,14,nevada,
+1995,9,new hampshire,
+1995,18,new mexico,
+1995,65,new york,
+1995,15,north carolina,
+1995,220,north dakota,
+1995,30,ohio,
+1995,6,oklahoma,
+1995,53,oregon,
+1995,28,pennsylvania,
+1995,11,south carolina,
+1995,245,south dakota,
+1995,8,tennessee,
+1995,105,texas,
+1995,42,utah,
+1995,6,vermont,
+1995,10,virginia,
+1995,60,washington,
+1995,20,west virginia,
+1995,100,wisconsin,
+1995,34,wyoming,
+1996,18,Alabama,
+1996,47,Alaska,
+1996,50,Arizona,
+1996,400,California,
+1996,45,Colorado,
+1996,230,Florida,
+1996,80,Georgia,
+1996,11,Hawaii,
+1996,127,Idaho,
+1996,13,Illinois,
+1996,13,Indiana,
+1996,55,Iowa,
+1996,19,Kansas,
+1996,3,Kentucky,
+1996,35,Louisiana,
+1996,8,Maine,
+1996,7,Maryland,
+1996,90,Michigan,
+1996,170,Minnesota,
+1996,19,Mississippi,
+1996,25,Missouri,
+1996,119,Montana,
+1996,72,Nebraska,
+1996,14,Nevada,
+1996,9,New Jersey,
+1996,19,New Mexico,
+1996,68,New York,
+1996,15,North Carolina,
+1996,235,North Dakota,
+1996,27,Ohio,
+1996,5,Oklahoma,
+1996,50,Oregon,
+1996,27,Pennsylvania,
+1996,10,South Carolina,
+1996,260,South Dakota,
+1996,6,Tennessee,
+1996,103,Texas,
+1996,43,Utah,
+1996,5,Vermont,
+1996,11,Virginia,
+1996,60,Washington,
+1996,20,West Virginia,
+1996,75,Wisconsin,
+1996,46,Wyoming,
+1997,18,Alabama,
+1997,47,Alaska,
+1997,50,Arizona,
+1997,400,California,
+1997,45,Colorado,
+1997,230,Florida,
+1997,80,Georgia,
+1997,11,Hawaii,
+1997,127,Idaho,
+1997,13,Illinois,
+1997,13,Indiana,
+1997,55,Iowa,
+1997,19,Kansas,
+1997,3,Kentucky,
+1997,35,Louisiana,
+1997,8,Maine,
+1997,7,Maryland,
+1997,90,Michigan,
+1997,170,Minnesota,
+1997,19,Mississippi,
+1997,25,Missouri,
+1997,119,Montana,
+1997,72,Nebraska,
+1997,14,Nevada,
+1997,9,New Jersey,
+1997,19,New Mexico,
+1997,68,New York,
+1997,15,North Carolina,
+1997,235,North Dakota,
+1997,27,Ohio,
+1997,5,Oklahoma,
+1997,50,Oregon,
+1997,27,Pennsylvania,
+1997,10,South Carolina,
+1997,260,South Dakota,
+1997,6,Tennessee,
+1997,103,Texas,
+1997,43,Utah,
+1997,5,Vermont,
+1997,11,Virginia,
+1997,60,Washington,
+1997,20,West Virginia,
+1997,75,Wisconsin,
+1997,46,Wyoming,
+1998,15,Alabama,
+1998,32,Alaska,
+1998,40,Arizona,
+1998,390,California,
+1998,30,Colorado,
+1998,240,Florida,
+1998,75,Georgia,
+1998,8,Hawaii,
+1998,110,Idaho,
+1998,11,Illinois,
+1998,9,Indiana,
+1998,58,Iowa,
+1998,16,Kansas,
+1998,3,Kentucky,
+1998,37,Louisiana,
+1998,9,Maine,
+1998,7,Maryland,
+1998,90,Michigan,
+1998,150,Minnesota,
+1998,17,Mississippi,
+1998,22,Missouri,
+1998,117,Montana,
+1998,65,Nebraska,
+1998,14,Nevada,
+1998,5,New Jersey,
+1998,15,New Mexico,
+1998,68,New York,
+1998,12,North Carolina,
+1998,230,North Dakota,
+1998,24,Ohio,
+1998,4,Oklahoma,
+1998,55,Oregon,
+1998,23,Pennsylvania,
+1998,9,South Carolina,
+1998,240,South Dakota,
+1998,5,Tennessee,
+1998,82,Texas,
+1998,34,Utah,
+1998,4,Vermont,
+1998,7,Virginia,
+1998,57,Washington,
+1998,10,West Virginia,
+1998,69,Wisconsin,
+1998,40,Wyoming,
+1999,14,Alabama,
+1999,42,Arizona,
+1999,50,Arkansas,
+1999,420,California,
+1999,35,Colorado,
+1999,240,Florida,
+1999,75,Georgia,
+1999,9,Hawaii,
+1999,120,Idaho,
+1999,7,Illinois,
+1999,8,Indiana,
+1999,45,Iowa,
+1999,17,Kansas,
+1999,3,Kentucky,
+1999,44,Louisiana,
+1999,8,Maine,
+1999,6,Maryland,
+1999,85,Michigan,
+1999,145,Minnesota,
+1999,19,Mississippi,
+1999,24,Missouri,
+1999,107,Montana,
+1999,61,Nebraska,
+1999,14,Nevada,
+1999,10,New Jersey,
+1999,15,New Mexico,
+1999,72,New York,
+1999,8,North Carolina,
+1999,245,North Dakota,
+1999,22,Ohio,
+1999,4,Oklahoma,
+1999,50,Oregon,
+1999,22,Pennsylvania,
+1999,240,South Dakota,
+1999,7,Tennessee,
+1999,94,Texas,
+1999,32,Utah,
+1999,5,Vermont,
+1999,8,Virginia,
+1999,60,Washington,
+1999,8,West Virginia,
+1999,79,Wisconsin,
+1999,38,Wyoming,
+2000,16,Alabama,
+2000,55,Arizona,
+2000,53,Arkansas,
+2000,450,California,
+2000,27,Colorado,
+2000,230,Florida,
+2000,75,Georgia,
+2000,8,Hawaii,
+2000,120,Idaho,
+2000,9,Illinois,
+2000,9,Indiana,
+2000,50,Iowa,
+2000,16,Kansas,
+2000,3,Kentucky,
+2000,41,Louisiana,
+2000,10,Maine,
+2000,7,Maryland,
+2000,80,Michigan,
+2000,140,Minnesota,
+2000,18,Mississippi,
+2000,23,Missouri,
+2000,115,Montana,
+2000,64,Nebraska,
+2000,10,Nevada,
+2000,11,New Jersey,
+2000,14,New Mexico,
+2000,65,New York,
+2000,8,North Carolina,
+2000,230,North Dakota,
+2000,18,Ohio,
+2000,4,Oklahoma,
+2000,50,Oregon,
+2000,23,Pennsylvania,
+2000,225,South Dakota,
+2000,7,Tennessee,
+2000,91,Texas,
+2000,30,Utah,
+2000,6,Vermont,
+2000,8,Virginia,
+2000,58,Washington,
+2000,6,West Virginia,
+2000,89,Wisconsin,
+2000,46,Wyoming,
+2001,17,Alabama,
+2001,52,Arizona,
+2001,52,Arkansas,
+2001,505,California,
+2001,27,Colorado,
+2001,228,Florida,
+2001,65,Georgia,
+2001,8,Hawaii,
+2001,120,Idaho,
+2001,9,Illinois,
+2001,10,Indiana,
+2001,40,Iowa,
+2001,13,Kansas,
+2001,3,Kentucky,
+2001,48,Louisiana,
+2001,14,Maine,
+2001,6,Maryland,
+2001,73,Michigan,
+2001,145,Minnesota,
+2001,18,Mississippi,
+2001,24,Missouri,
+2001,122,Montana,
+2001,58,Nebraska,
+2001,9,Nevada,
+2001,10,New Jersey,
+2001,15,New Mexico,
+2001,69,New York,
+2001,9,North Carolina,
+2001,255,North Dakota,
+2001,20,Ohio,
+2001,6,Oklahoma,
+2001,45,Oregon,
+2001,25,Pennsylvania,
+2001,224,South Dakota,
+2001,8,Tennessee,
+2001,108,Texas,
+2001,26,Utah,
+2001,6,Vermont,
+2001,7,Virginia,
+2001,52,Washington,
+2001,6,West Virginia,
+2001,80,Wisconsin,
+2001,37,Wyoming,
+2002,16,Alabama,
+2002,40,Arizona,
+2002,55,Arkansas,
+2002,440,California,
+2002,29,Colorado,
+2002,232,Florida,
+2002,55,Georgia,
+2002,7,Hawaii,
+2002,100,Idaho,
+2002,8,Illinois,
+2002,8,Indiana,
+2002,30,Iowa,
+2002,15,Kansas,
+2002,3,Kentucky,
+2002,43,Louisiana,
+2002,11,Maine,
+2002,6,Maryland,
+2002,72,Michigan,
+2002,150,Minnesota,
+2002,17,Mississippi,
+2002,23,Missouri,
+2002,124,Montana,
+2002,50,Nebraska,
+2002,10,Nevada,
+2002,11,New Jersey,
+2002,15,New Mexico,
+2002,58,New York,
+2002,11,North Carolina,
+2002,300,North Dakota,
+2002,18,Ohio,
+2002,7,Oklahoma,
+2002,48,Oregon,
+2002,22,Pennsylvania,
+2002,235,South Dakota,
+2002,9,Tennessee,
+2002,105,Texas,
+2002,24,Utah,
+2002,7,Vermont,
+2002,7,Virginia,
+2002,52,Washington,
+2002,7,West Virginia,
+2002,84,Wisconsin,
+2002,39,Wyoming,
+2003,14,Alabama,
+2003,43,Arizona,
+2003,58,Arkansas,
+2003,425,California,
+2003,26,Colorado,
+2003,220,Florida,
+2003,55,Georgia,
+2003,8,Hawaii,
+2003,100,Idaho,
+2003,6,Illinois,
+2003,7,Indiana,
+2003,33,Iowa,
+2003,13,Kansas,
+2003,3,Kentucky,
+2003,45,Louisiana,
+2003,11,Maine,
+2003,4,Maryland,
+2003,76,Massachusetts,
+2003,135,Minnesota,
+2003,17,Mississippi,
+2003,25,Missouri,
+2003,136,Montana,
+2003,43,Nebraska,
+2003,9,Nevada,
+2003,11,New Jersey,
+2003,10,New Mexico,
+2003,53,New York,
+2003,13,North Carolina,
+2003,280,North Dakota,
+2003,16,Ohio,
+2003,4,Oklahoma,
+2003,44,Oregon,
+2003,17,Pennsylvania,
+2003,7,South Carolina,
+2003,235,South Dakota,
+2003,8,Tennessee,
+2003,97,Texas,
+2003,23,Utah,
+2003,7,Vermont,
+2003,9,Virginia,
+2003,42,Washington,
+2003,7,West Virginia,
+2003,67,Wisconsin,
+2003,38,Wyoming,
+2004,12,Alabama,
+2004,38,Arizona,
+2004,45,Arkansas,
+2004,470,California,
+2004,24,Colorado,
+2004,220,Florida,
+2004,50,Georgia,
+2004,7,Hawaii,
+2004,100,Idaho,
+2004,9,Illinois,
+2004,8,Indiana,
+2004,33,Iowa,
+2004,17,Kansas,
+2004,5,Kentucky,
+2004,35,Louisiana,
+2004,11,Maine,
+2004,3,Maryland,
+2004,72,Massachusetts,
+2004,117,Minnesota,
+2004,18,Mississippi,
+2004,18,Missouri,
+2004,134,Montana,
+2004,43,Nebraska,
+2004,9,Nevada,
+2004,11,New Jersey,
+2004,11,New Mexico,
+2004,60,New York,
+2004,16,North Carolina,
+2004,320,North Dakota,
+2004,18,Ohio,
+2004,3,Oklahoma,
+2004,43,Oregon,
+2004,29,Pennsylvania,
+2004,5,South Carolina,
+2004,225,South Dakota,
+2004,8,Tennessee,
+2004,114,Texas,
+2004,22,Utah,
+2004,7,Vermont,
+2004,8,Virginia,
+2004,50,Washington,
+2004,9,West Virginia,
+2004,70,Wisconsin,
+2004,38,Wyoming,
+2005,13,Alabama,
+2005,35,Arizona,
+2005,40,Arkansas,
+2005,480,California,
+2005,24,Colorado,
+2005,210,Florida,
+2005,52,Georgia,
+2005,7,Hawaii,
+2005,100,Idaho,
+2005,7,Illinois,
+2005,5,Indiana,
+2005,32,Iowa,
+2005,16,Kansas,
+2005,5,Kentucky,
+2005,34,Louisiana,
+2005,8,Maine,
+2005,2,Maryland,
+2005,65,Massachusetts,
+2005,120,Minnesota,
+2005,21,Mississippi,
+2005,17,Missouri,
+2005,145,Montana,
+2005,45,Nebraska,
+2005,6,Nevada,
+2005,10,New Jersey,
+2005,6,New Mexico,
+2005,67,New York,
+2005,10,North Carolina,
+2005,340,North Dakota,
+2005,15,Ohio,
+2005,3,Oklahoma,
+2005,42,Oregon,
+2005,27,Pennsylvania,
+2005,4,South Carolina,
+2005,215,South Dakota,
+2005,6,Tennessee,
+2005,140,Texas,
+2005,25,Utah,
+2005,7,Vermont,
+2005,6,Virginia,
+2005,58,Washington,
+2005,8,West Virginia,
+2005,74,Wisconsin,
+2005,39,Wyoming,
+2006,12,Alabama,
+2006,32,Arizona,
+2006,40,Arkansas,
+2006,390,California,
+2006,23,Colorado,
+2006,205,Florida,
+2006,63,Georgia,
+2006,8,Hawaii,
+2006,100,Idaho,
+2006,7,Illinois,
+2006,7,Indiana,
+2006,35,Iowa,
+2006,14,Kansas,
+2006,5,Kentucky,
+2006,35,Louisiana,
+2006,7,Maine,
+2006,65,Michigan,
+2006,135,Minnesota,
+2006,18,Mississippi,
+2006,16,Missouri,
+2006,140,Montana,
+2006,51,Nebraska,
+2006,14,Nevada,
+2006,12,New Jersey,
+2006,8,New Mexico,
+2006,64,New York,
+2006,9,North Carolina,
+2006,390,North Dakota,
+2006,16,Ohio,
+2006,42,Oregon,
+2006,30,Pennsylvania,
+2006,215,South Dakota,
+2006,6,Tennessee,
+2006,116,Texas,
+2006,23,Utah,
+2006,6,Vermont,
+2006,7,Virginia,
+2006,56,Washington,
+2006,9,West Virginia,
+2006,68,Wisconsin,
+2006,39,Wyoming,
+2007,13,ALABAMA,
+2007,36,ARIZONA,
+2007,36,ARKANSAS,
+2007,400,CALIFORNIA,
+2007,28,COLORADO,
+2007,160,FLORIDA,
+2007,59,GEORGIA,
+2007,9,HAWAII,
+2007,95,IDAHO,
+2007,8,ILLINOIS,
+2007,8,INDIANA,
+2007,28,IOWA,
+2007,16,KANSAS,
+2007,5,KENTUCKY,
+2007,35,LOUISIANA,
+2007,8,MAINE,
+2007,65,MICHIGAN,
+2007,120,MINNESOTA,
+2007,16,MISSISSIPPI,
+2007,15,MISSOURI,
+2007,130,MONTANA,
+2007,40,NEBRASKA,
+2007,12,NEVADA,
+2007,12,NEW JERSEY,
+2007,7,NEW MEXICO,
+2007,60,NEW YORK,
+2007,10,NORTH CAROLINA,
+2007,370,NORTH DAKOTA,
+2007,15,OHIO,
+2007,39,OREGON,
+2007,28,PENNSYLVANIA,
+2007,220,SOUTH DAKOTA,
+2007,7,TENNESSEE,
+2007,84,TEXAS,
+2007,23,UTAH,
+2007,6,VERMONT,
+2007,8,VIRGINIA,
+2007,51,WASHINGTON,
+2007,8,WEST VIRGINIA,
+2007,64,WISCONSIN,
+2007,40,WYOMING,
+2008,11,ALABAMA,
+2008,30,ARIZONA,
+2008,32,ARKANSAS,
+2008,380,CALIFORNIA,
+2008,36,COLORADO,
+2008,170,FLORIDA,
+2008,63,GEORGIA,
+2008,10,HAWAII,
+2008,95,IDAHO,
+2008,10,ILLINOIS,
+2008,6,INDIANA,
+2008,26,IOWA,
+2008,14,KANSAS,
+2008,5,KENTUCKY,
+2008,30,LOUISIANA,
+2008,11,MAINE,
+2008,72,MICHIGAN,
+2008,125,MINNESOTA,
+2008,14,MISSISSIPPI,
+2008,15,MISSOURI,
+2008,132,MONTANA,
+2008,47,NEBRASKA,
+2008,9,NEVADA,
+2008,9,NEW JERSEY,
+2008,7,NEW MEXICO,
+2008,60,NEW YORK,
+2008,10,NORTH CAROLINA,
+2008,350,NORTH DAKOTA,
+2008,14,OHIO,
+2008,46,OREGON,
+2008,28,PENNSYLVANIA,
+2008,225,SOUTH DAKOTA,
+2008,7,TENNESSEE,
+2008,82,TEXAS,
+2008,23,UTAH,
+2008,6,VERMONT,
+2008,8,VIRGINIA,
+2008,49,WASHINGTON,
+2008,5,WEST VIRGINIA,
+2008,64,WISCONSIN,
+2008,39,WYOMING,
+2009,11,ALABAMA,
+2009,30,ARIZONA,
+2009,28,ARKANSAS,
+2009,340,CALIFORNIA,
+2009,31,COLORADO,
+2009,160,FLORIDA,
+2009,60,GEORGIA,
+2009,10,HAWAII,
+2009,92,IDAHO,
+2009,9,ILLINOIS,
+2009,8,INDIANA,
+2009,26,IOWA,
+2009,14,KANSAS,
+2009,4,KENTUCKY,
+2009,29,LOUISIANA,
+2009,9,MAINE,
+2009,72,MICHIGAN,
+2009,130,MINNESOTA,
+2009,15,MISSISSIPPI,
+2009,14,MISSOURI,
+2009,135,MONTANA,
+2009,45,NEBRASKA,
+2009,10,NEVADA,
+2009,9,NEW JERSEY,
+2009,6,NEW MEXICO,
+2009,53,NEW YORK,
+2009,12,NORTH CAROLINA,
+2009,420,NORTH DAKOTA,
+2009,14,OHIO,
+2009,46,OREGON,
+2009,25,PENNSYLVANIA,
+2009,255,SOUTH DAKOTA,
+2009,7,TENNESSEE,
+2009,105,TEXAS,
+2009,28,UTAH,
+2009,5,VERMONT,
+2009,6,VIRGINIA,
+2009,46,WASHINGTON,
+2009,6,WEST VIRGINIA,
+2009,60,WISCONSIN,
+2009,43,WYOMING,
+2010,9,ALABAMA,
+2010,25,ARIZONA,
+2010,28,ARKANSAS,
+2010,360,CALIFORNIA,
+2010,27,COLORADO,
+2010,150,FLORIDA,
+2010,65,GEORGIA,
+2010,10,HAWAII,
+2010,90,IDAHO,
+2010,8,ILLINOIS,
+2010,7,INDIANA,
+2010,24,IOWA,
+2010,10,KANSAS,
+2010,4,KENTUCKY,
+2010,40,LOUISIANA,
+2010,7,MAINE,
+2010,71,MICHIGAN,
+2010,122,MINNESOTA,
+2010,14,MISSISSIPPI,
+2010,11,MISSOURI,
+2010,134,MONTANA,
+2010,36,NEBRASKA,
+2010,10,NEVADA,
+2010,9,NEW JERSEY,
+2010,6,NEW MEXICO,
+2010,50,NEW YORK,
+2010,12,NORTH CAROLINA,
+2010,400,NORTH DAKOTA,
+2010,14,OHIO,
+2010,50,OREGON,
+2010,23,PENNSYLVANIA,
+2010,225,SOUTH DAKOTA,
+2010,7,TENNESSEE,
+2010,77,TEXAS,
+2010,28,UTAH,
+2010,5,VERMONT,
+2010,6,VIRGINIA,
+2010,49,WASHINGTON,
+2010,6,WEST VIRGINIA,
+2010,58,WISCONSIN,
+2010,39,WYOMING,
+2011,9,ALABAMA,
+2011,20,ARIZONA,
+2011,24,ARKANSAS,
+2011,355,CALIFORNIA,
+2011,28,COLORADO,
+2011,170,FLORIDA,
+2011,65,GEORGIA,
+2011,10,HAWAII,
+2011,103,IDAHO,
+2011,8,ILLINOIS,
+2011,9,INDIANA,
+2011,26,IOWA,
+2011,9,KANSAS,
+2011,5,KENTUCKY,
+2011,37,LOUISIANA,
+2011,6,MAINE,
+2011,66,MICHIGAN,
+2011,122,MINNESOTA,
+2011,14,MISSISSIPPI,
+2011,11,MISSOURI,
+2011,146,MONTANA,
+2011,48,NEBRASKA,
+2011,11,NEW JERSEY,
+2011,7,NEW MEXICO,
+2011,45,NEW YORK,
+2011,11,NORTH CAROLINA,
+2011,450,NORTH DAKOTA,
+2011,11,OHIO,
+2011,55,OREGON,
+2011,21,PENNSYLVANIA,
+2011,270,SOUTH DAKOTA,
+2011,7,TENNESSEE,
+2011,89,TEXAS,
+2011,26,UTAH,
+2011,5,VERMONT,
+2011,6,VIRGINIA,
+2011,62,WASHINGTON,
+2011,5,WEST VIRGINIA,
+2011,63,WISCONSIN,
+2011,37,WYOMING,
+2012,9,ALABAMA,
+2012,24,ARIZONA,
+2012,25,ARKANSAS,
+2012,410,CALIFORNIA,
+2012,34,COLORADO,
+2012,200,FLORIDA,
+2012,55,GEORGIA,
+2012,10,HAWAII,
+2012,97,IDAHO,
+2012,9,ILLINOIS,
+2012,10,INDIANA,
+2012,27,IOWA,
+2012,9,KANSAS,
+2012,5,KENTUCKY,
+2012,36,LOUISIANA,
+2012,5,MAINE,
+2012,71,MICHIGAN,
+2012,128,MINNESOTA,
+2012,16,MISSISSIPPI,
+2012,11,MISSOURI,
+2012,157,MONTANA,
+2012,41,NEBRASKA,
+2012,13,NEW JERSEY,
+2012,7,NEW MEXICO,
+2012,45,NEW YORK,
+2012,13,NORTH CAROLINA,
+2012,510,NORTH DAKOTA,
+2012,18,OHIO,
+2012,59,OREGON,
+2012,30,PENNSYLVANIA,
+2012,265,SOUTH DAKOTA,
+2012,8,TENNESSEE,
+2012,100,TEXAS,
+2012,26,UTAH,
+2012,4,VERMONT,
+2012,5,VIRGINIA,
+2012,71,WASHINGTON,
+2012,5,WEST VIRGINIA,
+2012,64,WISCONSIN,
+2012,34,WYOMING,
+2013,9,ALABAMA,
+2013,23,ARIZONA,
+2013,22,ARKANSAS,
+2013,370,CALIFORNIA,
+2013,31,COLORADO,
+2013,180,FLORIDA,
+2013,65,GEORGIA,
+2013,9,HAWAII,
+2013,87,IDAHO,
+2013,7,ILLINOIS,
+2013,8,INDIANA,
+2013,25,IOWA,
+2013,7,KANSAS,
+2013,4,KENTUCKY,
+2013,36,LOUISIANA,
+2013,4,MAINE,
+2013,74,MICHIGAN,
+2013,120,MINNESOTA,
+2013,18,MISSISSIPPI,
+2013,8,MISSOURI,
+2013,145,MONTANA,
+2013,41,NEBRASKA,
+2013,11,NEW JERSEY,
+2013,7,NEW MEXICO,
+2013,49,NEW YORK,
+2013,14,NORTH CAROLINA,
+2013,460,NORTH DAKOTA,
+2013,15,OHIO,
+2013,60,OREGON,
+2013,24,PENNSYLVANIA,
+2013,250,RHODE ISLAND,
+2013,7,TENNESSEE,
+2013,78,TEXAS,
+2013,23,UTAH,
+2013,4,VERMONT,
+2013,4,VIRGINIA,
+2013,71,WASHINGTON,
+2013,4,WEST VIRGINIA,
+2013,57,WISCONSIN,
+2013,35,WYOMING,
+2014,8,ALABAMA,
+2014,22,ARIZONA,
+2014,25,ARKANSAS,
+2014,330,CALIFORNIA,
+2014,25,COLORADO,
+2014,193,FLORIDA,
+2014,59,GEORGIA,
+2014,10,HAWAII,
+2014,92,IDAHO,
+2014,7,ILLINOIS,
+2014,8,INDIANA,
+2014,37,IOWA,
+2014,6,KANSAS,
+2014,5,KENTUCKY,
+2014,41,LOUISIANA,
+2014,4,MAINE,
+2014,73,MICHIGAN,
+2014,125,MINNESOTA,
+2014,18,MISSISSIPPI,
+2014,7,MISSOURI,
+2014,145,MONTANA,
+2014,43,NEBRASKA,
+2014,14,NEW JERSEY,
+2014,5,NEW MEXICO,
+2014,51,NEW YORK,
+2014,13,NORTH CAROLINA,
+2014,480,NORTH DAKOTA,
+2014,18,OHIO,
+2014,60,OREGON,
+2014,16,PENNSYLVANIA,
+2014,260,SOUTH DAKOTA,
+2014,6,TENNESSEE,
+2014,92,TEXAS,
+2014,25,UTAH,
+2014,4,VERMONT,
+2014,4,VIRGINIA,
+2014,62,WASHINGTON,
+2014,6,WEST VIRGINIA,
+2014,60,WISCONSIN,
+2014,50,WYOMING,
+2015,7,ALABAMA,
+2015,29,ARIZONA,
+2015,22,ARKANSAS,
+2015,330,CALIFORNIA,
+2015,26,COLORADO,
+2015,220,FLORIDA,
+2015,67,GEORGIA,
+2015,13,HAWAII,
+2015,83,IDAHO,
+2015,7,ILLINOIS,
+2015,6,INDIANA,
+2015,39,IOWA,
+2015,6,KANSAS,
+2015,3,KENTUCKY,
+2015,50,LOUISIANA,
+2015,7,MAINE,
+2015,85,MICHIGAN,
+2015,130,MINNESOTA,
+2015,17,MISSISSIPPI,
+2015,10,MISSOURI,
+2015,159,MONTANA,
+2015,46,NEBRASKA,
+2015,11,NEW JERSEY,
+2015,55,NEW YORK,
+2015,10,NORTH CAROLINA,
+2015,480,NORTH DAKOTA,
+2015,17,OHIO,
+2015,62,OREGON,
+2015,13,PENNSYLVANIA,
+2015,265,SOUTH DAKOTA,
+2015,7,TENNESSEE,
+2015,106,TEXAS,
+2015,30,UTAH,
+2015,3,VERMONT,
+2015,5,VIRGINIA,
+2015,69,WASHINGTON,
+2015,6,WEST VIRGINIA,
+2015,59,WISCONSIN,
+2015,47,WYOMING,
+2016,7,ALABAMA,
+2016,26,ARIZONA,
+2016,21,ARKANSAS,
+2016,320,CALIFORNIA,
+2016,27,COLORADO,
+2016,245,FLORIDA,
+2016,73,GEORGIA,
+2016,15,HAWAII,
+2016,100,IDAHO,
+2016,8,ILLINOIS,
+2016,5,INDIANA,
+2016,35,IOWA,
+2016,7,KANSAS,
+2016,5,KENTUCKY,
+2016,48,LOUISIANA,
+2016,8,MAINE,
+2016,91,MICHIGAN,
+2016,132,MINNESOTA,
+2016,20,MISSISSIPPI,
+2016,12,MISSOURI,
+2016,162,MONTANA,
+2016,50,NEBRASKA,
+2016,12,NEW JERSEY,
+2016,60,NEW YORK,
+2016,12,NORTH CAROLINA,
+2016,490,NORTH DAKOTA,
+2016,15,OHIO,
+2016,71,OREGON,
+2016,17,PENNSYLVANIA,
+2016,9,SOUTH CAROLINA,
+2016,280,SOUTH DAKOTA,
+2016,7,TENNESSEE,
+2016,116,TEXAS,
+2016,29,UTAH,
+2016,3,VERMONT,
+2016,6,VIRGINIA,
+2016,68,WASHINGTON,
+2016,6,WEST VIRGINIA,
+2016,53,WISCONSIN,
+2016,38,WYOMING,
+2017,7,ALABAMA,
+2017,26,ARIZONA,
+2017,24,ARKANSAS,
+2017,275,CALIFORNIA,
+2017,29,COLORADO,
+2017,220,FLORIDA,
+2017,69,GEORGIA,
+2017,14,HAWAII,
+2017,89,IDAHO,
+2017,8,ILLINOIS,
+2017,6,INDIANA,
+2017,36,IOWA,
+2017,8,KANSAS,
+2017,5,KENTUCKY,
+2017,44,LOUISIANA,
+2017,10,MAINE,
+2017,90,MICHIGAN,
+2017,122,MINNESOTA,
+2017,15,MISSISSIPPI,
+2017,10,MISSOURI,
+2017,146,MONTANA,
+2017,57,NEBRASKA,
+2017,12,NEW JERSEY,
+2017,58,NEW YORK,
+2017,12,NORTH CAROLINA,
+2017,490,NORTH DAKOTA,
+2017,17,OHIO,
+2017,71,OREGON,
+2017,17,PENNSYLVANIA,
+2017,14,SOUTH CAROLINA,
+2017,290,SOUTH DAKOTA,
+2017,7,TENNESSEE,
+2017,126,TEXAS,
+2017,27,UTAH,
+2017,5,VERMONT,
+2017,6,VIRGINIA,
+2017,73,WASHINGTON,
+2017,5,WEST VIRGINIA,
+2017,52,WISCONSIN,
+2017,38,WYOMING,
+2018,7,Alabama,
+2018,27,Arizona,
+2018,24,Arkansas,
+2018,310,California,
+2018,32,Colorado,
+2018,215,Florida,
+2018,96,Georgia,
+2018,16,Hawaii,
+2018,97,Idaho,
+2018,10,Illinois,
+2018,7,Indiana,
+2018,37,Iowa,
+2018,7,Kansas,
+2018,5,Kentucky,
+2018,50,Louisiana,
+2018,12,Maine,
+2018,89,Michigan,
+2018,124,Minnesota,
+2018,19,Mississippi,
+2018,8,Missouri,
+2018,159,Montana,
+2018,48,Nebraska,
+2018,12,New Jersey,
+2018,64,New York,
+2018,12,North Carolina,
+2018,485,North Dakota,
+2018,15,Ohio,
+2018,74,Oregon,
+2018,19,Pennsylvania,
+2018,16,South Carolina,
+2018,280,South Dakota,
+2018,6,Tennessee,
+2018,133,Texas,
+2018,31,Utah,
+2018,6,Vermont,
+2018,5,Virginia,
+2018,84,Washington,
+2018,5,West Virginia,
+2018,54,Wisconsin,
+2018,40,Wyoming,
