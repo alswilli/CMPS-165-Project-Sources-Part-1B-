@@ -1019,10 +1019,15 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
 //                        d3.select(".toggleCity")
 //                            .transition().duration(1000)
 //                            .style("background-color","#823232");  
+                        var stateNaming = d3.select("#bloc").text();
                         
                         d3.select("h2")
                             .transition().duration(1000)
                             .text("U.S. Temperature Change, 1978-2018");
+                        
+                        d3.select("#bloc1")
+                            .transition().duration(1000)
+                            .text(stateNaming);
                         
                         //console.log(d3.select("h1"));
                         
@@ -1058,11 +1063,15 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
 //                        d3.select(".toggleCity")
 //                            .transition().duration(1000)
 //                            .style("background-color","#28682d");
+                        var stateNaming = d3.select("#bloc").text();
                         
                         d3.select("h2")
                             .transition().duration(1000)
                             .text("U.S. Honey Bee Population Change, 1978-2018");
                         
+                        d3.select("#bloc1")
+                            .transition().duration(1000)
+                            .text(stateNaming);
                     }
                  });
             
