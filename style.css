@@ -1,0 +1,193 @@
+/*corresponds to title element*/
+h1 {
+    text-align: left;
+    color: ;
+    font-size: 23px;
+    margin-left: 160px;
+}
+
+#bloc1, #bloc2
+{
+    display:inline;
+}
+
+h2 {
+/*    text-align: center;*/
+    color: ;
+    font-size: 23px;
+    margin-left: 180px;
+    margin-right: 100px;
+}
+
+h6 {
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+p1 {
+    font-size: 24px;
+}
+
+span1 {
+    font-size: 18px; 
+}
+
+#ending{
+                height:700px;
+                height:auto;
+                min-height:630px;
+                margin:0 auto;
+                width:100%;
+                background-color:rgb(241,241,241);
+                border-bottom-right-radius:2em;
+                border-bottom-left-radius:2em;
+                border-top-left-radius:2em;
+                border-top-right-radius:2em;
+                font-size: 16px;
+                font-family: sans-serif;
+                line-height: 70%;
+            }
+
+.columnFooter {
+                float: left;
+                width: 23.6%;
+                padding: 10px;
+                padding-left: 10px;
+                height: 40%;
+                line-height: 30px;
+            }
+
+#endingtext{
+                padding: 10px;
+                width:1000px;
+                margin:0 auto;
+                text-align:center;
+            }
+
+.footer{
+                margin-top: 20px;
+                transform: translate(0%,10%);
+            }
+/*
+.button toggleSeparation {
+
+}
+
+button toggleOverlap {
+    
+}
+*/
+
+/*relate to the grid not the axis*/
+.grid .tick {             
+    stroke: lightgrey;
+    opacity: 0.1;
+}
+.grid path {
+      stroke-width: 0;
+}
+
+/*relates to the axis not the grid*/
+.axis path,
+.axis line {
+    /*  Color of path and line  */
+    stroke: gray; 
+    /*  Appearence/font of path and line  */
+    shape-rendering: crispEdges;
+/*    opacity: 0.3;*/
+}
+
+.visualization {
+    background-color:antiquewhite
+}
+
+.visualization2 {
+    background-color:antiquewhite
+}
+
+.line {
+  fill: none;
+  stroke: green;
+  stroke-width: 2px;
+}
+
+.axisSteelBlue text{
+  fill: green;
+}
+
+.axisRed text{
+  fill: red;
+}
+
+.background {
+    fill: none;
+    pointer-events: all;
+}
+
+/*
+.legendQuant beeLegend {
+    background-color: aliceblue;
+}
+*/
+
+/*Add Tooltip Type here. Formats various rendering aspects for tooltip label*/
+#tooltip {
+        position: absolute;
+        width: 400px;
+        height: 100;
+        padding: 10px;
+        background-color:lightgrey;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        pointer-events: none;
+        left: 200px;
+        top: 867px;
+}
+
+/*Define what the keyword "hidden" does on the tooltip when called*/
+#tooltip.hidden {
+        display: none;
+}
+
+/*Defines the paragraph layout of the actual tooltip label*/
+#tooltip p {
+        margin: 0;
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+}
+
+.state-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+.bees {
+    color:green;
+}
+
+.temps {
+    color:red;
+}
+
+.tooltip-values bees {
+    font-size: 14px
+}
+
+.tooltip-values temps {
+    font-size: 14px
+}
+
+.state-labels {
+    fill: white;
+    pointer-events: none;
+}
