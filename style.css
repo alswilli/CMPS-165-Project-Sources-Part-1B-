@@ -6,16 +6,72 @@ h1 {
     margin-left: 160px;
 }
 
-#bloc1, #bloc2
+#bloc1
 {
     display:inline;
 }
+
+#bloc2
+{
+    text-align: center;
+    align-content: center;
+    align-self: center;
+    display:inline;
+}
+
+#bloc3
+{
+    display:inline;
+    background-color:lightgrey;
+    margin-left: 250px;
+    padding: 22px 10px; 
+    border-bottom-right-radius:0.8em;
+    border-bottom-left-radius:0.8em;
+    border-top-left-radius:0.8em;
+    border-top-right-radius:0.8em;
+}
+
+#bloc4
+{
+    display:inline;
+    background-color:lightgrey;
+    margin-left: 417px;
+    padding: 22px 10px; 
+    border-bottom-right-radius:0.8em;
+    border-bottom-left-radius:0.8em;
+    border-top-left-radius:0.8em;
+    border-top-right-radius:0.8em;
+}
+
+#bloc5 {
+/*    display:inline;*/
+    background-color:antiquewhite;
+    margin-left: 695px;
+    margin-right: 650px;
+    padding: 10px 10px; 
+    border-bottom-right-radius:0.8em;
+    border-bottom-left-radius:0.8em;
+    border-top-left-radius:0.8em;
+    border-top-right-radius:0.8em;
+    height:120;
+    width:300;
+}
+
+/*
+.verticalLine {
+    height: 200px;
+    border-left: thin solid #fff;
+    transform: translate(840px,80px);
+    position: absolute;
+    color:black;
+}
+*/
 
 h2 {
 /*    text-align: center;*/
     color: ;
     font-size: 23px;
-    margin-left: 180px;
+    margin-left: 235px;
     margin-right: 100px;
 }
 
@@ -133,13 +189,29 @@ button toggleOverlap {
 }
 */
 
+button {
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    top: 191px;
+    left: 420px;
+    background-color: grey;
+}
+
 /*Add Tooltip Type here. Formats various rendering aspects for tooltip label*/
 #tooltip {
         position: absolute;
-        width: 400px;
+        width: 300px;
         height: 100;
         padding: 10px;
-        background-color:lightgrey;
+        background-color:#F8F8F8;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px;
@@ -147,8 +219,10 @@ button toggleOverlap {
         -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
         pointer-events: none;
+/*
         left: 200px;
         top: 867px;
+*/
 }
 
 /*Define what the keyword "hidden" does on the tooltip when called*/
@@ -176,6 +250,21 @@ button toggleOverlap {
 }
 
 .temps {
+    color:red;
+}
+
+.state-title2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+.bees2 {
+    color:green;
+}
+
+.temps2 {
     color:red;
 }
 

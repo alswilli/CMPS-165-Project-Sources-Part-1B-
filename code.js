@@ -10,6 +10,11 @@ var margin = {top: 20, right: 80, bottom: 70, left: 80},             // defines 
 var range = [0, 24];
 var step = 2;
 
+//Show the tooltip 
+//        d3.select("#tooltip").classed("hidden", true);
+        
+        
+
 var zoom = d3.zoom()
                 .scaleExtent([1, 8])
                 .on("zoom", zoomed);
@@ -27,8 +32,8 @@ var formatComma = d3.format(",");
 
 // D3 Projection
 var projection = d3.geoAlbersUsa()
-  .translate([width / 1.96, height / 2.45]) // translate to center of screen
-  .scale([735]); // scale things down so see entire US
+  .translate([width / 1.55, height / 1.65]) // translate to center of screen
+  .scale([1000]); // scale things down so see entire US
 
 //Define path generator
 var path = d3.geoPath()
@@ -134,11 +139,12 @@ var colorTempData = d3.scaleQuantize()
 //Create SVG element for Bee Population Graph
 var svgBee = d3.select("body")
         .append("svg")
-        .attr("width", width)
-        .attr("height", height - (3 * margin.top)+10)
+        .attr("width", width + margin.left + margin.right)
+//        .attr("height", height - (3 * margin.top)+10)
+        .attr("height", height + margin.top + margin.bottom + margin.bottom)
         .attr("id", "beeSvg")
-        .attr("transform", "translate(0,-140)")
-        .style("background-color", "black");
+        .attr("transform", "translate(0,0)")
+//        .style("background-color", "#F8F8F8");
 //.on("click", stopped, true);
 
  svgBee.append("rect")
@@ -153,9 +159,9 @@ svgBee.call(zoom);
 
 // Define SVG.
 var svgLineGraph = d3.select("body").append("svg")
-    .attr("width", width + margin.left + margin.right)                       // defines the width of the "div" of where the chart can be displayed
-    .attr("height", height + margin.top + margin.bottom)                     // defines the height of the "div" of where the chart can be displayed
-.style("background-color", "#F8F8F8")
+    .attr("width", width + margin.left + margin.right + margin.right)                       // defines the width of the "div" of where the chart can be displayed
+    .attr("height", height + margin.top + margin.bottom + margin.bottom)                     // defines the height of the "div" of where the chart can be displayed
+//.style("background-color", "#F8F8F8")
     .append("g")                                                             // groups elements together(clean code) and allows application of transformations                                                                                                                (affects how visual elements are rendered)
     .attr("id", "svgLine")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")"); // scales the dimensional appearance of graph based on the margin values
@@ -168,15 +174,15 @@ var parseTime = d3.timeParse("%Y"); // Tells d3 to parse the data as a date (yea
 
 // Define X and Y SCALE.
 var x =                                 // Sets the scale (mapping of values to placements on line) for x-axis  
-    d3.scaleTime().range([0, width]);   // Places date/time values on the ticks of the x axis 
+    d3.scaleTime().range([0, width + margin.right]);   // Places date/time values on the ticks of the x axis 
 
 var y =                                 // Sets the scale (mapping of values to placements on line) for y-axis
     d3.scaleLinear()                         // Sets the scale to be a specal ordinal scale (mapping to labels rather than values) 
-    .range([height, 0]);                     // Reverses ordering of how y-axis bars are displayed (big to small versus small to big)
+    .range([height + margin.bottom, 0]);                     // Reverses ordering of how y-axis bars are displayed (big to small versus small to big)
 
 var y2 =                                 // Sets the scale (mapping of values to placements on line) for y-axis
     d3.scaleLinear()                         // Sets the scale to be a specal ordinal scale (mapping to labels rather than values) 
-    .range([height, 0]);                     // Reverses ordering of how y-axis bars are displayed (big to small versus small to big)
+    .range([height + margin.bottom, 0]);                     // Reverses ordering of how y-axis bars are displayed (big to small versus small to big)
 
 var zColor = d3.scaleOrdinal(d3.schemeCategory10); // Preset ordinal (names) scale that output values with 10 unique ctegorial colors
 
@@ -275,14 +281,14 @@ d3.csv("data/mergedBees.csv", function(error, data){   // Parses the data from t
 
   // Add the X Axis
   svgLineGraph.append("g")
-      .attr("transform", "translate(0," + height + ")")
+      .attr("transform", "translate(0," + (height + margin.bottom) + ")")
       .call(d3.axisBottom(x));
 //      .call(xAxis(x));
     
   // This section defines any text/labels related to the axis
   svgLineGraph.append("text")
-      .attr("y", 6.5 * margin.bottom)
-      .attr("x",width/2)
+      .attr("y", 7.4 * margin.bottom)
+      .attr("x",width/1.87)
       .attr("dy", "1em")
       .style("text-anchor", "middle")
       .attr("font-weight", "bold")
@@ -461,14 +467,14 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
   // Add the Y2 Axis
   svgLineGraph.append("g")
       .attr("class", "axisRed")
-      .attr("transform", "translate( " + width + ", 0 )")
+      .attr("transform", "translate( " + (width + margin.right) + ", 0 )")
     .attr("id", "rightaxis")
       .call(d3.axisRight(y2));
     
   // This section defines any text/labels related to the axis
   svgLineGraph.append("text")
       .attr("transform", "rotate(90)")
-      .attr("y", 0 - margin.left - 600)
+      .attr("y", 0 - margin.left - 673)
       .attr("x",0 + (height / 2))
       .attr("dy", "1em")
       .style("text-anchor", "middle")
@@ -821,6 +827,12 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
                        .attr("d", path).attr("class", "feature")
                            .on("click", clicked)
                         .attr("stroke","#fff").attr("stroke-width","0.4").style("opacity", "0.8").style("stroke-opacity", "1")
+                        .attr("x", function(d){                        
+                            return path.centroid(d)[0];
+                        })
+                       .attr("y", function(d){
+                            return  path.centroid(d)[1];
+                        })
                        .style("fill", function(d) {
                             //Get data value
                             var value = d.properties.bees;
@@ -838,9 +850,21 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
                             var temps = d.properties.temps;
                             var bees = d.properties.bees;
                             //console.log(d3.select(this))
+                            //Get this bar's x/y values, then augment for the tooltip
+                            var xPosition = parseFloat(d3.select(this).attr("x")) + 140.0;// augmented to the right of the circle it defines
+                            var yPosition = parseFloat(d3.select(this).attr("y")) + 320;
+                           
+                           console.log(xPosition)
+                           console.log(yPosition)
+                           
+                           d3.select("#tooltip").style("left", xPosition + "px").style("top", yPosition + "px");
+                           
                            d3.select(".state-title").text("United States").style("opacity", "0");
+//                                .style("left", xPosition + "px").style("top", yPosition + "px");
                            d3.select(".bees").text("Bee Colony Loss | 1,421,000 colonies").style("opacity", "0");
+//                                  .style("left", xPosition + "px").style("top", yPosition + "px");
                            d3.select(".temps").text("Temperature Increase | 3.5 degrees").style("opacity", "0");
+//                                  .style("left", xPosition + "px").style("top", yPosition + "px");
                            
                             d3.select(this)
                                 .style("opacity", "1");
@@ -855,6 +879,12 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
                             if (temps){
                                 d3.select(".temps").text("Temperature Increase | " + temps + " degrees").style("opacity", 1);
                             }
+                           
+                           //Show the tooltip 
+                            d3.select("#tooltip").classed("hidden", false);
+//                           d3.select("#tooltip.hidden").classed("hidden", false);
+
+                            
                         
                         })
                        .on("mouseout", function(d){
@@ -879,6 +909,11 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
                            
 //                           d3.select(this)
 //                                .style("opacity", "1");
+        
+                            //Show the tooltip 
+                            d3.select("#tooltip").classed("hidden", true);
+
+                            
                        })
             
                    // Adding Labels for each State
@@ -980,16 +1015,20 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
                        .attr('font-size','6pt')
                        .style("color","white");
 
+        d3.select("#bloc1")
+            .transition().duration(1000)
+            .text("\xa0 Honey Bee Colony Count Change, 1978-2018 \xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0");
+        
         // Defining Button Interactivity
             var togData = false;
             var togCities = false; 
-            d3.select(".toggleData")
+            d3.select(".toggleCity")
                 .on("click", function(){
                     // Determine if current line is visible
                     togData=!togData;
                     //console.log(togData);
                     
-                    if (togData == true){
+                    //if (togData == true){
                         g.selectAll("path")
                             .transition().duration(1000)
                             .style("fill", function(d) {
@@ -1019,21 +1058,24 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
 //                        d3.select(".toggleCity")
 //                            .transition().duration(1000)
 //                            .style("background-color","#823232");  
-                        var stateNaming = d3.select("#bloc").text();
-                        
-                        d3.select("h2")
-                            .transition().duration(1000)
-                            .text("U.S. Temperature Change, 1978-2018");
+                        var stateNaming = d3.select("#bloc2").text();
                         
                         d3.select("#bloc1")
+                            .transition().duration(1000)
+                            .text("Temperature Change in Fahrenheit, 1978-2018 \xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0");
+                        
+                        d3.select("#bloc2")
                             .transition().duration(1000)
                             .text(stateNaming);
                         
                         //console.log(d3.select("h1"));
                         
-                    }
+                    //}
+                });
                 
-                    if (togData == false){
+                 d3.select(".toggleData")
+                .on("click", function() {
+                    //if (togData == false){
                         g.selectAll("path")
                             .transition().duration(1000)
                             .style("fill", function(d) {
@@ -1063,16 +1105,17 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
 //                        d3.select(".toggleCity")
 //                            .transition().duration(1000)
 //                            .style("background-color","#28682d");
-                        var stateNaming = d3.select("#bloc").text();
-                        
-                        d3.select("h2")
-                            .transition().duration(1000)
-                            .text("U.S. Honey Bee Population Change, 1978-2018");
+                        var stateNaming = d3.select("#bloc2").text();
                         
                         d3.select("#bloc1")
                             .transition().duration(1000)
+                            .text("\xa0 Honey Bee Colony Count Change, 1978-2018 \xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0");
+                        
+                        d3.select("#bloc2")
+                            .transition().duration(1000)
                             .text(stateNaming);
-                    }
+                    //}
+                 //});
                  });
             
     });
@@ -1104,7 +1147,7 @@ function clicked(d) {
                        
 
                       drawChart(neigh);
-                    d3.select("#bloc1")
+                    d3.select("#bloc2")
                             .transition().duration(1000)
                             .text(neigh);
 //                    };
@@ -1123,7 +1166,7 @@ function clicked(d) {
                        
 
                       drawChart(neigh);
-                d3.select("#bloc1")
+                d3.select("#bloc2")
                             .transition().duration(1000)
                             .text("United States");
                 }
@@ -1184,21 +1227,21 @@ function clicked(d) {
         .duration(2000)
         .attrTween("stroke-dasharray", tweenDash);
 
-  // Add the X Axis
-  svgLineGraph.append("g")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
-//                    .call(xAxis(x));
+//  // Add the X Axis
+//  svgLineGraph.append("g")
+//      .attr("transform", "translate(0," + (height + margin.bottom) + ")")
+//      .call(d3.axisBottom(x));
+////                    .call(xAxis(x));
     
   // This section defines any text/labels related to the axis
-  svgLineGraph.append("text")
-      .attr("y", 6.5 * margin.bottom)
-      .attr("x",width/2)
-      .attr("dy", "1em")
-      .style("text-anchor", "middle")
-      .attr("font-weight", "bold")
-      .attr("font-size", "14px")
-      .text("Years");
+//  svgLineGraph.append("text")
+//      .attr("y", 7.4 * margin.bottom)
+//      .attr("x",width/1.87)
+//      .attr("dy", "1em")
+//      .style("text-anchor", "middle")
+//      .attr("font-weight", "bold")
+//      .attr("font-size", "14px")
+//      .text("Years");
 
   // Add the Y Axis
   svgLineGraph.append("g")
@@ -1206,16 +1249,16 @@ function clicked(d) {
     .attr("id", "leftaxis")
       .call(d3.axisLeft(y));
   
-  // This section defines any text/labels related to the axis
-  svgLineGraph.append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 0 - margin.left)
-      .attr("x",0 - (height / 2))
-      .attr("dy", "1em")
-      .style("text-anchor", "middle")
-      .attr("font-weight", "bold")
-      .attr("font-size", "14px")
-      .text("Number of Honey Bee Colonies (Thousands)");
+//  // This section defines any text/labels related to the axis
+//  svgLineGraph.append("text")
+//      .attr("transform", "rotate(-90)")
+//      .attr("y", 0 - margin.left)
+//      .attr("x",0 - (height / 2))
+//      .attr("dy", "1em")
+//      .style("text-anchor", "middle")
+//      .attr("font-weight", "bold")
+//      .attr("font-size", "14px")
+//      .text("Number of Honey Bee Colonies (Thousands)");
 });
 
 d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from the .csv file using a d3.csv request
@@ -1262,20 +1305,20 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
   // Add the Y2 Axis
   svgLineGraph.append("g")
       .attr("class", "axisRed")
-      .attr("transform", "translate( " + width + ", 0 )")
+      .attr("transform", "translate( " + (width + margin.right) + ", 0 )")
     .attr("id", "rightaxis")
       .call(d3.axisRight(y2));
     
-  // This section defines any text/labels related to the axis
-  svgLineGraph.append("text")
-      .attr("transform", "rotate(90)")
-      .attr("y", 0 - margin.left - 600)
-      .attr("x",0 + (height / 2))
-      .attr("dy", "1em")
-      .style("text-anchor", "middle")
-      .attr("font-weight", "bold")
-      .attr("font-size", "14px")
-      .text("Average Temperature (Fahrenheit)");
+//  // This section defines any text/labels related to the axis
+//  svgLineGraph.append("text")
+//      .attr("transform", "rotate(90)")
+//      .attr("y", 0 - margin.left - 600)
+//      .attr("x",0 + (height / 2))
+//      .attr("dy", "1em")
+//      .style("text-anchor", "middle")
+//      .attr("font-weight", "bold")
+//      .attr("font-size", "14px")
+//      .text("Average Temperature (Fahrenheit)");
 });
     
                 
