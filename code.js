@@ -346,7 +346,7 @@ d3.csv("data/mergedBees.csv", function(error, data){   // Parses the data from t
       .attr("transform", "translate(10,3)");
 
     mouseG.append('svg:rect') // append a rect to catch mouse movements on canvas
-      .attr('width', width) // can't catch mouse events on a g element
+      .attr('width', width + margin.right) // can't catch mouse events on a g element
       .attr('height', height + margin.top + margin.bottom)
       .attr('fill', 'none')
       .attr('pointer-events', 'all')
@@ -360,7 +360,7 @@ d3.csv("data/mergedBees.csv", function(error, data){   // Parses the data from t
       })
       .on('mouseover', function() { // on mouse in show line, circles and text
         d3.select(".mouse-line")
-          .style("opacity", "1");
+          .style("opacity", "0.6");
         d3.selectAll(".mouse-per-line circle")
           .style("opacity", "1");
         d3.selectAll(".mouse-per-line text")
@@ -370,7 +370,7 @@ d3.csv("data/mergedBees.csv", function(error, data){   // Parses the data from t
         var mouse = d3.mouse(this);
         d3.select(".mouse-line")
           .attr("d", function() {
-            var d = "M" + mouse[0] + "," + height;
+            var d = "M" + mouse[0] + "," + (height + margin.bottom);
             d += " " + mouse[0] + "," + 0;
             return d;
           });
@@ -516,7 +516,7 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
       .attr("transform", "translate(-60,3)");
 
     mouseG.append('svg:rect') // append a rect to catch mouse movements on canvas
-      .attr('width', width) // can't catch mouse events on a g element
+      .attr('width', width + margin.right) // can't catch mouse events on a g element
       .attr('height', height + margin.top + margin.bottom)
       .attr('fill', 'none')
       .attr('pointer-events', 'all')
@@ -530,7 +530,7 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
       })
       .on('mouseover', function() { // on mouse in show line, circles and text
         d3.select(".mouse-line")
-          .style("opacity", "1");
+          .style("opacity", "0.6");
         d3.selectAll(".mouse-per-line circle")
           .style("opacity", "1");
         d3.selectAll(".mouse-per-line text")
@@ -540,7 +540,7 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
         var mouse = d3.mouse(this);
         d3.select(".mouse-line")
           .attr("d", function() {
-            var d = "M" + mouse[0] + "," + height;
+            var d = "M" + mouse[0] + "," + (height + margin.bottom);
             d += " " + mouse[0] + "," + 0;
             return d;
           });
