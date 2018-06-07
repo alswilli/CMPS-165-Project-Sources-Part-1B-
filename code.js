@@ -1144,11 +1144,15 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
 //                           d3.select(".tooltip").style("top", 570 + "px");
                         
                             d3.select(".state-title").text(state).style("opacity", 0).style("opacity", 1);
-                            if (bees){
-                                d3.select(".bees").text("Bee Colony Loss | " + formatComma(bees) + ",000 colonies").style("opacity", 1);
+                            if (bees > 0){
+                                d3.select(".bees").text("Bee Colony Gained | " + formatComma(bees) + ",000 colonies").style("opacity", 1);
+                            } else if (bees < 0){
+                                d3.select(".bees").text("Bee Colony Loss | " + formatComma(-1*bees) + ",000 colonies").style("opacity", 1);
                             }
-                            if (temps){
+                            if (temps > 0){
                                 d3.select(".temps").text("Temperature Increase | " + temps + " degrees").style("opacity", 1);
+                            } else if (temps < 0){
+                                d3.select(".temps").text("Temperature Decrease | " + temps + " degrees").style("opacity", 1);
                             }
                            
                            //Show the tooltip 
