@@ -176,6 +176,9 @@ var parseTime = d3.timeParse("%Y"); // Tells d3 to parse the data as a date (yea
 var x =                                 // Sets the scale (mapping of values to placements on line) for x-axis  
     d3.scaleTime().range([0, width + margin.right]);   // Places date/time values on the ticks of the x axis 
 
+var x2 = d3.scaleLinear()
+	      .range([0,width + margin.right]);
+
 var y =                                 // Sets the scale (mapping of values to placements on line) for y-axis
     d3.scaleLinear()                         // Sets the scale to be a specal ordinal scale (mapping to labels rather than values) 
     .range([height + margin.bottom, 0]);                     // Reverses ordering of how y-axis bars are displayed (big to small versus small to big)
@@ -238,7 +241,7 @@ function tweenDash() {
         return function (t) { return i(t); };
     }
 
-d3.csv("data/mergedBees.csv", function(error, data){   // Parses the data from the .csv file using a d3.csv request
+d3.csv("data/mergedBees.csv", types, function(error, data){   // Parses the data from the .csv file using a d3.csv request
     
  if (error) throw error;
 
@@ -256,7 +259,9 @@ d3.csv("data/mergedBees.csv", function(error, data){   // Parses the data from t
       //console.log(d)
       if(d.state === "all"){
 //          console.log(d.beePop)
+          d.dt = d.date
           d.date = parseTime(d.date);
+          d.dateInt = parseInt(d.dt)
           d.b = +d.beePop;
           d.stateName = d.state;
           newData.push(d);
@@ -266,7 +271,47 @@ d3.csv("data/mergedBees.csv", function(error, data){   // Parses the data from t
 
   // Scale the range of the data
   x.domain(d3.extent(data, function(d) { return parseTime(d.date); }));
+//  x.domain(d3.extent(data, function(d) { return d.date; }));
   y.domain([d3.min(data, function(d) {return Math.min(d.b);}), d3.max(data, function(d) {return Math.max(d.b);})]);
+    
+// console.log(x.domain)
+    
+//  var lg = calcLinear(newData, "x", "y", d3.min(newData, function(d){ return d.dateInt}), d3.min(newData, function(d){ return d.dateInt}));
+    
+var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
+    
+//    var lg = calcLinear(newData, "x", "y", 1978, 1978);
+    
+// console.log(d3.min(newData, function(d){ return d.dateInt}))
+// console.log(d3.min(newData, function(d){ return d.b}))
+
+  svgLineGraph.append("line")
+	        .attr("class", "regression")
+//	        .attr("x1", x(parseTime("1978")))
+            .attr("x1", x(parseTime(lg.ptA.x)))
+	        .attr("y1", y(lg.ptA.y))
+//	        .attr("x2", x(parseTime(lg.ptB.x)))
+            .attr("x2", x(parseTime(lg.ptB.x)))
+	        .attr("y2", y(lg.ptB.y))
+            .attr("id", "dotted1");
+//            .attr("x1", 0)
+//	        .attr("y1", 0)
+//	        .attr("x2", 100)
+//	        .attr("y2", 100)   
+//            .attr("stroke-width", 2)
+//            .attr("stroke", "black");
+    
+//    console.log(x(parseTime("1978")))
+//    console.log(x(parseTime(lg.ptA.x)))
+//    console.log(x2(lg.ptB.x))
+//    console.log(x(parseTime(lg.ptB.x)))
+//    console.log(x(parseTime("2017")))
+    
+    
+//    console.log(x(parseTime(lg.ptA.x)))
+//    console.log(y2(lg.ptA.y))
+//    console.log(x(parseTime(lg.ptB.x)))
+//    console.log(y2(lg.ptB.y))
 
   // Add the valueline path.
   svgLineGraph.append("path")
@@ -323,8 +368,8 @@ d3.csv("data/mergedBees.csv", function(error, data){   // Parses the data from t
       
     var lines = document.getElementsByClassName('line');
                 
-    console.log(lines)
-    console.log(lines[1])
+//    console.log(lines)
+//    console.log(lines[1])
 
     var mousePerLine = mouseG.selectAll('.mouse-per-line')
       .data([newData])
@@ -404,15 +449,15 @@ d3.csv("data/mergedBees.csv", function(error, data){   // Parses the data from t
             
 //            if(i == 0) {
             if(lines[i].id == "path") {
-                console.log("A")
-                console.log(lines[i])
+//                console.log("A")
+//                console.log(lines[i])
                 d3.select(this).select('text')
               .text(y.invert(pos.y).toFixed(2));
                 //d3.select(".mouse-per-line circle").style("stroke", "steelBlue");
             }
             else {
-                console.log("B")
-                console.log(lines[i])
+//                console.log("B")
+//                console.log(lines[i])
                 d3.select(this).select('text')
               .text(y2.invert(pos.y).toFixed(2));
                 //d3.select(".mouse-per-line circle").style("stroke", "red");
@@ -423,7 +468,167 @@ d3.csv("data/mergedBees.csv", function(error, data){   // Parses the data from t
     });
 });
 
-d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from the .csv file using a d3.csv request
+function types(d){
+        if(d.state === "all"){
+//          console.log(d.beePop)
+          d.dt = d.date
+//          d.date = parseTime(d.date);
+          d.x = parseInt(d.dt)
+          d.y = +d.beePop;
+//          d.stateName = d.state;
+//          newData.push(d);
+      }
+    
+//	    d.x = d.dateInt;
+//	    d.y = +d.beePop;
+
+	    return d;
+	  }
+
+function types2(d){
+        if(d.state === "all"){
+//          console.log(d.beePop)
+          d.dt = d.date
+//          d.date = parseTime(d.date);
+          d.x = parseInt(d.dt)
+          d.y = +d.Temp;
+//          d.stateName = d.state;
+//          newData.push(d);
+      }
+    
+//	    d.x = d.dateInt;
+//	    d.y = +d.beePop;
+
+	    return d;
+	  }
+
+
+
+    // Calculate a linear regression from the data
+
+		// Takes 5 parameters:
+    // (1) Your data
+    // (2) The column of data plotted on your x-axis
+    // (3) The column of data plotted on your y-axis
+    // (4) The minimum value of your x-axis
+    // (5) The minimum value of your y-axis
+
+    // Returns an object with two points, where each point is an object with an x and y coordinate
+
+    function calcLinear(data, x, y, minX, minY, maxY){
+      /////////
+      //SLOPE//
+      /////////
+//     console.log("MinX: " + minX)
+//        console.log("MinY: " + minY)
+//
+//      console.log(data)    
+        
+      // Let n = the number of data points
+      var n = data.length;
+    
+    
+
+      // Get just the points
+      var pts = [];
+      data.forEach(function(d,i){
+        var obj = {};
+        obj.x = d[x];
+//        console.log(d[x])
+        obj.y = d[y];
+//        console.log(d[y])
+        obj.mult = obj.x*obj.y;
+        pts.push(obj);
+//          console.log(obj)
+      });
+        
+      console.log(pts)
+
+      // Let a equal n times the summation of all x-values multiplied by their corresponding y-values
+      // Let b equal the sum of all x-values times the sum of all y-values
+      // Let c equal n times the sum of all squared x-values
+      // Let d equal the squared sum of all x-values
+      var sum = 0;
+      var xSum = 0;
+      var ySum = 0;
+      var sumSq = 0;
+      pts.forEach(function(pt){
+        sum = sum + pt.mult;
+        xSum = xSum + pt.x;
+        ySum = ySum + pt.y;
+        sumSq = sumSq + (pt.x * pt.x);
+      });
+      var a = sum * n;
+      var b = xSum * ySum;
+      var c = sumSq * n;
+      var d = xSum * xSum;
+
+      // Plug the values that you calculated for a, b, c, and d into the following equation to calculate the slope
+      // slope = m = (a - b) / (c - d)
+      var m = (a - b) / (c - d);
+        
+      console.log(m)
+
+      /////////////
+      //INTERCEPT//
+      /////////////
+
+      // Let e equal the sum of all y-values
+      var e = ySum;
+
+      // Let f equal the slope times the sum of all x-values
+      var f = m * xSum;
+
+      // Plug the values you have calculated for e and f into the following equation for the y-intercept
+      // y-intercept = b = (e - f) / n
+      var b = (e - f) / n;
+
+			// Print the equation below the chart
+			document.getElementsByClassName("equation")[0].innerHTML = "y = " + m + "x + " + b;
+			document.getElementsByClassName("equation")[1].innerHTML = "x = ( y - " + b + " ) / " + m;
+
+//      console.log("AHHHHHHH: " + ((minY - b) / m))
+//        console.log(Math.floor(((minY - b) / m)))
+        
+      // return an object of two points
+      // each point is an object with an x and y coordinate
+//        return {
+//        ptA : {
+//          x: minX,
+//          y: m * minX + b
+//        },
+//        ptB : {
+//          y: minY,
+//          x: Math.floor((minY - b) / m)
+//        }
+//      }
+      if(m > 0) {
+          return {
+        ptA : {
+          x: minX,
+          y: m * minX + b
+        },
+        ptB : {
+          y: maxY,
+          x: Math.floor((maxY - b) / m)
+        }
+      }
+      }
+       else {
+           return {
+        ptA : {
+          x: minX,
+          y: m * minX + b
+        },
+        ptB : {
+          y: minY,
+          x: Math.floor((minY - b) / m)
+        }
+      }
+       }    
+    }
+
+d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the data from the .csv file using a d3.csv request
     
  if (error) throw error;
 
@@ -437,10 +642,12 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
                     
   // format the data
   data.forEach(function(d) {
-//      console.log(d)
+      //console.log(d)
       if(d.state === "all"){
 //          console.log(d.beePop)
+          d.dt = d.date
           d.date = parseTime(d.date);
+          d.dateInt = parseInt(d.dt)
           d.t = +d.Temp;
           d.stateName = d.state;
           newData.push(d);
@@ -451,6 +658,32 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
   // Scale the range of the data
   x.domain(d3.extent(data, function(d) { return parseTime(d.date); }));
   y2.domain([d3.min(data, function(d) {return Math.min(d.t);}), d3.max(data, function(d) {return Math.max(d.t); })]);
+    
+    var lg = calcLinear(newData, "x", "y", 1978, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
+//    var lg = calcLinear(newData, "x", "y", 1978, 1978);
+    
+    svgLineGraph.append("line")
+	        .attr("class", "regression")
+//	        .attr("x1", x(parseTime("1978")))
+            .attr("x1", x(parseTime(lg.ptA.x)))
+	        .attr("y1", y2(lg.ptA.y))
+//	        .attr("x2", x(parseTime(lg.ptB.x)))
+            .attr("x2", x(parseTime(lg.ptB.x)))
+	        .attr("y2", y2(lg.ptB.y))
+//            .transition()
+//            .duration(3000)
+//            .attrTween("stroke-dasharray", tweenDash)
+            .attr("id", "dotted2");
+    
+//    console.log(x(parseTime(lg.ptA.x)))
+//    console.log(y2(lg.ptA.y))
+//    console.log(x(parseTime(lg.ptB.x)))
+//    console.log(y2(lg.ptB.y))
+    
+//    console.log((parseTime(lg.ptA.x)))
+//    console.log((lg.ptA.y))
+//    console.log((parseTime(lg.ptB.x)))
+//    console.log((lg.ptB.y))
 
   // Add the valueline2 path.
   svgLineGraph.append("path")
@@ -493,8 +726,8 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
       
     var lines = document.getElementsByClassName('line');
                 
-    console.log(lines)
-    console.log(lines[1])
+//    console.log(lines)
+//    console.log(lines[1])
 
     var mousePerLine = mouseG.selectAll('.mouse-per-line')
       .data([newData])
@@ -573,15 +806,15 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
 
 //            if(i == 0) {
             if(lines[i].id == "path") {
-                console.log("C")
-                console.log(lines[i])
+//                console.log("C")
+//                console.log(lines[i])
                 d3.select(this).select('text')
               .text(y.invert(pos.y).toFixed(2)).style("font-size", "22").style("font-weight", "bold").style("color", "red");
                 //d3.select(".mouse-per-line circle").style("stroke", "steelBlue");
             }
             else {
-                console.log("D")
-                console.log(lines[i])
+//                console.log("D")
+//                console.log(lines[i])
                 d3.select(this).select('text')
               .text(y2.invert(pos.y).toFixed(2)).style("font-size", "22").style("font-weight", "bold");
                 //d3.select(".mouse-per-line circle").style("stroke", "red");
@@ -854,8 +1087,8 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
                             var xPosition = parseFloat(d3.select(this).attr("x")) + 140.0;// augmented to the right of the circle it defines
                             var yPosition = parseFloat(d3.select(this).attr("y")) + 320;
                            
-                           console.log(xPosition)
-                           console.log(yPosition)
+//                           console.log(xPosition)
+//                           console.log(yPosition)
                            
                            d3.select("#tooltip").style("left", xPosition + "px").style("top", yPosition + "px");
                            
@@ -1192,8 +1425,45 @@ function clicked(d) {
                 d3.select('#svgLine').select('#leftaxis').remove();
                 d3.select('#svgLine').select('#rightaxis').remove();
                 
+                d3.selectAll("#dotted1").remove();
+                d3.selectAll("#dotted2").remove();
                 
-                d3.csv("data/mergedBees.csv", function(error, data){   // Parses the data from the .csv file using a d3.csv request
+                function types3(d){
+                    if(field === d.state){
+            //          console.log(d.beePop)
+                      d.dt = d.date
+            //          d.date = parseTime(d.date);
+                      d.x = parseInt(d.dt)
+                      d.y = +d.beePop;
+            //          d.stateName = d.state;
+            //          newData.push(d);
+                  }
+
+            //	    d.x = d.dateInt;
+            //	    d.y = +d.beePop;
+
+                    return d;
+                  }
+                
+                function types4(d){
+                    if(field === d.state){
+            //          console.log(d.beePop)
+                      d.dt = d.date
+            //          d.date = parseTime(d.date);
+                      d.x = parseInt(d.dt)
+                      d.y = +d.Temp;
+            //          d.stateName = d.state;
+            //          newData.push(d);
+                  }
+
+            //	    d.x = d.dateInt;
+            //	    d.y = +d.beePop;
+
+                    return d;
+                  }
+                
+                
+                d3.csv("data/mergedBees.csv", types3, function(error, data){   // Parses the data from the .csv file using a d3.csv request
     
  if (error) throw error;
 
@@ -1204,7 +1474,9 @@ function clicked(d) {
       //console.log(d)
       if(field === d.state){
 //          console.log(d.beePop)
+          d.dt = d.date
           d.date = parseTime(d.date);
+          d.dateInt = parseInt(d.dt)
           d.b = +d.beePop;
           d.stateName = d.state;
           newData.push(d);
@@ -1215,6 +1487,22 @@ function clicked(d) {
   // Scale the range of the data
   x.domain(d3.extent(data, function(d) { return parseTime(d.date); }));
   y.domain([d3.min(data, function(d) {return Math.min(d.b);}), d3.max(data, function(d) {return Math.max(d.b);})]);
+                    
+  var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
+    
+//    var lg = calcLinear(newData, "x", "y", 1978, 1978);
+  
+
+  svgLineGraph.append("line")
+	        .attr("class", "regression")
+//	        .attr("x1", x(parseTime("1978")))
+            .attr("x1", x(parseTime(lg.ptA.x)))
+	        .attr("y1", y(lg.ptA.y))
+//	        .attr("x2", x(parseTime(lg.ptB.x)))
+            .attr("x2", x(parseTime(lg.ptB.x)))
+	        .attr("y2", y(lg.ptB.y))
+            .attr("id","dotted1");
+            
 
   // Add the valueline path.
   svgLineGraph.append("path")
@@ -1261,7 +1549,7 @@ function clicked(d) {
 //      .text("Number of Honey Bee Colonies (Thousands)");
 });
 
-d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from the .csv file using a d3.csv request
+d3.csv("data/mergedTemp.csv", types4, function(error, data){   // Parses the data from the .csv file using a d3.csv request
     
  if (error) throw error;
 
@@ -1278,7 +1566,9 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
       //console.log(d)
       if(field === d.state){
 //          console.log(d.beePop)
+          d.dt = d.date
           d.date = parseTime(d.date);
+          d.dateInt = parseInt(d.dt)
           d.t = +d.Temp;
           d.stateName = d.state;
           newData.push(d);
@@ -1289,6 +1579,21 @@ d3.csv("data/mergedTemp.csv", function(error, data){   // Parses the data from t
   // Scale the range of the data
   x.domain(d3.extent(data, function(d) { return parseTime(d.date); }));
   y2.domain([d3.min(data, function(d) {return Math.min(d.t);}), d3.max(data, function(d) {return Math.max(d.t); })]);
+    
+  var lg = calcLinear(newData, "x", "y", 1978, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
+//    var lg = calcLinear(newData, "x", "y", 1978, 1978);
+    
+     d3.selectAll("#dotted2").remove();
+    
+    svgLineGraph.append("line")
+	        .attr("class", "regression")
+//	        .attr("x1", x(parseTime("1978")))
+            .attr("x1", x(parseTime(lg.ptA.x)))
+	        .attr("y1", y2(lg.ptA.y))
+//	        .attr("x2", x(parseTime(lg.ptB.x)))
+            .attr("x2", x(parseTime(lg.ptB.x)))
+	        .attr("y2", y2(lg.ptB.y))
+            .attr("id","dotted2");
 
   // Add the valueline2 path.
   svgLineGraph.append("path")
