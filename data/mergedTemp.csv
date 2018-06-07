@@ -39,6 +39,46 @@ ALL,all,52.5,0,0,2014
 ALL,all,54.4,0,0,2015
 ALL,all,55.0,0,0,2016
 ALL,all,54.5,0,0,2017
+AK,Alaska,29.1,0,0,1978
+AK,Alaska,27.6,0,0,1979
+AK,Alaska,26.4,0,0,1980
+AK,Alaska,29.2,0,0,1981
+AK,Alaska,25.3,0,0,1982
+AK,Alaska,26.9,0,0,1983
+AK,Alaska,25.2,0,0,1984
+AK,Alaska,26.3,0,0,1985
+AK,Alaska,26.9,0,0,1986
+AK,Alaska,27.5,0,0,1987
+AK,Alaska,27.1,0,0,1988
+AK,Alaska,26.8,0,0,1989
+AK,Alaska,25.4,0,0,1990
+AK,Alaska,27.0,0,0,1991
+AK,Alaska,25.0,0,0,1992
+AK,Alaska,29.9,0,0,1993
+AK,Alaska,26.2,0,0,1994
+AK,Alaska,27.8,0,0,1995
+AK,Alaska,25.1,0,0,1996
+AK,Alaska,28.1,0,0,1997
+AK,Alaska,28.4,0,0,1998
+AK,Alaska,24.0,0,0,1999
+AK,Alaska,28.4,0,0,2000
+AK,Alaska,27.3,0,0,2001
+AK,Alaska,30.1,0,0,2002
+AK,Alaska,29.1,0,0,2003
+AK,Alaska,29.3,0,0,2004
+AK,Alaska,29.2,0,0,2005
+AK,Alaska,26.4,0,0,2006
+AK,Alaska,28.1,0,0,2007
+AK,Alaska,25.1,0,0,2008
+AK,Alaska,26.8,0,0,2009
+AK,Alaska,27.4,0,0,2010
+AK,Alaska,27.0,0,0,2011
+AK,Alaska,24.3,0,0,2012
+AK,Alaska,27.8,0,0,2013
+AK,Alaska,30.3,0,0,2014
+AK,Alaska,30.0,0,0,2015
+AK,Alaska,31.9,0,0,2016
+AK,Alaska,29.3,0,0,2017
 AL,Alabama,62.6,74.4,50.9,1978
 AZ,Arizona,60.5,74.7,46.3,1978
 AR,Arkansas,60.9,72.2,49.7,1978
@@ -84,7 +124,7 @@ UT,Utah,49.4,62.3,36.4,1978
 VT,Vermont,42.3,52.5,32.1,1978
 VA,Virginia,55.2,66.4,44,1978
 WA,Washington,46.7,56.4,36.9,1978
-WV,We Virginia,51.3,62.5,40.2,1978
+WV,West Virginia,51.3,62.5,40.2,1978
 WI,Wisconsin,43.5,54,33,1978
 WY,Wyoming,42.1,55.1,29,1978
 AL,Alabama,62,74.2,49.9,1979
@@ -132,7 +172,7 @@ UT,Utah,46.9,59.2,34.5,1979
 VT,Vermont,40.2,51.4,29.1,1979
 VA,Virginia,53.9,65,42.9,1979
 WA,Washington,44.9,54.5,35.2,1979
-WV,We Virginia,50.2,61,39.5,1979
+WV,West Virginia,50.2,61,39.5,1979
 WI,Wisconsin,40.6,51.4,29.7,1979
 WY,Wyoming,38.4,51.3,25.5,1979
 AL,Alabama,62.1,73.4,50.8,1980
@@ -180,7 +220,7 @@ UT,Utah,47.6,60.4,34.9,1980
 VT,Vermont,42.5,52.7,32.4,1980
 VA,Virginia,54.1,64.6,43.5,1980
 WA,Washington,46.8,56.8,36.7,1980
-WV,We Virginia,50.7,61.1,40.2,1980
+WV,West Virginia,50.7,61.1,40.2,1980
 WI,Wisconsin,41.3,51.5,31.2,1980
 WY,Wyoming,41,53.9,28,1980
 AL,Alabama,61.9,74.2,49.6,1981
@@ -228,7 +268,7 @@ UT,Utah,48.6,61.4,35.9,1981
 VT,Vermont,39.6,50.6,28.7,1981
 VA,Virginia,53.9,65.4,42.5,1981
 WA,Washington,47.1,56.2,38,1981
-WV,We Virginia,49.9,61,38.8,1981
+WV,West Virginia,49.9,61,38.8,1981
 WI,Wisconsin,42.3,52.9,31.7,1981
 WY,Wyoming,42.9,55.8,30,1981
 AL,Alabama,62.3,74.5,50,1982
@@ -276,7 +316,7 @@ UT,Utah,49.5,62,36.9,1982
 VT,Vermont,42.2,52.6,31.8,1982
 VA,Virginia,53.6,64.9,42.3,1982
 WA,Washington,46.6,56.3,36.9,1982
-WV,We Virginia,50.1,61.4,38.8,1982
+WV,West Virginia,50.1,61.4,38.8,1982
 WI,Wisconsin,42.5,53,32,1982
 WY,Wyoming,42.8,55.8,29.9,1982
 AL,Alabama,63.3,74.6,52,1983
@@ -324,7 +364,7 @@ UT,Utah,46.8,58.5,35.1,1983
 VT,Vermont,42.3,53.4,31.2,1983
 VA,Virginia,55.2,65.9,44.4,1983
 WA,Washington,46.1,55.8,36.5,1983
-WV,We Virginia,52.1,63.1,41,1983
+WV,West Virginia,52.1,63.1,41,1983
 WI,Wisconsin,42.7,52.7,32.7,1983
 WY,Wyoming,40.6,52.7,28.5,1983
 AL,Alabama,61,72.5,49.6,1984
@@ -372,7 +412,7 @@ UT,Utah,47,58.3,35.6,1984
 VT,Vermont,42.2,52.7,31.7,1984
 VA,Virginia,54.2,65.3,43.1,1984
 WA,Washington,46.4,55.8,37,1984
-WV,We Virginia,50.9,62,39.7,1984
+WV,West Virginia,50.9,62,39.7,1984
 WI,Wisconsin,42.7,52.3,33.1,1984
 WY,Wyoming,40.2,52.2,28.2,1984
 AL,Alabama,62.6,74.6,50.5,1985
@@ -420,7 +460,7 @@ UT,Utah,46.1,58.1,34.1,1985
 VT,Vermont,42.4,53,31.8,1985
 VA,Virginia,54.9,65.7,44.1,1985
 WA,Washington,44.9,54.2,35.5,1985
-WV,We Virginia,51.4,62.1,40.7,1985
+WV,West Virginia,51.4,62.1,40.7,1985
 WI,Wisconsin,43.2,53.4,32.9,1985
 WY,Wyoming,39.6,52.1,27.1,1985
 AL,Alabama,63.3,74.7,51.9,1986
@@ -468,7 +508,7 @@ UT,Utah,47.6,60.1,35.2,1986
 VT,Vermont,41.9,52.6,31.2,1986
 VA,Virginia,55.7,67,44.5,1986
 WA,Washington,44.5,54.6,34.5,1986
-WV,We Virginia,52,63.2,40.9,1986
+WV,West Virginia,52,63.2,40.9,1986
 WI,Wisconsin,41.8,52.3,31.3,1986
 WY,Wyoming,40.1,53.2,27,1986
 AL,Alabama,64.1,75.5,52.6,1987
@@ -516,7 +556,7 @@ UT,Utah,48.7,61,36.4,1987
 VT,Vermont,41.7,52.2,31.3,1987
 VA,Virginia,55.6,66.4,44.8,1987
 WA,Washington,47,56.6,37.5,1987
-WV,We Virginia,52.4,62.9,41.8,1987
+WV,West Virginia,52.4,62.9,41.8,1987
 WI,Wisconsin,43.7,53.7,33.7,1987
 WY,Wyoming,41.9,54.4,29.3,1987
 AL,Alabama,62.8,74.9,50.9,1988
@@ -564,7 +604,7 @@ UT,Utah,48.2,60.6,35.7,1988
 VT,Vermont,42.2,53,31.3,1988
 VA,Virginia,54.9,66.3,43.6,1988
 WA,Washington,48.2,58.6,37.8,1988
-WV,We Virginia,52.1,63.6,40.6,1988
+WV,West Virginia,52.1,63.6,40.6,1988
 WI,Wisconsin,45.5,56.1,34.9,1988
 WY,Wyoming,42.2,55.4,29.1,1988
 AL,Alabama,62.9,75.1,50.7,1989
@@ -612,7 +652,7 @@ UT,Utah,48.4,61.5,35.2,1989
 VT,Vermont,42.2,53,31.4,1989
 VA,Virginia,54.8,66.7,42.8,1989
 WA,Washington,47.5,57.5,37.6,1989
-WV,We Virginia,51.8,63.9,39.6,1989
+WV,West Virginia,51.8,63.9,39.6,1989
 WI,Wisconsin,44.4,55.8,33,1989
 WY,Wyoming,43.2,56.8,29.4,1989
 AL,Alabama,62.1,73.2,51,1990
@@ -660,7 +700,7 @@ UT,Utah,49.2,62.5,35.9,1990
 VT,Vermont,41.2,51.9,30.5,1990
 VA,Virginia,54.6,65.2,44,1990
 WA,Washington,46.8,56.4,37.2,1990
-WV,We Virginia,51,61.5,40.4,1990
+WV,West Virginia,51,61.5,40.4,1990
 WI,Wisconsin,41.4,52.4,30.3,1990
 WY,Wyoming,41.4,54.4,28.5,1990
 AL,Alabama,64.6,76.8,52.4,1991
@@ -708,7 +748,7 @@ UT,Utah,48.2,61,35.4,1991
 VT,Vermont,43.2,53.8,32.6,1991
 VA,Virginia,57,68.4,45.5,1991
 WA,Washington,46.8,56.5,37,1991
-WV,We Virginia,53.5,64.7,42.2,1991
+WV,West Virginia,53.5,64.7,42.2,1991
 WI,Wisconsin,43.4,54.2,32.7,1991
 WY,Wyoming,41.3,54.4,28.2,1991
 AL,Alabama,63.8,74.9,52.8,1992
@@ -756,7 +796,7 @@ UT,Utah,47.7,60.1,35.2,1992
 VT,Vermont,43.6,54.4,32.7,1992
 VA,Virginia,57,68.3,45.7,1992
 WA,Washington,47.6,57.2,38.1,1992
-WV,We Virginia,53.8,65.1,42.5,1992
+WV,West Virginia,53.8,65.1,42.5,1992
 WI,Wisconsin,44.5,54.6,34.4,1992
 WY,Wyoming,42.2,54.9,29.5,1992
 AL,Alabama,62.5,73.5,51.5,1993
@@ -804,7 +844,7 @@ UT,Utah,49,61.4,36.6,1993
 VT,Vermont,40.9,51.2,30.6,1993
 VA,Virginia,54.5,64.8,44.3,1993
 WA,Washington,47.8,57.8,37.9,1993
-WV,We Virginia,51.6,61.8,41.4,1993
+WV,West Virginia,51.6,61.8,41.4,1993
 WI,Wisconsin,42.3,52.1,32.5,1993
 WY,Wyoming,42,54.9,29,1993
 AL,Alabama,61.7,73.2,50.2,1994
@@ -852,7 +892,7 @@ UT,Utah,47.3,59.8,34.7,1994
 VT,Vermont,40,51.1,29,1994
 VA,Virginia,54.3,65.3,43.3,1994
 WA,Washington,46.6,55.9,37.3,1994
-WV,We Virginia,50.8,61.6,40,1994
+WV,West Virginia,50.8,61.6,40,1994
 WI,Wisconsin,40.8,50.5,31.1,1994
 WY,Wyoming,39.5,51.8,27.2,1994
 AL,Alabama,63.4,74.5,52.3,1995
@@ -900,7 +940,7 @@ UT,Utah,49.6,62.1,37,1995
 VT,Vermont,42.9,53.3,32.5,1995
 VA,Virginia,56,67.3,44.6,1995
 WA,Washington,47.6,57.4,37.6,1995
-WV,We Virginia,52.5,63.9,41.1,1995
+WV,West Virginia,52.5,63.9,41.1,1995
 WI,Wisconsin,44,54.3,33.8,1995
 WY,Wyoming,42.8,56,29.6,1995
 AL,Alabama,62.9,74.5,51.2,1996
@@ -948,7 +988,7 @@ UT,Utah,49.2,62.1,36.2,1996
 VT,Vermont,41.6,52.3,30.9,1996
 VA,Virginia,54.6,65.6,43.6,1996
 WA,Washington,47.2,56.8,37.7,1996
-WV,We Virginia,51.3,62.4,40.3,1996
+WV,West Virginia,51.3,62.4,40.3,1996
 WI,Wisconsin,42.2,52.4,32,1996
 WY,Wyoming,41.3,53.7,28.8,1996
 AL,Alabama,62.3,73.7,50.9,1997
@@ -996,7 +1036,7 @@ UT,Utah,49.4,62.3,36.5,1997
 VT,Vermont,42.1,51.8,32.3,1997
 VA,Virginia,54.2,64.8,43.6,1997
 WA,Washington,45.7,55.3,36.1,1997
-WV,We Virginia,50.8,61.4,40.3,1997
+WV,West Virginia,50.8,61.4,40.3,1997
 WI,Wisconsin,40.6,50.6,30.6,1997
 WY,Wyoming,41.2,54,28.3,1997
 AL,Alabama,62.5,73.6,51.4,1998
@@ -1044,7 +1084,7 @@ UT,Utah,48.6,61.1,36,1998
 VT,Vermont,41.6,52,31.1,1998
 VA,Virginia,55,66,43.9,1998
 WA,Washington,47.2,56.5,38,1998
-WV,We Virginia,51.6,62.2,40.9,1998
+WV,West Virginia,51.6,62.2,40.9,1998
 WI,Wisconsin,43.4,53,33.7,1998
 WY,Wyoming,41.5,54.1,29,1998
 AL,Alabama,65.3,76.6,53.9,1999
@@ -1092,7 +1132,7 @@ UT,Utah,48.3,60.5,36.1,1999
 VT,Vermont,44.8,55,34.5,1999
 VA,Virginia,57.3,68.6,46.1,1999
 WA,Washington,48.8,58.3,39.2,1999
-WV,We Virginia,54,64.9,43,1999
+WV,West Virginia,54,64.9,43,1999
 WI,Wisconsin,46.6,56.9,36.4,1999
 WY,Wyoming,42.7,55,30.5,1999
 AL,Alabama,63.9,76,51.8,2000
@@ -1140,7 +1180,7 @@ UT,Utah,49.2,62.5,35.9,2000
 VT,Vermont,44.1,55,33.3,2000
 VA,Virginia,55.9,67.5,44.2,2000
 WA,Washington,46.6,56.3,36.9,2000
-WV,We Virginia,52.6,64.8,40.4,2000
+WV,West Virginia,52.6,64.8,40.4,2000
 WI,Wisconsin,45.6,56.3,34.9,2000
 WY,Wyoming,43.1,56.3,29.9,2000
 AL,Alabama,63.1,75.6,50.7,2001
@@ -1188,7 +1228,7 @@ UT,Utah,49.8,62.5,37,2001
 VT,Vermont,42,52.1,32,2001
 VA,Virginia,54.9,66.2,43.7,2001
 WA,Washington,46.3,55.9,36.7,2001
-WV,We Virginia,51.8,62.8,40.8,2001
+WV,West Virginia,51.8,62.8,40.8,2001
 WI,Wisconsin,44.2,54.5,33.9,2001
 WY,Wyoming,42.3,55.6,29,2001
 AL,Alabama,63.5,75.1,51.9,2002
@@ -1236,7 +1276,7 @@ UT,Utah,50,63,37,2002
 VT,Vermont,44.4,55.2,33.6,2002
 VA,Virginia,56.2,68.1,44.4,2002
 WA,Washington,47,56.6,37.3,2002
-WV,We Virginia,53.2,64.7,41.6,2002
+WV,West Virginia,53.2,64.7,41.6,2002
 WI,Wisconsin,45.7,56,35.5,2002
 WY,Wyoming,43.1,56.3,29.9,2002
 AL,Alabama,63,74.2,51.8,2003
@@ -1284,7 +1324,7 @@ UT,Utah,49.6,63,36.1,2003
 VT,Vermont,42.3,52.7,31.8,2003
 VA,Virginia,55.9,67,44.8,2003
 WA,Washington,47.2,57.1,37.3,2003
-WV,We Virginia,52.4,63.2,41.6,2003
+WV,West Virginia,52.4,63.2,41.6,2003
 WI,Wisconsin,43.7,53.7,33.8,2003
 WY,Wyoming,42,55.3,28.8,2003
 AL,Alabama,63.1,74.2,52,2004
@@ -1332,7 +1372,7 @@ UT,Utah,49.7,62.5,36.9,2004
 VT,Vermont,41.3,51.7,30.9,2004
 VA,Virginia,55,65.3,44.7,2004
 WA,Washington,47.6,57.6,37.7,2004
-WV,We Virginia,51.8,61.9,41.6,2004
+WV,West Virginia,51.8,61.9,41.6,2004
 WI,Wisconsin,43,53.7,32.2,2004
 WY,Wyoming,42.4,55.4,29.6,2004
 AL,Alabama,63.7,74.6,52.8,2005
@@ -1380,7 +1420,7 @@ UT,Utah,49.4,61.7,37.1,2005
 VT,Vermont,42.4,53,31.8,2005
 VA,Virginia,56.3,66.7,46,2005
 WA,Washington,48.5,58.3,38.8,2005
-WV,We Virginia,53.3,63.7,42.9,2005
+WV,West Virginia,53.3,63.7,42.9,2005
 WI,Wisconsin,43.8,54.1,33.5,2005
 WY,Wyoming,42.7,55.3,30.1,2005
 AL,Alabama,63.6,75.1,52,2006
@@ -1428,7 +1468,7 @@ UT,Utah,49.1,61.9,36.3,2006
 VT,Vermont,44.4,54.8,34,2006
 VA,Virginia,56.3,67.3,45.4,2006
 WA,Washington,47.7,57.5,37.9,2006
-WV,We Virginia,53.2,64.1,42.2,2006
+WV,West Virginia,53.2,64.1,42.2,2006
 WI,Wisconsin,46.2,56.5,35.8,2006
 WY,Wyoming,43,56.2,29.9,2006
 AL,Alabama,63.8,76.1,51.5,2007
@@ -1476,7 +1516,7 @@ UT,Utah,48.5,61.7,35.4,2007
 VT,Vermont,44.5,54.1,34.9,2007
 VA,Virginia,56.4,67.7,45,2007
 WA,Washington,46.9,57.1,36.7,2007
-WV,We Virginia,52.7,63.6,41.8,2007
+WV,West Virginia,52.7,63.6,41.8,2007
 WI,Wisconsin,45.4,55.6,35.2,2007
 WY,Wyoming,42.3,55.6,29,2007
 AL,Alabama,64.1,76.5,51.7,2008
@@ -1524,7 +1564,7 @@ UT,Utah,49.9,63.2,36.6,2008
 VT,Vermont,42.3,52.8,31.8,2008
 VA,Virginia,56.5,68,44.9,2008
 WA,Washington,46.7,56.4,37,2008
-WV,We Virginia,52.9,64.5,41.4,2008
+WV,West Virginia,52.9,64.5,41.4,2008
 WI,Wisconsin,44.3,54.7,33.8,2008
 WY,Wyoming,43.3,56.4,30.1,2008
 AL,Alabama,63.1,75,51.2,2009
@@ -1572,7 +1612,7 @@ UT,Utah,48.7,62,35.4,2009
 VT,Vermont,42.2,52.7,31.6,2009
 VA,Virginia,55.4,66.6,44.2,2009
 WA,Washington,46,55.8,36.2,2009
-WV,We Virginia,51.5,62.7,40.3,2009
+WV,West Virginia,51.5,62.7,40.3,2009
 WI,Wisconsin,41.1,51.9,30.2,2009
 WY,Wyoming,41.3,54.3,28.2,2009
 AL,Alabama,62.5,73.3,51.7,2010
@@ -1620,7 +1660,7 @@ UT,Utah,48.2,61.2,35.2,2010
 VT,Vermont,43,53,33.1,2010
 VA,Virginia,55.2,65.6,44.8,2010
 WA,Washington,46.9,56.7,37.1,2010
-WV,We Virginia,51.8,62.1,41.4,2010
+WV,West Virginia,51.8,62.1,41.4,2010
 WI,Wisconsin,43.1,53.3,33,2010
 WY,Wyoming,40.8,53.7,28,2010
 AL,Alabama,62.8,74.7,50.8,2011
@@ -1668,7 +1708,7 @@ UT,Utah,48.2,60.8,35.6,2011
 VT,Vermont,44.5,54.3,34.8,2011
 VA,Virginia,55.9,67,44.8,2011
 WA,Washington,46.7,55.9,37.5,2011
-WV,We Virginia,52,62.9,41.1,2011
+WV,West Virginia,52,62.9,41.1,2011
 WI,Wisconsin,45.2,55.6,34.8,2011
 WY,Wyoming,41.8,54.6,29,2011
 AL,Alabama,64.6,76.8,52.4,2012
@@ -1716,7 +1756,7 @@ UT,Utah,48.1,60.9,35.2,2012
 VT,Vermont,44.8,54.7,34.8,2012
 VA,Virginia,57.5,68.6,46.5,2012
 WA,Washington,45.4,54.9,35.9,2012
-WV,We Virginia,54.2,64.9,43.4,2012
+WV,West Virginia,54.2,64.9,43.4,2012
 WI,Wisconsin,44.8,54.8,34.9,2012
 WY,Wyoming,41.5,54.3,28.6,2012
 AL,Alabama,64.9,76.3,53.5,2013
@@ -1764,7 +1804,7 @@ UT,Utah,50,63.3,36.8,2013
 VT,Vermont,45.6,56.1,35.2,2013
 VA,Virginia,57.5,68.6,46.5,2013
 WA,Washington,46.9,56.4,37.5,2013
-WV,We Virginia,54.2,65.5,42.9,2013
+WV,West Virginia,54.2,65.5,42.9,2013
 WI,Wisconsin,47.1,57.9,36.2,2013
 WY,Wyoming,44.4,58.1,30.7,2013
 AL,Alabama,61.5,72.5,50.6,2014
@@ -1812,7 +1852,7 @@ UT,Utah,48.6,61.4,35.9,2014
 VT,Vermont,42.9,53,32.8,2014
 VA,Virginia,54.4,64.8,43.9,2014
 WA,Washington,47.6,57.2,37.9,2014
-WV,We Virginia,50.9,61.3,40.5,2014
+WV,West Virginia,50.9,61.3,40.5,2014
 WI,Wisconsin,40.9,51.1,30.7,2014
 WY,Wyoming,42,54.7,29.2,2014
 AL,Alabama,62.6,74.1,51,2015
@@ -1860,7 +1900,7 @@ UT,Utah,50.6,63.2,37.9,2015
 VT,Vermont,41.8,52.2,31.3,2015
 VA,Virginia,54.8,65.4,44.2,2015
 WA,Washington,48.5,58,38.9,2015
-WV,We Virginia,51.2,61.9,40.6,2015
+WV,West Virginia,51.2,61.9,40.6,2015
 WI,Wisconsin,41,50.8,31.2,2015
 WY,Wyoming,42.3,55,29.6,2015
 AL,Alabama,64.6,75.4,53.8,2016
@@ -1908,7 +1948,7 @@ UT,Utah,50.3,62.8,37.8,2016
 VT,Vermont,43.4,54.3,32.5,2016
 VA,Virginia,56.5,67.1,45.8,2016
 WA,Washington,49.8,59.8,39.8,2016
-WV,We Virginia,53,64.1,41.9,2016
+WV,West Virginia,53,64.1,41.9,2016
 WI,Wisconsin,44.9,55,34.7,2016
 WY,Wyoming,43.9,56.7,31.1,2016
 AL,Alabama,66.1,78,54.2,2017
@@ -1956,6 +1996,6 @@ UT,Utah,50.2,62.8,37.5,2017
 VT,Vermont,45,55.6,34.4,2017
 VA,Virginia,57.7,68.3,47.1,2017
 WA,Washington,47.9,57.4,38.4,2017
-WV,We Virginia,55,65.9,44,2017
+WV,West Virginia,55,65.9,44,2017
 WI,Wisconsin,46.5,56.1,36.9,2017
 WY,Wyoming,43.4,56.5,30.3,2017
