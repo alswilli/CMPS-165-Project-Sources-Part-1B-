@@ -584,8 +584,10 @@ function types2(d){
       var b = (e - f) / n;
 
 			// Print the equation below the chart
-			document.getElementsByClassName("equation")[0].innerHTML = "y = " + m + "x + " + b;
-			document.getElementsByClassName("equation")[1].innerHTML = "x = ( y - " + b + " ) / " + m;
+//			document.getElementsByClassName("equation")[0].innerHTML = "y = " + m + "x + " + b;
+//			document.getElementsByClassName("equation")[1].innerHTML = "x = ( y - " + b + " ) / " + m;
+        
+        console.log("working?")
 
 //      console.log("AHHHHHHH: " + ((minY - b) / m))
 //        console.log(Math.floor(((minY - b) / m)))

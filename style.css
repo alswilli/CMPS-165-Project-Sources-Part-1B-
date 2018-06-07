@@ -94,7 +94,7 @@ span1 {
 #ending{
                 height:700px;
                 height:auto;
-                min-height:630px;
+                min-height:670px;
                 margin:0 auto;
                 width:100%;
                 background-color:rgb(241,241,241);
@@ -167,7 +167,7 @@ button toggleOverlap {
 .line {
   fill: none;
   stroke: green;
-  stroke-width: 2px;
+  stroke-width: 3.2px;
 }
 
 .axisSteelBlue text{
@@ -269,7 +269,9 @@ button {
 }
 
 #dotted1 {
-    stroke: orange;
+/*    stroke: orange;*/
+    stroke: lightgreen;
+    opacity: 0.7
 }
 
 /*
@@ -280,7 +282,7 @@ button {
 
 .regression {
   stroke-width: 2px;
-  stroke: steelblue;
+  stroke: salmon;
   stroke-dasharray: 10,5;
 }
 .equation {
