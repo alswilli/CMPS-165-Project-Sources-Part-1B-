@@ -73,7 +73,7 @@ svgLegend.select(".beeLegend")
 
 
 
- var tempScale = d3.scaleThreshold()
+var tempScale = d3.scaleThreshold()
     //.domain([1000000, 3000000, 7000000, 12000000])  
   .domain([1, 2.2, 3.4, 4.5])
  .range(["#fcbba1","#fc9272","#fb6a4a","#de2d26","#66070a"]);
@@ -84,7 +84,7 @@ var tempLegend = d3.scaleThreshold()
 
 svgLegend.append("g")
   .attr("class", "legendQuant tempLegend")
-.style("background-color","blue")
+//.style("background-color","blue")
   .attr("transform", "translate(10,20)");
 var legendProd = d3.legendColor()
     .labelFormat(d3.format(".1f")).shapePadding(-2).shapeHeight(30)

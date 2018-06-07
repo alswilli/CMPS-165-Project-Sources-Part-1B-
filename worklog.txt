@@ -5,6 +5,7 @@ List of things to work on:
 - make line graph regression lines not ugly
 - any other weird html bugs you notice
 
+Move the task to your name if you are working on it.
 Alex:
 Brooke:
 Kevin: - handle negatives in the tooltip with "bees gained" instead of "negative bees lost"
