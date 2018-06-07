@@ -1703,7 +1703,7 @@ function clicked(d) {
   var yaddVal = ydomainLength / 2;
 // console.log(domainLength)
       
-  y.domain([(ydomainLow - (4 *yaddVal)), (ydomainHigh)]);        
+  y.domain([(ydomainLow - (3 *yaddVal)), (ydomainHigh)]);        
                     
   var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
     
@@ -1847,7 +1847,7 @@ d3.csv("data/mergedTemp.csv", types4, function(error, data){   // Parses the dat
   var yaddVal = ydomainLength / 2;
 // console.log(domainLength)
       
-  y2.domain([(ydomainLow), (ydomainHigh + (4 *yaddVal))]);   
+  y2.domain([(ydomainLow), (ydomainHigh + (3 *yaddVal))]);   
     
   var lg = calcLinear(newData, "x", "y", 1978, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
 //    var lg = calcLinear(newData, "x", "y", 1978, 1978);
