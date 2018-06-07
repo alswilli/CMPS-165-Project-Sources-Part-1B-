@@ -24,6 +24,7 @@ var svgLegend = d3.select("body")
                   .attr("width", width/6)
                   .attr("height", 450);
 
+
 var currentSliderValue = 1976;
 
 var active = d3.select(null);
@@ -39,8 +40,34 @@ var projection = d3.geoAlbersUsa()
 var path = d3.geoPath()
         .projection(projection);
 
+var svgLegend2 = d3.select("body")
+                  .append("svg").attr("class", "svg-legends")
+                  .attr("width", width/6)
+                  .attr("transform", "translate(1725,0)")
+				  .attr("height", 425);
 
+//------------------------------------------------------------------------
+	
+var myLegend = d3.scaleThreshold() 
+  .domain([0,10])
+  .range(["green", "red"]);
 
+svgLegend2.append("g")
+  .attr("class", "legendQuant myLegend")
+  .style("background-color","blue");
+
+var legendProd = d3.legendColor()
+    .labelFormat(d3.format(".1f")).shapePadding(2).shapeHeight(5)
+    .labels(d3.legendHelpers.thresholdLabels).title('Lines').titleWidth(90)
+    //.useClass(true)
+    .labels(["Bee Population", "Temperature Change"]).labelWrap(30)
+    .scale(myLegend);
+
+svgLegend2.select(".myLegend")
+  .call(legendProd);
+
+	//------------------------------------------------------------------------
+	
 
 
 
@@ -313,7 +340,7 @@ var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return
 //    console.log(x(parseTime(lg.ptB.x)))
 //    console.log(y2(lg.ptB.y))
 
-  // Add the valueline path.
+	// Add the valueline path.
   svgLineGraph.append("path")
       .data([newData])
       .attr("class", "line")
