@@ -2,10 +2,11 @@ List of things to work on:
 - Add major crops to state tooltips
 - add overlap/separate functionality (path line and regression line)
 - possibly add more legend stuff for map to show colors for negative change/add line graph legend
-- make line graph regression lines not ugly
+- make line graph regression lines not ugly 
+    -> %DONE%
 - any other weird html bugs you notice
 
 Move the task to your name if you are working on it.
-Alex:
+Alex: - overlapping/separation
 Brooke:
 Kevin: - handle negatives in the tooltip with "bees gained" instead of "negative bees lost"
