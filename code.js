@@ -10,6 +10,8 @@ var margin = {top: 20, right: 80, bottom: 70, left: 80},             // defines 
 var range = [0, 24];
 var step = 2;
 
+var zoomLinesToggled = false;
+
 //Show the tooltip 
 //        d3.select("#tooltip").classed("hidden", true);
         
@@ -203,10 +205,37 @@ var line2 = d3.line()                                   // Defines lines on scre
         .x(function(d) { return x(d.date); })          // Data field for x coordinates
         .y(function(d) { return y2(d.t); });       // Data field for y coordinates
 
+//var ticks = [];
+//    for (var i = 0; i <= 100; i += 2.5) {
+//      ticks.push( { value: i, isVisible: i % 10 === 0 });
+//    } 
+//
+//var tickValues = ticks.map( function(t) { return t.value; });
+//
+// var isMajorTick = function (index) {
+//        return ticks[index].isVisible;
+//      }
+
 // Define X and Y AXIS
 function xAxis() {
   return d3.axisBottom(x)                              // Sets axis to be at bottom (orientation wise) 
-    .ticks(5);  
+    .ticks(10)
+//    .tickSize(10)
+//        .tickPadding(5)
+//    .tickValues(tickValues)
+//        .tickFormat(function (d, i) {
+//          return isMajorTick(i) ? d : "";})
+//    .tickValues(function(d,i) 
+//                        {
+//                if(i % 2 === 0 ) {
+//              return d;
+//              }
+//            })
+//            .filter(function (d) 
+//            { 
+//                return !!d; 
+//            } 
+//            );
 } 
 
 function yAxis() {
@@ -232,7 +261,7 @@ function make_x_grid() {
 function make_y_grid() {        
     return d3.axisLeft(y)
         .ticks(5)
-}
+}   
 
 // From https://bl.ocks.org/pjsier/28d1d410b64dcd74d9dab348514ed256
 function tweenDash() {
@@ -325,10 +354,17 @@ var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return
         .attrTween("stroke-dasharray", tweenDash);
 
   // Add the X Axis
-  svgLineGraph.append("g")
+  var x_axis = svgLineGraph.append("g")
       .attr("transform", "translate(0," + (height + margin.bottom) + ")")
-      .call(d3.axisBottom(x));
-//      .call(xAxis(x));
+//      .call(d3.axisBottom(x));
+      .call(xAxis(x));
+
+//   // Add the class 'minor' to all minor ticks
+//  x_axis.selectAll("g")
+//        .filter(function (d, i) {
+//          return !isMajorTick(i);
+//        })
+//        .classed("minor", true);    
     
   // This section defines any text/labels related to the axis
   svgLineGraph.append("text")
@@ -1352,9 +1388,108 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                     //}
                  //});
                  });
+        
+                 d3.select(".toggleSeparation").on("click", function (e) {
+//                    zoomOutLines();
+                    zoomLinesToggled = true;
+//                     console.log(d3.select(".state-title2")._groups[0][0].innerHTML)
+                     var currStateName = d3.select(".state-title2")._groups[0][0].innerHTML;
+                     if(currStateName === "United States") {
+                        drawChart("all");
+                     }
+                     else {
+                        drawChart(currStateName)   
+                     }
+//                     drawChart()
+//                     console.log("s")
+                });
+                d3.select(".toggleOverlap").on("click", function (e) {
+//                    zoomResetLines();
+                    zoomLinesToggled = false;
+//                    console.log(d3.select(".state-title2")._groups[0][0].innerHTML)
+                    var currStateName = d3.select(".state-title2")._groups[0][0].innerHTML;
+                    if(currStateName === "United States") {
+                        drawChart("all");
+                    }
+                    else {
+                        drawChart(currStateName)   
+                    }
+//                    console.log("o")
+                });
             
     });
 });
+
+//function zoomed1() {
+//
+//    svg.select(".axisRed").transition().duration(1000).call(yAxisRed);
+//    svg.select("#xAxis").transition().duration(1000).call(xAxisRed);
+//    console.log("red " + yScaleRed.domain());
+//    svg.selectAll("#redLine")
+//        .datum(seaData)
+//        .transition().duration(1000)
+//        .attr("d", line1);  
+//    svg.selectAll("#redCircle")
+//        .data(seaData)
+//        .attr("cx", function(d) { return xScaleRed(d.Sea_Year); })
+//        .attr("cy", function(d) { return yScaleRed(d.GMSL); });
+//
+//};
+//
+//function zoomed2() {
+//
+//    svg.select(".axisBlue").transition().duration(1000).call(yAxisBlue);
+//    svg.select(".x.axis").call(xAxisBlue);
+//    svg.selectAll("#blueLine")
+//        .datum(tempData)
+//        .transition().duration(1000)
+//        .attr("d", line2);  
+//    svg.selectAll("#blueCircle")
+//        .data(tempData)
+//        .attr("cx", function(d) { return xScaleBlue(d.Temp_Year); })
+//        .attr("cy", function(d) { return yScaleBlue(d.Annual_5_Year_Mean); });
+//
+//};
+
+//function zoomOutLines() {
+//    
+//    svgLineGraph.call(
+//        d3.behavior.zoom()
+//        .y(y)
+//        .scaleExtent([1, 10])
+//        .on("zoom", zoomed1)
+////        .y(y.domain( displayMore == false ? [-138.81745544323303,81.98254455676701] : [-370.5873381902873,82.45929302054348] ))
+////        .event);
+//
+//    svgLineGraph.call(
+//        d3.behavior.zoom()
+//        .y(y2)
+//        .scaleExtent([1, 10])
+//        .on("zoom", zoomed2)
+////        .y(y2.domain( displayMore == false ? [-0.12298306496912875,0.9170169350308713] : [-1.0490103069115129,1.3402822714823206] ))
+////        .event);
+//
+//};  
+//
+///***************Reset Zoom Logic/Overlap Lines***************/
+//function zoomResetLines() {
+//
+//    svgLineGraph.call(
+//        d3.behavior.zoom()
+//        .y(y)
+//        .scaleExtent([1, 10])
+//        .on("zoom", zoomed1)
+//        .y(y.domain( displayMore == false ? [-22.5,76.1] : d3.extent(seaData, function(d) { return d.GMSL;}) ))
+//        .event);
+//
+//    svgLineGraph.call(
+//        d3.behavior.zoom()
+//        .y(y2)
+//        .scaleExtent([1, 10])
+//        .on("zoom", zoomed2)
+//        .y(y2.domain( displayMore == false ? [0.18,0.7] : d3.extent(tempData, function(d) { return d.Annual_5_Year_Mean;}) ))
+//        .event);
+//};
 
 function clicked(d) {
                 //console.log(d)        
@@ -1486,7 +1621,8 @@ function clicked(d) {
 //      console.log(d.state)
   });
                     
-  // Scale the range of the data
+  if(!zoomLinesToggled) {
+      // Scale the range of the data
   x.domain(d3.extent(data, function(d) { return parseTime(d.date); }));
   y.domain([d3.min(data, function(d) {return Math.min(d.b);}), d3.max(data, function(d) {return Math.max(d.b);})]);
                     
@@ -1549,6 +1685,83 @@ function clicked(d) {
 //      .attr("font-weight", "bold")
 //      .attr("font-size", "14px")
 //      .text("Number of Honey Bee Colonies (Thousands)");
+       console.log("collapse")
+  }
+  else {
+      // Scale the range of the data
+  x.domain(d3.extent(data, function(d) { return parseTime(d.date); }));
+  y.domain([d3.min(data, function(d) {return Math.min(d.b);}), d3.max(data, function(d) {return Math.max(d.b);})]);
+      
+//  console.log(y.domain())
+  var ydomainLow = y.domain()[0];
+  var ydomainHigh = y.domain()[1];
+  var ydomainLength = ydomainHigh - ydomainLow;
+  var yaddVal = ydomainLength / 2;
+// console.log(domainLength)
+      
+  y.domain([(ydomainLow - (4 *yaddVal)), (ydomainHigh)]);        
+                    
+  var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
+    
+//    var lg = calcLinear(newData, "x", "y", 1978, 1978);
+  
+
+  svgLineGraph.append("line")
+	        .attr("class", "regression")
+//	        .attr("x1", x(parseTime("1978")))
+            .attr("x1", x(parseTime(lg.ptA.x)))
+	        .attr("y1", y(lg.ptA.y))
+//	        .attr("x2", x(parseTime(lg.ptB.x)))
+            .attr("x2", x(parseTime(lg.ptB.x)))
+	        .attr("y2", y(lg.ptB.y))
+            .attr("id","dotted1");
+            
+
+  // Add the valueline path.
+  svgLineGraph.append("path")
+      .data([newData])
+      .attr("class", "line")
+      .attr("d", line)
+    .attr('pointer-events', 'none')
+    .attr("id", "path")
+      .transition()
+        .duration(2000)
+        .attrTween("stroke-dasharray", tweenDash);
+
+//  // Add the X Axis
+//  svgLineGraph.append("g")
+//      .attr("transform", "translate(0," + (height + margin.bottom) + ")")
+//      .call(d3.axisBottom(x));
+////                    .call(xAxis(x));
+    
+  // This section defines any text/labels related to the axis
+//  svgLineGraph.append("text")
+//      .attr("y", 7.4 * margin.bottom)
+//      .attr("x",width/1.87)
+//      .attr("dy", "1em")
+//      .style("text-anchor", "middle")
+//      .attr("font-weight", "bold")
+//      .attr("font-size", "14px")
+//      .text("Years");
+
+  // Add the Y Axis
+  svgLineGraph.append("g")
+      .attr("class", "axisSteelBlue")
+    .attr("id", "leftaxis")
+      .call(d3.axisLeft(y));
+  
+//  // This section defines any text/labels related to the axis
+//  svgLineGraph.append("text")
+//      .attr("transform", "rotate(-90)")
+//      .attr("y", 0 - margin.left)
+//      .attr("x",0 - (height / 2))
+//      .attr("dy", "1em")
+//      .style("text-anchor", "middle")
+//      .attr("font-weight", "bold")
+//      .attr("font-size", "14px")
+//      .text("Number of Honey Bee Colonies (Thousands)");
+      console.log("expand")
+  }
 });
 
 d3.csv("data/mergedTemp.csv", types4, function(error, data){   // Parses the data from the .csv file using a d3.csv request
@@ -1578,9 +1791,10 @@ d3.csv("data/mergedTemp.csv", types4, function(error, data){   // Parses the dat
 //      console.log(d.state)
   });
 
-  // Scale the range of the data
+  if(!zoomLinesToggled) {
+      // Scale the range of the data
   x.domain(d3.extent(data, function(d) { return parseTime(d.date); }));
-  y2.domain([d3.min(data, function(d) {return Math.min(d.t);}), d3.max(data, function(d) {return Math.max(d.t); })]);
+  y2.domain([d3.min(data, function(d) {return Math.min(d.t);}), d3.max(data, function(d) {return Math.max(d.t); })]);   
     
   var lg = calcLinear(newData, "x", "y", 1978, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
 //    var lg = calcLinear(newData, "x", "y", 1978, 1978);
@@ -1616,6 +1830,56 @@ d3.csv("data/mergedTemp.csv", types4, function(error, data){   // Parses the dat
     .attr("id", "rightaxis")
       .call(d3.axisRight(y2));
     
+  }
+  else {
+      // Scale the range of the data
+  x.domain(d3.extent(data, function(d) { return parseTime(d.date); }));
+  y2.domain([d3.min(data, function(d) {return Math.min(d.t);}), d3.max(data, function(d) {return Math.max(d.t); })]);
+      
+  //  console.log(y.domain())
+  var ydomainLow = y2.domain()[0];
+  var ydomainHigh = y2.domain()[1];
+  var ydomainLength = ydomainHigh - ydomainLow;
+  var yaddVal = ydomainLength / 2;
+// console.log(domainLength)
+      
+  y2.domain([(ydomainLow), (ydomainHigh + (4 *yaddVal))]);   
+    
+  var lg = calcLinear(newData, "x", "y", 1978, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
+//    var lg = calcLinear(newData, "x", "y", 1978, 1978);
+    
+     d3.selectAll("#dotted2").remove();
+    
+    svgLineGraph.append("line")
+	        .attr("class", "regression")
+//	        .attr("x1", x(parseTime("1978")))
+            .attr("x1", x(parseTime(lg.ptA.x)))
+	        .attr("y1", y2(lg.ptA.y))
+//	        .attr("x2", x(parseTime(lg.ptB.x)))
+            .attr("x2", x(parseTime(lg.ptB.x)))
+	        .attr("y2", y2(lg.ptB.y))
+            .attr("id","dotted2");
+
+  // Add the valueline2 path.
+  svgLineGraph.append("path")
+      .data([newData])
+      .attr("class", "line")
+      .style("stroke", "red")
+      .attr("d", line2)
+    .attr('pointer-events', 'none')
+      .attr("id", "path2")
+      .transition()
+        .duration(2000)
+        .attrTween("stroke-dasharray", tweenDash);
+
+  // Add the Y2 Axis
+  svgLineGraph.append("g")
+      .attr("class", "axisRed")
+      .attr("transform", "translate( " + (width + margin.right) + ", 0 )")
+    .attr("id", "rightaxis")
+      .call(d3.axisRight(y2));
+    
+  }    
 //  // This section defines any text/labels related to the axis
 //  svgLineGraph.append("text")
 //      .attr("transform", "rotate(90)")
