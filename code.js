@@ -1132,9 +1132,9 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                            
                            d3.select(".state-title").text("United States").style("opacity", "0");
 //                                .style("left", xPosition + "px").style("top", yPosition + "px");
-                           d3.select(".bees").text("Bee Colony Loss | 1,421,000 colonies").style("opacity", "0");
+                           d3.select(".bees").text("Net Bee Colony Loss | 1,421,000 colonies").style("opacity", "0");
 //                                  .style("left", xPosition + "px").style("top", yPosition + "px");
-                           d3.select(".temps").text("Temperature Increase | 3.5 degrees").style("opacity", "0");
+                           d3.select(".temps").text("Net Temperature Increase | 3.5 degrees").style("opacity", "0");
 //                                  .style("left", xPosition + "px").style("top", yPosition + "px");
                            
                             d3.select(this)
@@ -1145,14 +1145,16 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                         
                             d3.select(".state-title").text(state).style("opacity", 0).style("opacity", 1);
                             if (bees > 0){
-                                d3.select(".bees").text("Bee Colony Gained | " + formatComma(bees) + ",000 colonies").style("opacity", 1);
+                                d3.select(".bees").text("Net Bee Colony Gained | " + formatComma(bees) + ",000 colonies").style("opacity", 1);
                             } else if (bees < 0){
-                                d3.select(".bees").text("Bee Colony Loss | " + formatComma(-1*bees) + ",000 colonies").style("opacity", 1);
+                                d3.select(".bees").text("Net Bee Colony Loss | " + formatComma(-1*bees) + ",000 colonies").style("opacity", 1);
                             }
                             if (temps > 0){
-                                d3.select(".temps").text("Temperature Increase | " + temps + " degrees").style("opacity", 1);
+                                d3.select(".temps").text("Net Temperature Increase | " + temps + " degrees").style("opacity", 1);
+                                // d3.select(".temps").text("Net Temperature Increase");
+                                // d3.select(".temps").text(" | " + temps + " degrees").style("opacity", 1);
                             } else if (temps < 0){
-                                d3.select(".temps").text("Temperature Decrease | " + temps + " degrees").style("opacity", 1);
+                                d3.select(".temps").text("Net Temperature Decrease | " + temps + " degrees").style("opacity", 1);
                             }
                            
                            //Show the tooltip 

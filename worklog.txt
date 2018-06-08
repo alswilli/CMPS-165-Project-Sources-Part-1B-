@@ -3,6 +3,12 @@ List of things to work on:
 - add overlap/separate functionality (path line and regression line)
 - possibly add more legend stuff for map to show colors for negative change/add line graph legend
 - any other weird html bugs you notice
+- net colonies gain
+- chanage mouse to hand to show that it is clickable
+- Data not available for 40 years
+- On tooltip add text for data unavailable
+- Center tooltip
+- Do the line clipping
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
