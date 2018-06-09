@@ -1,25 +1,25 @@
 List of things to work on:
 - Add major crops to state tooltips
-- add overlap/separate functionality (path line and regression line)
 - possibly add more legend stuff for map to show colors for negative change/add line graph legend
 - any other weird html bugs you notice
 - net colonies gain
 - chanage mouse to hand to show that it is clickable
-- Data not available for 40 years
+- Add text to tell that "Data is not available for all 40 years"
 - On tooltip add text for data unavailable
 - Center tooltip
 - Do the line clipping
+- tooltip text alignment
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Move the task to your name if you are working on it.
-Alex: - overlapping/separation
+Alex: 
 Brooke:
-Kevin: - tooltip text alignment
+Kevin: 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Complete:
 - make line graph regression lines not ugly 
 - handle negatives in the tooltip with "bees gained" instead of "negative bees lost"
-    
+- add overlap/separate functionality (path line and regression line)
