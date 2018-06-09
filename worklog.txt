@@ -7,7 +7,6 @@ List of things to work on:
 - Add text to tell that "Data is not available for all 40 years"
 - On tooltip add text for data unavailable
 - Center tooltip
-- Do the line clipping
 - tooltip text alignment
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -15,7 +14,7 @@ List of things to work on:
 Move the task to your name if you are working on it.
 Alex: 
 Brooke:
-Kevin: 
+Kevin: - Do the line clipping
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
