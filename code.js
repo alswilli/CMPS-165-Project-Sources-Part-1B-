@@ -28,6 +28,8 @@ var svgLegend = d3.select("body")
 
 var currentSliderValue = 1976;
 
+var togSeparation
+
 var active = d3.select(null);
 
 var formatComma = d3.format(",");
@@ -1092,6 +1094,7 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                     json.features[j].properties.temps = temps;
                     json.features[j].properties.bees = bees;
                     json.features[j].properties.code = code;
+                    json.features[j].properties.naming = dataState;
                     //Stop looking through the JSON
                     break;
 
@@ -1107,6 +1110,9 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                        .attr("d", path).attr("class", "feature")
                            .on("click", clicked)
                         .attr("stroke","#fff").attr("stroke-width","0.4").style("opacity", "0.8").style("stroke-opacity", "1")
+                        .attr("stateName", function(d) {
+                           return d.properties.naming;
+                       })
                         .attr("x", function(d){                        
                             return path.centroid(d)[0];
                         })
@@ -1413,9 +1419,19 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
         
                  d3.select(".toggleSeparation").on("click", function (e) {
 //                    zoomOutLines();
-                    zoomLinesToggled = true;
-//                     console.log(d3.select(".state-title2")._groups[0][0].innerHTML)
-                     var currStateName = d3.select(".state-title2")._groups[0][0].innerHTML;
+                     zoomLinesToggled = true;
+//                     console.log(d3.select(".state-title2")._groups[0][0].textContent)
+//                     var currStateName = d3.select(".state-title2")._groups[0][0].innerHTML;
+                     var currStateName = "";
+                     if(active.node() != null) {
+                         currStateName = active.node().getAttribute("stateName");
+//                         console.log(currStateName)
+                     }
+                     else {
+                         currStateName = "United States";
+                     }
+//                     console.log(currStateName)
+                     console.log(active.node())
                      if(currStateName === "United States") {
                         drawChart("all");
                      }
@@ -1428,8 +1444,17 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                 d3.select(".toggleOverlap").on("click", function (e) {
 //                    zoomResetLines();
                     zoomLinesToggled = false;
-//                    console.log(d3.select(".state-title2")._groups[0][0].innerHTML)
-                    var currStateName = d3.select(".state-title2")._groups[0][0].innerHTML;
+                    var currStateName = "";
+//                    console.log(d3.select(".state-title2")._groups[0][0])
+//                    console.log(d3.select(".state-title2")._groups[0][0].textContent)
+//                    var currStateName = d3.select(".state-title2")._groups[0][0].innerHTML;
+                     if(active.node() != null) {
+                         currStateName = active.node().getAttribute("stateName");
+                     }
+                     else {
+                         currStateName = "United States";
+                     }
+//                    console.log(currStateName)
                     if(currStateName === "United States") {
                         drawChart("all");
                     }
