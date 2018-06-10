@@ -12,6 +12,8 @@ var step = 2;
 
 var zoomLinesToggled = false;
 
+var clicker = false;
+
 //Show the tooltip 
 //        d3.select("#tooltip").classed("hidden", true);
         
@@ -1185,9 +1187,27 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                         
                         })
                        .on("mouseout", function(d){
+                           
+//                           console.log(d3.select(this))
+                           console.log(d3.select(this)._groups[0][0])
+                           console.log(active.node())
                         
-                            d3.select(this)
+                            if(active.node() == null) {
+                                d3.select(this)
                                 .style("opacity", "0.8");
+                            }
+                            
+                            if(active.node() != null) {
+                                if(active.node() == d3.select(this)._groups[0][0]) {
+                                    d3.select(this)
+                                .style("opacity", "0.8");
+                                }
+                                else {
+                                    d3.select(this)
+                                .style("opacity", "0.2");
+                                }
+                            }
+                           
                     var state = d.properties.name;
                             var temps = d.properties.temps;
                             var bees = d.properties.bees;
@@ -1539,13 +1559,25 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
 //};
 
 function clicked(d) {
-                //console.log(d)        
+                //console.log(g.selectAll("path").attr("d", path))
+                g.selectAll("path").attr("d", path).style("opacity", "0.2")
+                  console.log(d)
+                 //console.log(d.id)
+                 var stateId = d.id;
+                 console.log(d.id)
+                  
+                  console.log(g.selectAll("path"))
+//                  console.log(g.selectAll("path")._groups[0][0])
+                 console.log(g.selectAll("path")._groups[0][stateId])
+                  console.log(g.selectAll("path")._groups[0][stateId].style.opacity)
+                 g.selectAll("path")._groups[0][stateId].style.opacity = 1;
     
 //                if (active.node() === this) return reset();
                   if (active.node() === this) {
                       active.node().setAttribute("stroke-width","0.4")
                       active.node().setAttribute("stroke","#fff")
                       active.classed("active", false);
+                      g.selectAll("path").attr("d", path).style("opacity", "0.8")
                       return reset();
                       console.log("pp")
                   }
@@ -1555,7 +1587,7 @@ function clicked(d) {
 //                      active.node().setAttribute("stroke","#fff")
                       active.classed("active", false);
                       active = d3.select(this).classed("active", true);
-                      active.node().setAttribute("stroke-width","3")
+                      active.node().setAttribute("stroke-width","4")
                       active.node().setAttribute("stroke","#ffb")
                       console.log("gg3")
                   }
@@ -1564,8 +1596,12 @@ function clicked(d) {
                       active.node().setAttribute("stroke","#fff")
                       active.classed("active", false);
                       active = d3.select(this).classed("active", true);
-                      active.node().setAttribute("stroke-width","3")
+                      active.node().setAttribute("stroke-width","4")
                       active.node().setAttribute("stroke","#ffb")
+//                      console.log(active.node().parent)
+                      console.log(active.node())
+                      console.log(active.node().getAttribute("style"))
+//                      active.node().setAttribute("style","opacity: 0.2")
                       console.log("gg")
                   }
 //                  active.classed("active", false);
