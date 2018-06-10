@@ -166,12 +166,12 @@ button toggleOverlap {
 
 .line {
   fill: none;
-  stroke: green;
+  stroke: purple;
   stroke-width: 3.2px;
 }
 
 .axisSteelBlue text{
-  fill: green;
+  fill: purple;
 }
 
 .axisRed text{
@@ -261,7 +261,7 @@ button {
 }
 
 .bees2 {
-    color:green;
+    color:purple;
 }
 
 .temps2 {
@@ -270,7 +270,7 @@ button {
 
 #dotted1 {
 /*    stroke: orange;*/
-    stroke: lightgreen;
+    stroke: purple;
     opacity: 0.7
 }
 

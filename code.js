@@ -50,14 +50,17 @@ var path = d3.geoPath()
  var beeScale = d3.scaleThreshold()
     .domain([1, 30, 70, 120])  
 //.domain([1, 2.50, 7.50, 12.50, 35.00])
-.range(["#ccece6", "#66c2a4", "#41ae76", "#238b45", "#005824"]);
+//.range(["#ccece6", "#66c2a4", "#41ae76", "#238b45", "#005824"]);
+// .range(["#edf8fb", "#b3cde3", "#8c96c6", "#8856a7", "#810f7c"]);
+ .range(["#cbc9e2", "#9e9ac8", "#756bb1", "#54278f", "#2c134c"]);
 
 
 var beeLegend = d3.scaleThreshold()
     //.domain([1000000, 2500000, 7500000, 12500000, 35000000])  
   .domain([1, 30, 70, 120])
 //.range(d3.interpolateReds(1/23),d3.interpolateReds(3/23),d3.interpolateReds(7/23),d3.interpolateReds(12/23))      
- .range(["#ccece6", "#66c2a4", "#41ae76", "#238b45", "#005824"]);
+// .range(["#ccece6", "#66c2a4", "#41ae76", "#238b45", "#005824"]);
+ .range(["#cbc9e2", "#9e9ac8", "#756bb1", "#54278f", "#2c134c"]);
 
 svgLegend.append("g")
   .attr("class", "legendQuant beeLegend")
@@ -116,20 +119,24 @@ d3.select(".beeLegend").attr("opacity", "1");
 d3.select(".tempLegend").attr("opacity", "0");
 
 var colorAg = d3.scaleQuantize()
-				.range(["#ccece6", "#66c2a4", "#41ae76", "#238b45", "#005824"]);
+//				.range(["#ccece6", "#66c2a4", "#41ae76", "#238b45", "#005824"]);
+ .range(["#cbc9e2", "#9e9ac8", "#756bb1", "#54278f", "#2c134c"]);
             //Colors derived from ColorBrewer, by Cynthia Brewer, and included in
             //https://github.com/d3/d3-scale-chromatic
 var popLegend = d3.scaleLinear()
       .range(["#fcbba1","#a50f15"]);
 
 var agLegend = d3.scaleLinear()
-      .range(["#ccece6","#005824"]);
-
+//      .range(["#ccece6","#005824"]);
+//        .range(["#edf8fb", "#810f7c"])
+        .range(["#cbc9e2", "#2c134c"]);
 
 
 //Define quantize scale to sort data values into buckets of color for both sets of .csv data
 var colorBeeData = d3.scaleQuantize()
-                    .range(["rgb(237,248,233)","rgb(186,228,179)","rgb(116,196,118)","rgb(49,163,84)","rgb(0,109,44)"]);
+//                    .range(["rgb(237,248,233)","rgb(186,228,179)","rgb(116,196,118)","rgb(49,163,84)","rgb(0,109,44)"]);
+//                  .range(["rgb(237,248,251)","rgb(179,205,227)","rgb(140,150,198)","rgb(136,86,167)","rgb(129,15,124)"]);
+                   .range(["rgb(203,201,226)","rgb(158,154,200)","rgb(117,107,177)","rgb(84,39,143)","rgb(44,19,76)"]);
                     //Colors derived from ColorBrewer, by Cynthia Brewer, and included in
                     //https://github.com/d3/d3-scale-chromatic
 
@@ -149,11 +156,11 @@ var svgBee = d3.select("body")
 //        .style("background-color", "#F8F8F8");
 //.on("click", stopped, true);
 
- svgBee.append("rect")
-        .attr("class", "background")
-        .attr("width", width)
-        .attr("height", height + margin.top + margin.bottom)
-        .on("click", reset);
+// svgBee.append("rect")
+//        .attr("class", "background")
+//        .attr("width", width)
+//        .attr("height", height + margin.top + margin.bottom)
+//        .on("click", reset);
 
 var g = svgBee.append("g");
 
@@ -432,6 +439,7 @@ var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return
       .attr('fill', 'none')
       .attr('pointer-events', 'all')
       .on('mouseout', function() { // on mouse out hide line, circles and text
+//        d3.select(this).style("cursor", "default"); 
         d3.select(".mouse-line")
           .style("opacity", "0");
         d3.selectAll(".mouse-per-line circle")
@@ -440,6 +448,7 @@ var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return
           .style("opacity", "0");
       })
       .on('mouseover', function() { // on mouse in show line, circles and text
+//        d3.select(this).style("cursor", "pointer");
         d3.select(".mouse-line")
           .style("opacity", "0.6");
         d3.selectAll(".mouse-per-line circle")
@@ -578,7 +587,7 @@ function types2(d){
 //          console.log(obj)
       });
         
-      console.log(pts)
+//      console.log(pts)
 
       // Let a equal n times the summation of all x-values multiplied by their corresponding y-values
       // Let b equal the sum of all x-values times the sum of all y-values
@@ -603,7 +612,7 @@ function types2(d){
       // slope = m = (a - b) / (c - d)
       var m = (a - b) / (c - d);
         
-      console.log(m)
+//      console.log(m)
 
       /////////////
       //INTERCEPT//
@@ -623,7 +632,7 @@ function types2(d){
 //			document.getElementsByClassName("equation")[0].innerHTML = "y = " + m + "x + " + b;
 //			document.getElementsByClassName("equation")[1].innerHTML = "x = ( y - " + b + " ) / " + m;
         
-        console.log("working?")
+//        console.log("working?")
 
 //      console.log("AHHHHHHH: " + ((minY - b) / m))
 //        console.log(Math.floor(((minY - b) / m)))
@@ -1128,6 +1137,8 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
 //                           console.log(xPosition)
 //                           console.log(yPosition)
                            
+                           d3.select(this).style("cursor", "pointer"); 
+                           
                            d3.select("#tooltip").style("left", xPosition + "px").style("top", yPosition + "px");
                            
                            d3.select(".state-title").text("United States").style("opacity", "0");
@@ -1165,6 +1176,8 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                     var state = d.properties.name;
                             var temps = d.properties.temps;
                             var bees = d.properties.bees;
+                           
+                           d3.select(this).style("cursor", "default"); 
                             
 //                            d3.select(".state-title").text(state).transition().duration(500).style("opacity", 0);
 //                            if (bees){
@@ -1494,9 +1507,35 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
 function clicked(d) {
                 //console.log(d)        
     
-                if (active.node() === this) return reset();
-                  active.classed("active", false);
-                  active = d3.select(this).classed("active", true);
+//                if (active.node() === this) return reset();
+                  if (active.node() === this) {
+                      active.node().setAttribute("stroke-width","0.4")
+                      active.node().setAttribute("stroke","#fff")
+                      active.classed("active", false);
+                      return reset();
+                      console.log("pp")
+                  }
+                  console.log(active.node())
+                  if(active.node() === null && active.node() !== this) {
+//                      active.node().setAttribute("stroke-width","0.4")
+//                      active.node().setAttribute("stroke","#fff")
+                      active.classed("active", false);
+                      active = d3.select(this).classed("active", true);
+                      active.node().setAttribute("stroke-width","3")
+                      active.node().setAttribute("stroke","#ffb")
+                      console.log("gg3")
+                  }
+                  if(active.node() != null && active.node() !== this) {
+                      active.node().setAttribute("stroke-width","0.4")
+                      active.node().setAttribute("stroke","#fff")
+                      active.classed("active", false);
+                      active = d3.select(this).classed("active", true);
+                      active.node().setAttribute("stroke-width","3")
+                      active.node().setAttribute("stroke","#ffb")
+                      console.log("gg")
+                  }
+//                  active.classed("active", false);
+//                  active = d3.select(this).classed("active", true);
                   var bounds = path.bounds(d),
                       dx = bounds[1][0] - bounds[0][0],
                       dy = bounds[1][1] - bounds[0][1],
@@ -1504,10 +1543,19 @@ function clicked(d) {
                       y = (bounds[0][1] + bounds[1][1]) / 2,
                       scale = Math.max(1, Math.min(8, 0.9 / Math.max(dx / width, dy / height))),
                       translate = [width / 2 - scale * x, height / 2 - scale * y];
-                  svgBee.transition()
-                      .duration(750)
-                      // .call(zoom.translate(translate).scale(scale).event); // not in d3 v4
-                      .call(zoom.transform, d3.zoomIdentity.translate(translate[0],translate[1]).scale(scale) ); // updated for d3 v4
+//                  d3.select(path).style("stroke","#ffb")
+//                  console.log(d3.select(this))
+//                  console.log(d3.select(this)._groups[0][0])
+//                  d3.select(this)._groups[0][0].stroke-width = "2";
+//    console.log(d3.select(this)._groups[0][0].setAttribute("stroke-width","2").setAttribute("stroke","#ffb"))
+    
+//    d3.select(this)._groups[0][0].setAttribute("stroke-width","3")
+//    d3.select(this)._groups[0][0].setAttribute("stroke","#ffb")
+    
+//                  svgBee.transition()
+//                      .duration(750)
+//                      // .call(zoom.translate(translate).scale(scale).event); // not in d3 v4
+//                      .call(zoom.transform, d3.zoomIdentity.translate(translate[0],translate[1]).scale(scale) ); // updated for d3 v4
                   // create a callback for the neighborhood hover
 //                    var mover = function(d) {
                       var neigh = d.properties.name;
@@ -1525,6 +1573,8 @@ function clicked(d) {
             function reset() {
                   active.classed("active", false);
                   active = d3.select(null);
+//                d3.select(this)._groups[0][0].setAttribute("stroke-width","0.4")
+//                d3.select(this)._groups[0][0].setAttribute("stroke","#fff")
                   svgBee.transition()
                       .duration(750)
                       // .call( zoom.transform, d3.zoomIdentity.translate(0, 0).scale(1) ); // not in d3 v4
@@ -1685,7 +1735,7 @@ function clicked(d) {
 //      .attr("font-weight", "bold")
 //      .attr("font-size", "14px")
 //      .text("Number of Honey Bee Colonies (Thousands)");
-       console.log("collapse")
+//       console.log("collapse")
   }
   else {
       // Scale the range of the data
@@ -1760,7 +1810,7 @@ function clicked(d) {
 //      .attr("font-weight", "bold")
 //      .attr("font-size", "14px")
 //      .text("Number of Honey Bee Colonies (Thousands)");
-      console.log("expand")
+//      console.log("expand")
   }
 });
 
