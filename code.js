@@ -17,9 +17,9 @@ var zoomLinesToggled = false;
         
         
 
-var zoom = d3.zoom()
-                .scaleExtent([1, 8])
-                .on("zoom", zoomed);
+//var zoom = d3.zoom()
+//                .scaleExtent([1, 8])
+//                .on("zoom", zoomed);
 
 var svgLegend = d3.select("body")
                   .append("svg").attr("class", "svg-legends")
@@ -166,7 +166,7 @@ var svgBee = d3.select("body")
 
 var g = svgBee.append("g");
 
-svgBee.call(zoom);
+//svgBee.call(zoom);
 
 // Define SVG.
 var svgLineGraph = d3.select("body").append("svg")
@@ -1425,7 +1425,7 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                      var currStateName = "";
                      if(active.node() != null) {
                          currStateName = active.node().getAttribute("stateName");
-//                         console.log(currStateName)
+                         console.log(currStateName);
                      }
                      else {
                          currStateName = "United States";
@@ -1609,10 +1609,10 @@ function clicked(d) {
                   active = d3.select(null);
 //                d3.select(this)._groups[0][0].setAttribute("stroke-width","0.4")
 //                d3.select(this)._groups[0][0].setAttribute("stroke","#fff")
-                  svgBee.transition()
-                      .duration(750)
-                      // .call( zoom.transform, d3.zoomIdentity.translate(0, 0).scale(1) ); // not in d3 v4
-                      .call( zoom.transform, d3.zoomIdentity ); // updated for d3 v4
+//                  svgBee.transition()
+//                      .duration(750)
+//                      // .call( zoom.transform, d3.zoomIdentity.translate(0, 0).scale(1) ); // not in d3 v4
+//                      .call( zoom.transform, d3.zoomIdentity ); // updated for d3 v4
                       var neigh = "all";
 //                      d3.select('#svgLine path.' + neigh).style('fill', 'black');
 //                        console.log()
@@ -1624,16 +1624,16 @@ function clicked(d) {
                             .transition().duration(1000)
                             .text("United States");
                 }
-            function zoomed() {
-                  g.style("stroke-width", 1 / d3.event.transform.k + "px");
-                  // g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")"); // not in d3 v4
-                  g.attr("transform", d3.event.transform); // updated for d3 v4
-                }
-                // If the drag behavior prevents the default click,
-                // also stop propagation so we don’t click-to-zoom.
-            function stopped() {
-                  if (d3.event.defaultPrevented) d3.event.stopPropagation();
-                }
+//            function zoomed() {
+//                  g.style("stroke-width", 1 / d3.event.transform.k + "px");
+//                  // g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")"); // not in d3 v4
+//                  g.attr("transform", d3.event.transform); // updated for d3 v4
+//                }
+//                // If the drag behavior prevents the default click,
+//                // also stop propagation so we don’t click-to-zoom.
+//            function stopped() {
+//                  if (d3.event.defaultPrevented) d3.event.stopPropagation();
+//                }
 
             // create a function to draw the timeseries for each neighborhood
             var drawChart = function(field) {
