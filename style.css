@@ -22,7 +22,7 @@ h1 {
 #bloc3
 {
     display:inline;
-    background-color:lightgrey;
+    background-color:#fafafa;
     margin-left: 250px;
     padding: 22px 10px; 
     border-bottom-right-radius:0.8em;
@@ -34,7 +34,7 @@ h1 {
 #bloc4
 {
     display:inline;
-    background-color:lightgrey;
+    background-color:#fafafa;
     margin-left: 417px;
     padding: 22px 10px; 
     border-bottom-right-radius:0.8em;
@@ -190,6 +190,77 @@ button toggleOverlap {
 */
 
 button {
+/*    border: 1px solid black;*/
+    color: black;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    top: 191px;
+    left: 420px;
+    background-color:#ededed;
+}
+
+/*
+button2 {
+    border: none;
+    color: black;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    top: 191px;
+    left: 420px;
+    background-color:#ededed;
+}
+*/
+
+
+button:focus {
+  background: #dcdcdc;
+/*
+  outline: none;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+*/
+}
+/*
+button2:active {
+  background: #bbbbbb;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+}
+*/
+
+button:active {
+  background: #bfbfbf;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+}
+
+button:hover {
+/*  background: #e5e5e5;*/
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+}
+
+/*
+button2 {
     border: none;
     color: white;
     padding: 10px 10px;
@@ -204,6 +275,15 @@ button {
     left: 420px;
     background-color: grey;
 }
+
+button2:focus {
+  background: #e5e5e5;
+  outline: none;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+*/
 
 /*Add Tooltip Type here. Formats various rendering aspects for tooltip label*/
 #tooltip {

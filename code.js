@@ -1346,6 +1346,8 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                     // Determine if current line is visible
                     togData=!togData;
                     //console.log(togData);
+//                    d3.select(".toggleCity").style("background-color","#dfdfdf")
+//                console.log(d3.select(".toggleCity"))
                     
                     //if (togData == true){
                         g.selectAll("path")
