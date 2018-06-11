@@ -59,12 +59,31 @@ var path = d3.geoPath()
  .range(["#cbc9e2", "#9e9ac8", "#756bb1", "#54278f", "#2c134c"]);
 
 
-var beeLegend = d3.scaleThreshold()
+//var beeLegend = d3.scaleThreshold()
+//    //.domain([1000000, 2500000, 7500000, 12500000, 35000000])  
+//  .domain([1, 30, 70, 120])
+////.range(d3.interpolateReds(1/23),d3.interpolateReds(3/23),d3.interpolateReds(7/23),d3.interpolateReds(12/23))      
+//// .range(["#ccece6", "#66c2a4", "#41ae76", "#238b45", "#005824"]);
+// .range(["#cbc9e2", "#9e9ac8", "#756bb1", "#54278f", "#2c134c"]);
+
+//var beeLegend = d3.scaleLinear()
+//    //.domain([1000000, 2500000, 7500000, 12500000, 35000000])  
+//  .domain([1, 30, 70, 120])
+////.range(d3.interpolateReds(1/23),d3.interpolateReds(3/23),d3.interpolateReds(7/23),d3.interpolateReds(12/23))      
+//// .range(["#ccece6", "#66c2a4", "#41ae76", "#238b45", "#005824"]);
+// .range(["#cbc9e2", "#9e9ac8", "#756bb1", "#54278f", "#2c134c"]);
+
+var beeLegend = d3.scaleOrdinal()
     //.domain([1000000, 2500000, 7500000, 12500000, 35000000])  
-  .domain([1, 30, 70, 120])
+  .domain(["< 1", "1", "30", "70", "> 120"])
 //.range(d3.interpolateReds(1/23),d3.interpolateReds(3/23),d3.interpolateReds(7/23),d3.interpolateReds(12/23))      
 // .range(["#ccece6", "#66c2a4", "#41ae76", "#238b45", "#005824"]);
  .range(["#cbc9e2", "#9e9ac8", "#756bb1", "#54278f", "#2c134c"]);
+
+//var legendscale = d3.scaleLinear()
+//    .range([28, 69])
+//    .domain(beeScale2.domain());
+
 
 svgLegend.append("g")
   .attr("class", "legendQuant beeLegend")
@@ -72,11 +91,20 @@ svgLegend.append("g")
   .attr("transform", "translate(10,20)");
 var legendPop = d3.legendColor()
     .labelFormat(d3.format(".0f")).shapePadding(-2).shapeHeight(30)
-    .labels(d3.legendHelpers.thresholdLabels).title('Bee Colony Loss in Thousands').titleWidth(90)
+//    .labels(d3.legendHelpers.thresholdLabels).title('Bee Colony Loss in Thousands').titleWidth(90)
+.title('Bee Colony Loss in Thousands').titleWidth(90)
+//    .labelOffset(30)
+    .labelAlign("start")
     //.useClass(true)
-    .scale(beeLegend)
+    .scale(beeLegend);
 svgLegend.select(".beeLegend")
   .call(legendPop);
+//var legendaxis = d3.axisRight()
+//    .scale(legendscale)
+//    .tickSize(6)
+//    .ticks(8);
+//svgLegend.select(".beeLegend")
+//    .call(legendaxis);
 
 
 
@@ -84,11 +112,15 @@ svgLegend.select(".beeLegend")
 
 var tempScale = d3.scaleThreshold()
     //.domain([1000000, 3000000, 7000000, 12000000])  
-  .domain([1, 2.2, 3.4, 4.5])
+  .domain([1.0, 2.2, 3.4, 4.6])
  .range(["#fcbba1","#fc9272","#fb6a4a","#de2d26","#66070a"]);
-var tempLegend = d3.scaleThreshold()
+//var tempLegend = d3.scaleThreshold()
+//    //.domain([1000000, 2500000, 7500000, 12500000, 35000000])  
+//  .domain([1, 2.2, 3.4, 4.6])
+//.range(["#fcbba1","#fc9272","#fb6a4a","#de2d26","#66070a"]);
+var tempLegend = d3.scaleOrdinal()
     //.domain([1000000, 2500000, 7500000, 12500000, 35000000])  
-  .domain([1, 2.2, 3.4, 4.5])
+  .domain(["< 1.0", "1.0", "2.2", "3.4", "> 4.6"])
 .range(["#fcbba1","#fc9272","#fb6a4a","#de2d26","#66070a"]);
 
 svgLegend.append("g")
@@ -97,8 +129,10 @@ svgLegend.append("g")
   .attr("transform", "translate(10,20)");
 var legendProd = d3.legendColor()
     .labelFormat(d3.format(".1f")).shapePadding(-2).shapeHeight(30)
-    .labels(d3.legendHelpers.thresholdLabels).title('Temperature Change in Fahrenheit').titleWidth(90)
-    //.useClass(true)
+//    .labels(d3.legendHelpers.thresholdLabels).title('Temperature Change in Fahrenheit').titleWidth(90)
+//    //.useClass(true)
+.title('Temperature Change in Fahrenheit').titleWidth(90)
+
     .scale(tempLegend)
 
 svgLegend.select(".tempLegend")
