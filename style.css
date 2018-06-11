@@ -326,11 +326,13 @@ button2:focus {
 }
 
 .bees {
-    color:green;
+    color:purple;
+    font-size: 17px;
 }
 
 .temps {
     color:red;
+    font-size: 17px;
 }
 
 .state-title2 {
@@ -342,10 +344,12 @@ button2:focus {
 
 .bees2 {
     color:purple;
+    font-size: 17px;
 }
 
 .temps2 {
     color:red;
+    font-size: 17px;
 }
 
 #dotted1 {
