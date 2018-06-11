@@ -57,18 +57,7 @@ h1 {
     width:300;
 }
 
-/*
-.verticalLine {
-    height: 200px;
-    border-left: thin solid #fff;
-    transform: translate(840px,80px);
-    position: absolute;
-    color:black;
-}
-*/
-
 h2 {
-/*    text-align: center;*/
     color: ;
     font-size: 23px;
     margin-left: 235px;
@@ -94,7 +83,7 @@ span1 {
 #ending{
                 height:700px;
                 height:auto;
-                min-height:670px;
+                min-height:580px;
                 margin:0 auto;
                 width:100%;
                 background-color:rgb(241,241,241);
@@ -105,6 +94,7 @@ span1 {
                 font-size: 16px;
                 font-family: sans-serif;
                 line-height: 70%;
+                margin-bottom: 30px;
             }
 
 .columnFooter {
@@ -127,15 +117,6 @@ span1 {
                 margin-top: 20px;
                 transform: translate(0%,10%);
             }
-/*
-.button toggleSeparation {
-
-}
-
-button toggleOverlap {
-    
-}
-*/
 
 /*relate to the grid not the axis*/
 .grid .tick {             
@@ -183,12 +164,6 @@ button toggleOverlap {
     pointer-events: all;
 }
 
-/*
-.legendQuant beeLegend {
-    background-color: aliceblue;
-}
-*/
-
 button {
 /*    border: 1px solid black;*/
     color: black;
@@ -205,43 +180,9 @@ button {
     background-color:#ededed;
 }
 
-/*
-button2 {
-    border: none;
-    color: black;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    font-weight: bold;
-    margin: 4px 2px;
-    cursor: pointer;
-    top: 191px;
-    left: 420px;
-    background-color:#ededed;
-}
-*/
-
-
 button:focus {
   background: #dcdcdc;
-/*
-  outline: none;
-  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-          box-shadow: inset 0px 0px 5px #c1c1c1;
-*/
 }
-/*
-button2:active {
-  background: #bbbbbb;
-  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-          box-shadow: inset 0px 0px 5px #c1c1c1;
-   outline: none;
-}
-*/
 
 button:active {
   background: #bfbfbf;
@@ -252,38 +193,11 @@ button:active {
 }
 
 button:hover {
-/*  background: #e5e5e5;*/
   -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
      -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
           box-shadow: inset 0px 0px 5px #c1c1c1;
    outline: none;
 }
-
-/*
-button2 {
-    border: none;
-    color: white;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    font-weight: bold;
-    margin: 4px 2px;
-    cursor: pointer;
-    top: 191px;
-    left: 420px;
-    background-color: grey;
-}
-
-button2:focus {
-  background: #e5e5e5;
-  outline: none;
-  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-          box-shadow: inset 0px 0px 5px #c1c1c1;
-}
-*/
 
 /*Add Tooltip Type here. Formats various rendering aspects for tooltip label*/
 #tooltip {
@@ -299,10 +213,6 @@ button2:focus {
         -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
         pointer-events: none;
-/*
-        left: 200px;
-        top: 867px;
-*/
 }
 
 /*Define what the keyword "hidden" does on the tooltip when called*/
@@ -357,12 +267,6 @@ button2:focus {
     stroke: purple;
     opacity: 0.7
 }
-
-/*
-#dotted2 {
-    stroke: ;
-}
-*/
 
 .regression {
   stroke-width: 2px;
