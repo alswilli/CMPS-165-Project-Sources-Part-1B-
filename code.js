@@ -3,30 +3,12 @@ var margin = {top: 20, right: 80, bottom: 70, left: 80},             // defines 
     width = 760 - margin.left - margin.right,                         // defines the width dimension for the chart itself
     height = 500 - margin.top - margin.bottom;                        // defines the height dimension for the chart itself
 
-// Width and height of both svgs
-//var width = 600;
-//var height = 400;
-//var margin = {left: 30, right: 30};
 var range = [0, 24];
 var step = 2;
 
 var zoomLinesToggled = false;
 
 var clicker = false;
-
-//d3.select(".state-title2").text("United States").style("opacity", 1);
-d3.select(".tooltip-values bees2").text("Net Honey Bee Loss |\xa0 1,421,000 colonies").style("opacity", 1);
-//d3.select(".temps2").text("Net Temp. Increase \xa0|\xa0 3.5 degrees").style("opacity", 1);
-
-
-//Show the tooltip 
-//        d3.select("#tooltip").classed("hidden", true);
-        
-        
-
-//var zoom = d3.zoom()
-//                .scaleExtent([1, 8])
-//                .on("zoom", zoomed);
 
 var svgLegend = d3.select("body")
                   .append("svg").attr("class", "svg-legends")
@@ -50,45 +32,13 @@ var projection = d3.geoAlbersUsa()
 var path = d3.geoPath()
         .projection(projection);
 
-
-
-
-
-
-
  var beeScale = d3.scaleThreshold()
     .domain([1, 30, 70, 120])  
-//.domain([1, 2.50, 7.50, 12.50, 35.00])
-//.range(["#ccece6", "#66c2a4", "#41ae76", "#238b45", "#005824"]);
-// .range(["#edf8fb", "#b3cde3", "#8c96c6", "#8856a7", "#810f7c"]);
  .range(["#cbc9e2", "#9e9ac8", "#756bb1", "#54278f", "#2c134c"]);
 
-
-//var beeLegend = d3.scaleThreshold()
-//    //.domain([1000000, 2500000, 7500000, 12500000, 35000000])  
-//  .domain([1, 30, 70, 120])
-////.range(d3.interpolateReds(1/23),d3.interpolateReds(3/23),d3.interpolateReds(7/23),d3.interpolateReds(12/23))      
-//// .range(["#ccece6", "#66c2a4", "#41ae76", "#238b45", "#005824"]);
-// .range(["#cbc9e2", "#9e9ac8", "#756bb1", "#54278f", "#2c134c"]);
-
-//var beeLegend = d3.scaleLinear()
-//    //.domain([1000000, 2500000, 7500000, 12500000, 35000000])  
-//  .domain([1, 30, 70, 120])
-////.range(d3.interpolateReds(1/23),d3.interpolateReds(3/23),d3.interpolateReds(7/23),d3.interpolateReds(12/23))      
-//// .range(["#ccece6", "#66c2a4", "#41ae76", "#238b45", "#005824"]);
-// .range(["#cbc9e2", "#9e9ac8", "#756bb1", "#54278f", "#2c134c"]);
-
-var beeLegend = d3.scaleOrdinal()
-    //.domain([1000000, 2500000, 7500000, 12500000, 35000000])  
-  .domain(["< 1", "1", "30", "70", "> 120"])
-//.range(d3.interpolateReds(1/23),d3.interpolateReds(3/23),d3.interpolateReds(7/23),d3.interpolateReds(12/23))      
-// .range(["#ccece6", "#66c2a4", "#41ae76", "#238b45", "#005824"]);
+var beeLegend = d3.scaleOrdinal()  
+  .domain(["< 1", "1 +", "30 +", "70 +", "> 120"])
  .range(["#cbc9e2", "#9e9ac8", "#756bb1", "#54278f", "#2c134c"]);
-
-//var legendscale = d3.scaleLinear()
-//    .range([28, 69])
-//    .domain(beeScale2.domain());
-
 
 svgLegend.append("g")
   .attr("class", "legendQuant beeLegend")
@@ -96,63 +46,30 @@ svgLegend.append("g")
   .attr("transform", "translate(10,20)");
 var legendPop = d3.legendColor()
     .labelFormat(d3.format(".0f")).shapePadding(-2).shapeHeight(30)
-//    .labels(d3.legendHelpers.thresholdLabels).title('Bee Colony Loss in Thousands').titleWidth(90)
 .title('Honey Bee Colony Loss in Thousands').titleWidth(90)
-//    .labelOffset(30)
     .labelAlign("start")
-    //.useClass(true)
     .scale(beeLegend);
 svgLegend.select(".beeLegend")
   .call(legendPop);
-//var legendaxis = d3.axisRight()
-//    .scale(legendscale)
-//    .tickSize(6)
-//    .ticks(8);
-//svgLegend.select(".beeLegend")
-//    .call(legendaxis);
 
-
-
-
-
-var tempScale = d3.scaleThreshold()
-    //.domain([1000000, 3000000, 7000000, 12000000])  
+var tempScale = d3.scaleThreshold() 
   .domain([1.0, 2.2, 3.4, 4.6])
  .range(["#fcbba1","#fc9272","#fb6a4a","#de2d26","#66070a"]);
-//var tempLegend = d3.scaleThreshold()
-//    //.domain([1000000, 2500000, 7500000, 12500000, 35000000])  
-//  .domain([1, 2.2, 3.4, 4.6])
-//.range(["#fcbba1","#fc9272","#fb6a4a","#de2d26","#66070a"]);
-var tempLegend = d3.scaleOrdinal()
-    //.domain([1000000, 2500000, 7500000, 12500000, 35000000])  
-  .domain(["< 1.0", "1.0", "2.2", "3.4", "> 4.6"])
+var tempLegend = d3.scaleOrdinal()  
+  .domain(["< 1.0", "1.0 +", "2.2 +", "3.4 +", "> 4.6"])
 .range(["#fcbba1","#fc9272","#fb6a4a","#de2d26","#66070a"]);
 
 svgLegend.append("g")
   .attr("class", "legendQuant tempLegend")
-//.style("background-color","blue")
   .attr("transform", "translate(10,20)");
 var legendProd = d3.legendColor()
     .labelFormat(d3.format(".1f")).shapePadding(-2).shapeHeight(30)
-//    .labels(d3.legendHelpers.thresholdLabels).title('Temperature Change in Fahrenheit').titleWidth(90)
-//    //.useClass(true)
 .title('Temperature Change in Fahrenheit').titleWidth(90)
 
     .scale(tempLegend)
 
 svgLegend.select(".tempLegend")
   .call(legendProd);
-
-//d3.select(".beeLegend").select(".legendTitle").attr("transform", "translate(100,10)");
-//d3.select(".tempLegend").select(".legendTitle").attr("transform", "translate(113,10)");
-
-//d3.select(".state-title").style("opacity", "0");
-//d3.select(".bee").style("opacity", "0");
-//d3.select(".temp").style("opacity", "0");
-
-//d3.select(".all-title").style("opacity", "1");
-//d3.select(".allbee").style("opacity", "1");
-//d3.select(".alltemp").style("opacity", "1");
 
 d3.select(".state-title").text("United States").style("opacity", 1);
 d3.select(".bees").text("Bee Colony Loss | 1,421,000 colonies").style("opacity", 1);
@@ -161,24 +78,9 @@ d3.select(".temps").text("Temperature Increase | 3.5 degrees").style("opacity", 
 d3.select(".beeLegend").attr("opacity", "1");
 d3.select(".tempLegend").attr("opacity", "0");
 
-var colorAg = d3.scaleQuantize()
-//				.range(["#ccece6", "#66c2a4", "#41ae76", "#238b45", "#005824"]);
- .range(["#cbc9e2", "#9e9ac8", "#756bb1", "#54278f", "#2c134c"]);
-            //Colors derived from ColorBrewer, by Cynthia Brewer, and included in
-            //https://github.com/d3/d3-scale-chromatic
-var popLegend = d3.scaleLinear()
-      .range(["#fcbba1","#a50f15"]);
-
-var agLegend = d3.scaleLinear()
-//      .range(["#ccece6","#005824"]);
-//        .range(["#edf8fb", "#810f7c"])
-        .range(["#cbc9e2", "#2c134c"]);
-
 
 //Define quantize scale to sort data values into buckets of color for both sets of .csv data
 var colorBeeData = d3.scaleQuantize()
-//                    .range(["rgb(237,248,233)","rgb(186,228,179)","rgb(116,196,118)","rgb(49,163,84)","rgb(0,109,44)"]);
-//                  .range(["rgb(237,248,251)","rgb(179,205,227)","rgb(140,150,198)","rgb(136,86,167)","rgb(129,15,124)"]);
                    .range(["rgb(203,201,226)","rgb(158,154,200)","rgb(117,107,177)","rgb(84,39,143)","rgb(44,19,76)"]);
                     //Colors derived from ColorBrewer, by Cynthia Brewer, and included in
                     //https://github.com/d3/d3-scale-chromatic
@@ -192,34 +94,21 @@ var colorTempData = d3.scaleQuantize()
 var svgBee = d3.select("body")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
-//        .attr("height", height - (3 * margin.top)+10)
         .attr("height", height + margin.top + margin.bottom + margin.bottom)
         .attr("id", "beeSvg")
         .attr("transform", "translate(0,0)")
-//        .style("background-color", "#F8F8F8");
-//.on("click", stopped, true);
-
-// svgBee.append("rect")
-//        .attr("class", "background")
-//        .attr("width", width)
-//        .attr("height", height + margin.top + margin.bottom)
-//        .on("click", reset);
 
 var g = svgBee.append("g");
-
-//svgBee.call(zoom);
 
 // Define SVG.
 var svgLineGraph = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right + margin.right)                       // defines the width of the "div" of where the chart can be displayed
     .attr("height", height + margin.top + margin.bottom + margin.bottom)                     // defines the height of the "div" of where the chart can be displayed
-//.style("background-color", "#F8F8F8")
     .append("g")                                                             // groups elements together(clean code) and allows application of transformations                                                                                                                (affects how visual elements are rendered)
     .attr("id", "svgLine")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")"); // scales the dimensional appearance of graph based on the margin values
             
             var beeCsv = "data/beepop" + currentSliderValue + ".csv";
-//            var tempCsv = "data/temp" + currentSliderValue + ".csv";
             
 
 var parseTime = d3.timeParse("%Y"); // Tells d3 to parse the data as a date (years) when reading .csv strings. It can return a date object fromn there (which is used later on)
@@ -255,37 +144,10 @@ var line2 = d3.line()                                   // Defines lines on scre
         .x(function(d) { return x(d.date); })          // Data field for x coordinates
         .y(function(d) { return y2(d.t); });       // Data field for y coordinates
 
-//var ticks = [];
-//    for (var i = 0; i <= 100; i += 2.5) {
-//      ticks.push( { value: i, isVisible: i % 10 === 0 });
-//    } 
-//
-//var tickValues = ticks.map( function(t) { return t.value; });
-//
-// var isMajorTick = function (index) {
-//        return ticks[index].isVisible;
-//      }
-
 // Define X and Y AXIS
 function xAxis() {
   return d3.axisBottom(x)                              // Sets axis to be at bottom (orientation wise) 
     .ticks(10)
-//    .tickSize(10)
-//        .tickPadding(5)
-//    .tickValues(tickValues)
-//        .tickFormat(function (d, i) {
-//          return isMajorTick(i) ? d : "";})
-//    .tickValues(function(d,i) 
-//                        {
-//                if(i % 2 === 0 ) {
-//              return d;
-//              }
-//            })
-//            .filter(function (d) 
-//            { 
-//                return !!d; 
-//            } 
-//            );
 } 
 
 function yAxis() {
@@ -323,21 +185,12 @@ function tweenDash() {
 d3.csv("data/mergedBees.csv", types, function(error, data){   // Parses the data from the .csv file using a d3.csv request
     
  if (error) throw error;
-
-//  // format the data
-//  data.forEach(function(d) {
-//      d.date = +d.date;
-//      d.b = +d.beePop;
-//      d.stateName = d.state;
-//  });
     
     var newData = [];
                     
   // format the data
   data.forEach(function(d) {
-      //console.log(d)
       if(d.state === "all"){
-//          console.log(d.beePop)
           d.dt = d.date
           d.date = parseTime(d.date);
           d.dateInt = parseInt(d.dt)
@@ -345,52 +198,21 @@ d3.csv("data/mergedBees.csv", types, function(error, data){   // Parses the data
           d.stateName = d.state;
           newData.push(d);
       }
-//      console.log(d.state)
   });
 
   // Scale the range of the data
   x.domain(d3.extent(data, function(d) { return parseTime(d.date); }));
-//  x.domain(d3.extent(data, function(d) { return d.date; }));
   y.domain([d3.min(data, function(d) {return Math.min(d.b);}), d3.max(data, function(d) {return Math.max(d.b);})]);
     
-// console.log(x.domain)
-    
-//  var lg = calcLinear(newData, "x", "y", d3.min(newData, function(d){ return d.dateInt}), d3.min(newData, function(d){ return d.dateInt}));
-    
 var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
-    
-//    var lg = calcLinear(newData, "x", "y", 1978, 1978);
-    
-// console.log(d3.min(newData, function(d){ return d.dateInt}))
-// console.log(d3.min(newData, function(d){ return d.b}))
 
   svgLineGraph.append("line")
 	        .attr("class", "regression")
-//	        .attr("x1", x(parseTime("1978")))
             .attr("x1", x(parseTime(lg.ptA.x)))
 	        .attr("y1", y(lg.ptA.y))
-//	        .attr("x2", x(parseTime(lg.ptB.x)))
             .attr("x2", x(parseTime(lg.ptB.x)))
 	        .attr("y2", y(lg.ptB.y))
             .attr("id", "dotted1");
-//            .attr("x1", 0)
-//	        .attr("y1", 0)
-//	        .attr("x2", 100)
-//	        .attr("y2", 100)   
-//            .attr("stroke-width", 2)
-//            .attr("stroke", "black");
-    
-//    console.log(x(parseTime("1978")))
-//    console.log(x(parseTime(lg.ptA.x)))
-//    console.log(x2(lg.ptB.x))
-//    console.log(x(parseTime(lg.ptB.x)))
-//    console.log(x(parseTime("2017")))
-    
-    
-//    console.log(x(parseTime(lg.ptA.x)))
-//    console.log(y2(lg.ptA.y))
-//    console.log(x(parseTime(lg.ptB.x)))
-//    console.log(y2(lg.ptB.y))
 
   // Add the valueline path.
   svgLineGraph.append("path")
@@ -406,15 +228,7 @@ var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return
   // Add the X Axis
   var x_axis = svgLineGraph.append("g")
       .attr("transform", "translate(0," + (height + margin.bottom) + ")")
-//      .call(d3.axisBottom(x));
-      .call(xAxis(x));
-
-//   // Add the class 'minor' to all minor ticks
-//  x_axis.selectAll("g")
-//        .filter(function (d, i) {
-//          return !isMajorTick(i);
-//        })
-//        .classed("minor", true);    
+      .call(xAxis(x));    
     
   // This section defines any text/labels related to the axis
   svgLineGraph.append("text")
@@ -453,9 +267,6 @@ var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return
       .style("opacity", "0");
       
     var lines = document.getElementsByClassName('line');
-                
-//    console.log(lines)
-//    console.log(lines[1])
 
     var mousePerLine = mouseG.selectAll('.mouse-per-line')
       .data([newData])
@@ -465,9 +276,6 @@ var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return
     
      mousePerLine.append("circle")
       .attr("r", 7)
-//      .style("stroke", function(d) {
-//        return color(d.name);
-//      })
       .style("stroke", "black")
       .style("fill", "none")
       .style("stroke-width", "1px")
@@ -481,8 +289,7 @@ var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return
       .attr('height', height + margin.top + margin.bottom)
       .attr('fill', 'none')
       .attr('pointer-events', 'all')
-      .on('mouseout', function() { // on mouse out hide line, circles and text
-//        d3.select(this).style("cursor", "default"); 
+      .on('mouseout', function() { // on mouse out hide line, circles and text 
         d3.select(".mouse-line")
           .style("opacity", "0");
         d3.selectAll(".mouse-per-line circle")
@@ -491,7 +298,6 @@ var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return
           .style("opacity", "0");
       })
       .on('mouseover', function() { // on mouse in show line, circles and text
-//        d3.select(this).style("cursor", "pointer");
         d3.select(".mouse-line")
           .style("opacity", "0.6");
         d3.selectAll(".mouse-per-line circle")
@@ -510,12 +316,9 @@ var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return
 
         d3.selectAll(".mouse-per-line")
           .attr("transform", function(d, i) {
-//            console.log(width/mouse[0])
             var xDate = x.invert(mouse[0]),
                 bisect = d3.bisector(function(d) { return d.date; }).right;
                 idx = bisect(d.values, xDate);
-            
-            //console.log(d.values)
 
             var beginning = 0,
                 end = lines[i].getTotalLength(),
@@ -531,24 +334,14 @@ var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return
               else if (pos.x < mouse[0]) beginning = target;
               else break; //position found
             }
-
-//            d3.select(this).select('text')
-//              .text(y.invert(pos.y).toFixed(2));
             
-//            if(i == 0) {
             if(lines[i].id == "path") {
-//                console.log("A")
-//                console.log(lines[i])
                 d3.select(this).select('text')
               .text(y.invert(pos.y).toFixed(2));
-                //d3.select(".mouse-per-line circle").style("stroke", "steelBlue");
             }
             else {
-//                console.log("B")
-//                console.log(lines[i])
                 d3.select(this).select('text')
               .text(y2.invert(pos.y).toFixed(2));
-                //d3.select(".mouse-per-line circle").style("stroke", "red");
             }
 
             return "translate(" + mouse[0] + "," + pos.y +")";
@@ -558,34 +351,20 @@ var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return
 
 function types(d){
         if(d.state === "all"){
-//          console.log(d.beePop)
           d.dt = d.date
-//          d.date = parseTime(d.date);
           d.x = parseInt(d.dt)
           d.y = +d.beePop;
-//          d.stateName = d.state;
-//          newData.push(d);
       }
-    
-//	    d.x = d.dateInt;
-//	    d.y = +d.beePop;
 
 	    return d;
 	  }
 
 function types2(d){
         if(d.state === "all"){
-//          console.log(d.beePop)
           d.dt = d.date
-//          d.date = parseTime(d.date);
           d.x = parseInt(d.dt)
           d.y = +d.Temp;
-//          d.stateName = d.state;
-//          newData.push(d);
       }
-    
-//	    d.x = d.dateInt;
-//	    d.y = +d.beePop;
 
 	    return d;
 	  }
@@ -606,11 +385,7 @@ function types2(d){
     function calcLinear(data, x, y, minX, minY, maxY){
       /////////
       //SLOPE//
-      /////////
-//     console.log("MinX: " + minX)
-//        console.log("MinY: " + minY)
-//
-//      console.log(data)    
+      /////////   
         
       // Let n = the number of data points
       var n = data.length;
@@ -622,15 +397,10 @@ function types2(d){
       data.forEach(function(d,i){
         var obj = {};
         obj.x = d[x];
-//        console.log(d[x])
         obj.y = d[y];
-//        console.log(d[y])
         obj.mult = obj.x*obj.y;
         pts.push(obj);
-//          console.log(obj)
       });
-        
-//      console.log(pts)
 
       // Let a equal n times the summation of all x-values multiplied by their corresponding y-values
       // Let b equal the sum of all x-values times the sum of all y-values
@@ -654,8 +424,6 @@ function types2(d){
       // Plug the values that you calculated for a, b, c, and d into the following equation to calculate the slope
       // slope = m = (a - b) / (c - d)
       var m = (a - b) / (c - d);
-        
-//      console.log(m)
 
       /////////////
       //INTERCEPT//
@@ -675,23 +443,6 @@ function types2(d){
 //			document.getElementsByClassName("equation")[0].innerHTML = "y = " + m + "x + " + b;
 //			document.getElementsByClassName("equation")[1].innerHTML = "x = ( y - " + b + " ) / " + m;
         
-//        console.log("working?")
-
-//      console.log("AHHHHHHH: " + ((minY - b) / m))
-//        console.log(Math.floor(((minY - b) / m)))
-        
-      // return an object of two points
-      // each point is an object with an x and y coordinate
-//        return {
-//        ptA : {
-//          x: minX,
-//          y: m * minX + b
-//        },
-//        ptB : {
-//          y: minY,
-//          x: Math.floor((minY - b) / m)
-//        }
-//      }
       if(m > 0) {
           return {
         ptA : {
@@ -721,20 +472,12 @@ function types2(d){
 d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the data from the .csv file using a d3.csv request
     
  if (error) throw error;
-
-//  // format the data
-//  data.forEach(function(d) {
-//      d.date = +d.date;
-//      d.t = +d.Temp;
-//  });
     
     var newData = [];
                     
   // format the data
   data.forEach(function(d) {
-      //console.log(d)
       if(d.state === "all"){
-//          console.log(d.beePop)
           d.dt = d.date
           d.date = parseTime(d.date);
           d.dateInt = parseInt(d.dt)
@@ -742,7 +485,6 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
           d.stateName = d.state;
           newData.push(d);
       }
-//      console.log(d.state)
   });
 
   // Scale the range of the data
@@ -750,30 +492,14 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
   y2.domain([d3.min(data, function(d) {return Math.min(d.t);}), d3.max(data, function(d) {return Math.max(d.t); })]);
     
     var lg = calcLinear(newData, "x", "y", 1978, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
-//    var lg = calcLinear(newData, "x", "y", 1978, 1978);
     
     svgLineGraph.append("line")
 	        .attr("class", "regression")
-//	        .attr("x1", x(parseTime("1978")))
             .attr("x1", x(parseTime(lg.ptA.x)))
 	        .attr("y1", y2(lg.ptA.y))
-//	        .attr("x2", x(parseTime(lg.ptB.x)))
             .attr("x2", x(parseTime(lg.ptB.x)))
 	        .attr("y2", y2(lg.ptB.y))
-//            .transition()
-//            .duration(3000)
-//            .attrTween("stroke-dasharray", tweenDash)
             .attr("id", "dotted2");
-    
-//    console.log(x(parseTime(lg.ptA.x)))
-//    console.log(y2(lg.ptA.y))
-//    console.log(x(parseTime(lg.ptB.x)))
-//    console.log(y2(lg.ptB.y))
-    
-//    console.log((parseTime(lg.ptA.x)))
-//    console.log((lg.ptA.y))
-//    console.log((parseTime(lg.ptB.x)))
-//    console.log((lg.ptB.y))
 
   // Add the valueline2 path.
   svgLineGraph.append("path")
@@ -815,9 +541,6 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
       .style("opacity", "0");
       
     var lines = document.getElementsByClassName('line');
-                
-//    console.log(lines)
-//    console.log(lines[1])
 
     var mousePerLine = mouseG.selectAll('.mouse-per-line')
       .data([newData])
@@ -827,9 +550,6 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
     
      mousePerLine.append("circle")
       .attr("r", 7)
-//      .style("stroke", function(d) {
-//        return color(d.name);
-//      })
       .style("stroke", "black")
       .style("fill", "none")
       .style("stroke-width", "1px")
@@ -870,12 +590,9 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
 
         d3.selectAll(".mouse-per-line")
           .attr("transform", function(d, i) {
-//            console.log(width/mouse[0])
             var xDate = x.invert(mouse[0]),
                 bisect = d3.bisector(function(d) { return d.date; }).right;
                 idx = bisect(d.values, xDate);
-            
-            //console.log(d.values)
 
             var beginning = 0,
                 end = lines[i].getTotalLength(),
@@ -891,211 +608,30 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
               else if (pos.x < mouse[0]) beginning = target;
               else break; //position found
             }
-            
-//            console.log(d3.select(this).select('text'))
 
-//            if(i == 0) {
             if(lines[i].id == "path") {
-//                console.log("C")
-//                console.log(lines[i])
                 d3.select(this).select('text')
-              .text(y.invert(pos.y).toFixed(2)).style("font-size", "22").style("font-weight", "bold").style("color", "red");
-                //d3.select(".mouse-per-line circle").style("stroke", "steelBlue");
+              .text(y.invert(pos.y).toFixed(0)).style("font-size", "22").style("font-weight", "bold").style("color", "red");
             }
             else {
-//                console.log("D")
-//                console.log(lines[i])
                 d3.select(this).select('text')
-              .text(y2.invert(pos.y).toFixed(2)).style("font-size", "22").style("font-weight", "bold");
-                //d3.select(".mouse-per-line circle").style("stroke", "red");
+              .text(y2.invert(pos.y).toFixed(1)).style("font-size", "22").style("font-weight", "bold");
             }
 
             return "translate(" + mouse[0] + "," + pos.y +")";
           });
-//                    d3.select("path#path").select('text')
-//              .text(y.invert(pos.y).toFixed(2));
     });
 });
 
 
 
-//d3.selectAll(".mouse-per-line")
-//          .attr("transform", function(d) {
-//            console.log(width/mouse[0])
-//            var xDate = x.invert(mouse[0]),
-//                bisect = d3.bisector(function(d) { return d.date; }).right;
-//                idx = bisect(d.values, xDate);
-//            
-//            //console.log(d.values)
-//
-//            var beginning = 0,
-//                end = lines[0].getTotalLength(),
-//                target = null;
-//
-//            while (true){
-//              target = Math.floor((beginning + end) / 2);
-//              pos = lines[0].getPointAtLength(target);
-//              if ((target === end || target === beginning) && pos.x !== mouse[0]) {
-//                  break;
-//              }
-//              if (pos.x > mouse[0])      end = target;
-//              else if (pos.x < mouse[0]) beginning = target;
-//              else break; //position found
-//            }
-//
-//            d3.select(this).select('text')
-//              .text(y.invert(pos.y).toFixed(2));
-//
-//            return "translate(" + mouse[0] + "," + pos.y +")";
-//          });
-//        
-//        d3.selectAll(".mouse-per-line")
-//          .attr("transform", function(d) {
-//            console.log(width/mouse[0])
-//            var xDate = x.invert(mouse[0]),
-//                bisect = d3.bisector(function(d) { return d.date; }).right;
-//                idx = bisect(d.values, xDate);
-//            
-//            //console.log(d.values)
-//
-//            var beginning = 0,
-//                end = lines[1].getTotalLength(),
-//                target = null;
-//
-//            while (true){
-//              target = Math.floor((beginning + end) / 2);
-//              pos = lines[1].getPointAtLength(target);
-//              if ((target === end || target === beginning) && pos.x !== mouse[0]) {
-//                  break;
-//              }
-//              if (pos.x > mouse[0])      end = target;
-//              else if (pos.x < mouse[0]) beginning = target;
-//              else break; //position found
-//            }
-//
-//            d3.select(this).select('text')
-//              .text(y2.invert(pos.y).toFixed(2));
-//
-//            return "translate(" + mouse[0] + "," + pos.y +")";
-
-
-    
-
-// var mouseG = svgLineGraph.append("g")
-//      .attr("class", "mouse-over-effects");
-//
-//    mouseG.append("path") // this is the black vertical line to follow mouse
-//      .attr("class", "mouse-line")
-//      .style("stroke", "black")
-//      .style("stroke-width", "1px")
-//      .style("opacity", "0");
-//      
-//    var lines = document.getElementsByClassName('line');
-//                
-//    console.log(lines)
-//
-//    var mousePerLine = mouseG.selectAll('.mouse-per-line')
-//      .data(cities)
-//      .enter()
-//      .append("g")
-//      .attr("class", "mouse-per-line");
-//
-//    mousePerLine.append("circle")
-//      .attr("r", 7)
-//      .style("stroke", function(d) {
-//        return color(d.name);
-//      })
-//      .style("fill", "none")
-//      .style("stroke-width", "1px")
-//      .style("opacity", "0");
-//
-//    mousePerLine.append("text")
-//      .attr("transform", "translate(10,3)");
-//
-//    mouseG.append('svg:rect') // append a rect to catch mouse movements on canvas
-//      .attr('width', width) // can't catch mouse events on a g element
-//      .attr('height', height)
-//      .attr('fill', 'none')
-//      .attr('pointer-events', 'all')
-//      .on('mouseout', function() { // on mouse out hide line, circles and text
-//        d3.select(".mouse-line")
-//          .style("opacity", "0");
-//        d3.selectAll(".mouse-per-line circle")
-//          .style("opacity", "0");
-//        d3.selectAll(".mouse-per-line text")
-//          .style("opacity", "0");
-//      })
-//      .on('mouseover', function() { // on mouse in show line, circles and text
-//        d3.select(".mouse-line")
-//          .style("opacity", "1");
-//        d3.selectAll(".mouse-per-line circle")
-//          .style("opacity", "1");
-//        d3.selectAll(".mouse-per-line text")
-//          .style("opacity", "1");
-//      })
-//      .on('mousemove', function() { // mouse moving over canvas
-//        var mouse = d3.mouse(this);
-//        d3.select(".mouse-line")
-//          .attr("d", function() {
-//            var d = "M" + mouse[0] + "," + height;
-//            d += " " + mouse[0] + "," + 0;
-//            return d;
-//          });
-//
-//        d3.selectAll(".mouse-per-line")
-//          .attr("transform", function(d, i) {
-//            console.log(width/mouse[0])
-//            var xDate = x.invert(mouse[0]),
-//                bisect = d3.bisector(function(d) { return d.date; }).right;
-//                idx = bisect(d.values, xDate);
-//
-//            var beginning = 0,
-//                end = lines[i].getTotalLength(),
-//                target = null;
-//
-//            while (true){
-//              target = Math.floor((beginning + end) / 2);
-//              pos = lines[i].getPointAtLength(target);
-//              if ((target === end || target === beginning) && pos.x !== mouse[0]) {
-//                  break;
-//              }
-//              if (pos.x > mouse[0])      end = target;
-//              else if (pos.x < mouse[0]) beginning = target;
-//              else break; //position found
-//            }
-//
-//            d3.select(this).select('text')
-//              .text(y.invert(pos.y).toFixed(2));
-//
-//            return "translate(" + mouse[0] + "," + pos.y +")";
-//          });
-//    });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            
+     
             // Load Population .csv data by state
-//d3.csv("data/beepop1976.csv", function(data) {
             d3.csv("data/data.csv", function(data) {
-//                d3.selectAll("#beeGraph").remove();
     
     //Set input domain for pop. density color scale
     colorBeeData.domain([
         d3.min(data, function(d) {
-//             console.log(d.numColonies)
             return (d.numColonies); }), // Population divided by area gives you population density for the region
         
         d3.max(data, function(d) {    //console.log(d.numColonies)
@@ -1116,12 +652,6 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
             var temps = parseFloat(data[i].temps);
             var bees = parseFloat(data[i].bees);
             var code = data[i].abbreviation;
-
-//            //Grab bee population
-//            var dataBeePopulation = +data[i].numColonies;
-            
-            //Grab state temperature
-//            var dataTemperature = parseFloat(+data[i].temperature;);
 
             //Find the corresponding region inside the GeoJSON
             for (var j = 0; j < json.features.length; j++) {
@@ -1176,13 +706,10 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                             var state = d.properties.name;
                             var temps = d.properties.temps;
                             var bees = d.properties.bees;
-                            //console.log(d3.select(this))
+            
                             //Get this bar's x/y values, then augment for the tooltip
                             var xPosition = parseFloat(d3.select(this).attr("x")) + 140.0;// augmented to the right of the circle it defines
                             var yPosition = parseFloat(d3.select(this).attr("y")) + 320;
-                           
-//                           console.log(xPosition)
-//                           console.log(yPosition)
                            
                            d3.select(this).style("cursor", "pointer"); 
                            
@@ -1197,9 +724,6 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                            
                             d3.select(this)
                                 .style("opacity", "1");
-                           
-//                           d3.select(".tooltip").style("left", 180 + "px");
-//                           d3.select(".tooltip").style("top", 570 + "px");
                         
                             d3.select(".state-title").text(state).style("opacity", 0).style("opacity", 1);
                             if (bees > 0){
@@ -1218,24 +742,12 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                             else  {
                                 d3.select(".temps").text("Net Temp. Increase \xa0|\xa0 Data Unavailable").style("opacity", 1);
                             }
-                            // if (temps > 0){
-                                // d3.select(".temps").text("Net Temperature Increase | " + temps + " degrees").style("opacity", 1);
-                               // // d3.select(".temps").text("Net Temperature Increase");
-                               // // d3.select(".temps").text(" | " + temps + " degrees").style("opacity", 1);
-                            // } else if (temps < 0){
-                                // d3.select(".temps").text("Net Temperature Decrease | " + temps + " degrees").style("opacity", 1);
-                            // }
                            
                            //Show the tooltip 
-                            d3.select("#tooltip").classed("hidden", false);
-//                           d3.select("#tooltip.hidden").classed("hidden", false);
-
-                            
-                        
+                            d3.select("#tooltip").classed("hidden", false);                    
                         })
                        .on("mouseout", function(d){
                            
-//                           console.log(d3.select(this))
                            console.log(d3.select(this)._groups[0][0])
                            console.log(active.node())
                         
@@ -1260,26 +772,13 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                             var bees = d.properties.bees;
                            
                            d3.select(this).style("cursor", "default"); 
-                            
-//                            d3.select(".state-title").text(state).transition().duration(500).style("opacity", 0);
-//                            if (bees){
-//                                d3.select(".bees").text("Bee Colony Loss | " + formatComma(bees) + ",000 colonies").transition().duration(500).style("opacity", 0);
-//                            }
-//                            if (temps){
-//                                d3.select(".temps").text("Temperature Increase | " + temps + " degrees").transition().duration(500).style("opacity", 0);
-//                            }
                            
                            d3.select(".state-title").text("United States").style("opacity", 1);
                             d3.select(".bees").text("Honey Bee Loss | 1,421,000 colonies").style("opacity", 1);
                             d3.select(".temps").text("Temperature Increase | 3.5 degrees").style("opacity", 1);
-                           
-//                           d3.select(this)
-//                                .style("opacity", "1");
         
                             //Show the tooltip 
-                            d3.select("#tooltip").classed("hidden", true);
-
-                            
+                            d3.select("#tooltip").classed("hidden", true);    
                        })
             
                    // Adding Labels for each State
@@ -1293,23 +792,10 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                             }
                             return d.properties.code;
                         })
-                       .attr("x", function(d){
-                            
-//                        if (d.properties.code == "MD"){
-//                            return path.centroid(d)[0] - 3;
-//                        } else if (d.properties.code == "NJ"){
-//                            return path.centroid(d)[0] - 1;
-//                        }
-//                        
+                       .attr("x", function(d){                       
                             return path.centroid(d)[0];
                         })
-                       .attr("y", function(d){
-//                            if (d.properties.code == "MD"){
-//                                return path.centroid(d)[1] - 2;
-//                            } else if (d.properties.code == "NJ"){
-//                                return path.centroid(d)[1] - 6;
-//                            }
-                            
+                       .attr("y", function(d){          
                             return  path.centroid(d)[1];
                         })
                         .attr("dy", function(d){
@@ -1392,19 +878,13 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                 .on("click", function(){
                     // Determine if current line is visible
                     togData=!togData;
-                    //console.log(togData);
-//                    d3.select(".toggleCity").style("background-color","#dfdfdf")
-//                console.log(d3.select(".toggleCity"))
-                    
-                    //if (togData == true){
+
                         g.selectAll("path")
                             .transition().duration(1000)
                             .style("fill", function(d) {
                                 var value = d.properties.temps;
                                 if (value) {
                                     //If value exists…
-                                    /*console.log(colorPop(value))
-                                    console.log((value))*/
                                     return tempScale(value);
                                 } else {
                                     //If value is undefined…
@@ -1414,18 +894,7 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                     
                         d3.select(".tempLegend").transition().duration(1000).attr("opacity", "1");
                         d3.select(".beeLegend").transition().duration(1000).attr("opacity", "0");
-                        
-//                        d3.select("body")
-//                            .transition().duration(1000)
-//                            .style("background-color","#381616");
-                        
-//                        d3.select(".toggleData")
-//                            .transition().duration(1000)
-//                            .style("background-color","#823232");
-//                        
-//                        d3.select(".toggleCity")
-//                            .transition().duration(1000)
-//                            .style("background-color","#823232");  
+  
                         var stateNaming = d3.select("#bloc2").text();
                         
                         d3.select("#bloc1")
@@ -1435,23 +904,17 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                         d3.select("#bloc2")
                             .transition().duration(1000)
                             .text(stateNaming);
-                        
-                        //console.log(d3.select("h1"));
-                        
-                    //}
+
                 });
                 
                  d3.select(".toggleData")
                 .on("click", function() {
-                    //if (togData == false){
                         g.selectAll("path")
                             .transition().duration(1000)
                             .style("fill", function(d) {
                                 var value = d.properties.bees;
                                 if (value) {
-                                    //If value exists…
-                                    
-                                    
+                                    //If value exists…   
                                     return beeScale(value);
                                 } else {
                                     //If value is undefined…
@@ -1461,18 +924,7 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                     
                         d3.select(".tempLegend").transition().duration(1000).attr("opacity", "0");
                         d3.select(".beeLegend").transition().duration(1000).attr("opacity", "1");
-                        
-//                        d3.select("body")
-//                            .transition().duration(1000)
-//                            .style("background-color","#0c210e");
-                        
-//                        d3.select(".toggleData")
-//                            .transition().duration(1000)
-//                            .style("background-color","#28682d");
-//                        
-//                        d3.select(".toggleCity")
-//                            .transition().duration(1000)
-//                            .style("background-color","#28682d");
+
                         var stateNaming = d3.select("#bloc2").text();
                         
                         d3.select("#bloc1")
@@ -1482,15 +934,11 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                         d3.select("#bloc2")
                             .transition().duration(1000)
                             .text(stateNaming);
-                    //}
-                 //});
+
                  });
         
                  d3.select(".toggleSeparation").on("click", function (e) {
-//                    zoomOutLines();
                      zoomLinesToggled = true;
-//                     console.log(d3.select(".state-title2")._groups[0][0].textContent)
-//                     var currStateName = d3.select(".state-title2")._groups[0][0].innerHTML;
                      var currStateName = "";
                      if(active.node() != null) {
                          currStateName = active.node().getAttribute("stateName");
@@ -1499,7 +947,6 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                      else {
                          currStateName = "United States";
                      }
-//                     console.log(currStateName)
                      console.log(active.node())
                      if(currStateName === "United States") {
                         drawChart("all");
@@ -1507,121 +954,38 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
                      else {
                         drawChart(currStateName)   
                      }
-//                     drawChart()
-//                     console.log("s")
                 });
                 d3.select(".toggleOverlap").on("click", function (e) {
-//                    zoomResetLines();
                     zoomLinesToggled = false;
                     var currStateName = "";
-//                    console.log(d3.select(".state-title2")._groups[0][0])
-//                    console.log(d3.select(".state-title2")._groups[0][0].textContent)
-//                    var currStateName = d3.select(".state-title2")._groups[0][0].innerHTML;
                      if(active.node() != null) {
                          currStateName = active.node().getAttribute("stateName");
                      }
                      else {
                          currStateName = "United States";
                      }
-//                    console.log(currStateName)
                     if(currStateName === "United States") {
                         drawChart("all");
                     }
                     else {
                         drawChart(currStateName)   
                     }
-//                    console.log("o")
                 });
             
     });
 });
 
-//function zoomed1() {
-//
-//    svg.select(".axisRed").transition().duration(1000).call(yAxisRed);
-//    svg.select("#xAxis").transition().duration(1000).call(xAxisRed);
-//    console.log("red " + yScaleRed.domain());
-//    svg.selectAll("#redLine")
-//        .datum(seaData)
-//        .transition().duration(1000)
-//        .attr("d", line1);  
-//    svg.selectAll("#redCircle")
-//        .data(seaData)
-//        .attr("cx", function(d) { return xScaleRed(d.Sea_Year); })
-//        .attr("cy", function(d) { return yScaleRed(d.GMSL); });
-//
-//};
-//
-//function zoomed2() {
-//
-//    svg.select(".axisBlue").transition().duration(1000).call(yAxisBlue);
-//    svg.select(".x.axis").call(xAxisBlue);
-//    svg.selectAll("#blueLine")
-//        .datum(tempData)
-//        .transition().duration(1000)
-//        .attr("d", line2);  
-//    svg.selectAll("#blueCircle")
-//        .data(tempData)
-//        .attr("cx", function(d) { return xScaleBlue(d.Temp_Year); })
-//        .attr("cy", function(d) { return yScaleBlue(d.Annual_5_Year_Mean); });
-//
-//};
-
-//function zoomOutLines() {
-//    
-//    svgLineGraph.call(
-//        d3.behavior.zoom()
-//        .y(y)
-//        .scaleExtent([1, 10])
-//        .on("zoom", zoomed1)
-////        .y(y.domain( displayMore == false ? [-138.81745544323303,81.98254455676701] : [-370.5873381902873,82.45929302054348] ))
-////        .event);
-//
-//    svgLineGraph.call(
-//        d3.behavior.zoom()
-//        .y(y2)
-//        .scaleExtent([1, 10])
-//        .on("zoom", zoomed2)
-////        .y(y2.domain( displayMore == false ? [-0.12298306496912875,0.9170169350308713] : [-1.0490103069115129,1.3402822714823206] ))
-////        .event);
-//
-//};  
-//
-///***************Reset Zoom Logic/Overlap Lines***************/
-//function zoomResetLines() {
-//
-//    svgLineGraph.call(
-//        d3.behavior.zoom()
-//        .y(y)
-//        .scaleExtent([1, 10])
-//        .on("zoom", zoomed1)
-//        .y(y.domain( displayMore == false ? [-22.5,76.1] : d3.extent(seaData, function(d) { return d.GMSL;}) ))
-//        .event);
-//
-//    svgLineGraph.call(
-//        d3.behavior.zoom()
-//        .y(y2)
-//        .scaleExtent([1, 10])
-//        .on("zoom", zoomed2)
-//        .y(y2.domain( displayMore == false ? [0.18,0.7] : d3.extent(tempData, function(d) { return d.Annual_5_Year_Mean;}) ))
-//        .event);
-//};
-
 function clicked(d) {
-                //console.log(g.selectAll("path").attr("d", path))
                 g.selectAll("path").attr("d", path).style("opacity", "0.2")
                   console.log(d)
-                 //console.log(d.id)
                  var stateId = d.id;
                  console.log(d.id)
                   
                   console.log(g.selectAll("path"))
-//                  console.log(g.selectAll("path")._groups[0][0])
                  console.log(g.selectAll("path")._groups[0][stateId])
                   console.log(g.selectAll("path")._groups[0][stateId].style.opacity)
                  g.selectAll("path")._groups[0][stateId].style.opacity = 1;
     
-//                if (active.node() === this) return reset();
                   if (active.node() === this) {
                       active.node().setAttribute("stroke-width","0.4")
                       active.node().setAttribute("stroke","#fff")
@@ -1632,8 +996,6 @@ function clicked(d) {
                   }
                   console.log(active.node())
                   if(active.node() === null && active.node() !== this) {
-//                      active.node().setAttribute("stroke-width","0.4")
-//                      active.node().setAttribute("stroke","#fff")
                       active.classed("active", false);
                       active = d3.select(this).classed("active", true);
                       active.node().setAttribute("stroke-width","4")
@@ -1647,14 +1009,10 @@ function clicked(d) {
                       active = d3.select(this).classed("active", true);
                       active.node().setAttribute("stroke-width","4")
                       active.node().setAttribute("stroke","#ffb")
-//                      console.log(active.node().parent)
                       console.log(active.node())
                       console.log(active.node().getAttribute("style"))
-//                      active.node().setAttribute("style","opacity: 0.2")
                       console.log("gg")
                   }
-//                  active.classed("active", false);
-//                  active = d3.select(this).classed("active", true);
                   var bounds = path.bounds(d),
                       dx = bounds[1][0] - bounds[0][0],
                       dy = bounds[1][1] - bounds[0][1],
@@ -1662,69 +1020,28 @@ function clicked(d) {
                       y = (bounds[0][1] + bounds[1][1]) / 2,
                       scale = Math.max(1, Math.min(8, 0.9 / Math.max(dx / width, dy / height))),
                       translate = [width / 2 - scale * x, height / 2 - scale * y];
-//                  d3.select(path).style("stroke","#ffb")
-//                  console.log(d3.select(this))
-//                  console.log(d3.select(this)._groups[0][0])
-//                  d3.select(this)._groups[0][0].stroke-width = "2";
-//    console.log(d3.select(this)._groups[0][0].setAttribute("stroke-width","2").setAttribute("stroke","#ffb"))
-    
-//    d3.select(this)._groups[0][0].setAttribute("stroke-width","3")
-//    d3.select(this)._groups[0][0].setAttribute("stroke","#ffb")
-    
-//                  svgBee.transition()
-//                      .duration(750)
-//                      // .call(zoom.translate(translate).scale(scale).event); // not in d3 v4
-//                      .call(zoom.transform, d3.zoomIdentity.translate(translate[0],translate[1]).scale(scale) ); // updated for d3 v4
-                  // create a callback for the neighborhood hover
-//                    var mover = function(d) {
+
                       var neigh = d.properties.name;
-//                      d3.select('#svgLine path.' + neigh).style('fill', 'black');
-//                        console.log()
-                        //console.log(neigh)
-                       
 
                       drawChart(neigh);
                     d3.select("#bloc2")
                             .transition().duration(1000)
                             .text(neigh);
-//                    };
                 }
             function reset() {
                   active.classed("active", false);
                   active = d3.select(null);
-//                d3.select(this)._groups[0][0].setAttribute("stroke-width","0.4")
-//                d3.select(this)._groups[0][0].setAttribute("stroke","#fff")
-//                  svgBee.transition()
-//                      .duration(750)
-//                      // .call( zoom.transform, d3.zoomIdentity.translate(0, 0).scale(1) ); // not in d3 v4
-//                      .call( zoom.transform, d3.zoomIdentity ); // updated for d3 v4
                       var neigh = "all";
-//                      d3.select('#svgLine path.' + neigh).style('fill', 'black');
-//                        console.log()
-                        //console.log(neigh)
-                       
 
                       drawChart(neigh);
                 d3.select("#bloc2")
                             .transition().duration(1000)
                             .text("United States");
                 }
-//            function zoomed() {
-//                  g.style("stroke-width", 1 / d3.event.transform.k + "px");
-//                  // g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")"); // not in d3 v4
-//                  g.attr("transform", d3.event.transform); // updated for d3 v4
-//                }
-//                // If the drag behavior prevents the default click,
-//                // also stop propagation so we don’t click-to-zoom.
-//            function stopped() {
-//                  if (d3.event.defaultPrevented) d3.event.stopPropagation();
-//                }
 
             // create a function to draw the timeseries for each neighborhood
             var drawChart = function(field) {
               // remove the previous chart
-                
-                //console.log(field)
               
                 d3.select('#svgLine').select('#path').remove();
                 d3.select('#svgLine').select('#path2').remove();
@@ -1736,35 +1053,19 @@ function clicked(d) {
                 
                 function types3(d){
                     if(field === d.state){
-            //          console.log(d.beePop)
                       d.dt = d.date
-            //          d.date = parseTime(d.date);
                       d.x = parseInt(d.dt)
                       d.y = +d.beePop;
-            //          d.stateName = d.state;
-            //          newData.push(d);
                   }
-
-            //	    d.x = d.dateInt;
-            //	    d.y = +d.beePop;
-
                     return d;
                   }
                 
                 function types4(d){
                     if(field === d.state){
-            //          console.log(d.beePop)
                       d.dt = d.date
-            //          d.date = parseTime(d.date);
                       d.x = parseInt(d.dt)
                       d.y = +d.Temp;
-            //          d.stateName = d.state;
-            //          newData.push(d);
                   }
-
-            //	    d.x = d.dateInt;
-            //	    d.y = +d.beePop;
-
                     return d;
                   }
                 
@@ -1777,9 +1078,7 @@ function clicked(d) {
                     
   // format the data
   data.forEach(function(d) {
-      //console.log(d)
       if(field === d.state){
-//          console.log(d.beePop)
           d.dt = d.date
           d.date = parseTime(d.date);
           d.dateInt = parseInt(d.dt)
@@ -1787,7 +1086,6 @@ function clicked(d) {
           d.stateName = d.state;
           newData.push(d);
       }
-//      console.log(d.state)
   });
                     
   if(!zoomLinesToggled) {
@@ -1796,21 +1094,15 @@ function clicked(d) {
   y.domain([d3.min(data, function(d) {return Math.min(d.b);}), d3.max(data, function(d) {return Math.max(d.b);})]);
                     
   var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
-    
-//    var lg = calcLinear(newData, "x", "y", 1978, 1978);
-  
 
   svgLineGraph.append("line")
 	        .attr("class", "regression")
-//	        .attr("x1", x(parseTime("1978")))
             .attr("x1", x(parseTime(lg.ptA.x)))
 	        .attr("y1", y(lg.ptA.y))
-//	        .attr("x2", x(parseTime(lg.ptB.x)))
             .attr("x2", x(parseTime(lg.ptB.x)))
 	        .attr("y2", y(lg.ptB.y))
             .attr("id","dotted1");
             
-
   // Add the valueline path.
   svgLineGraph.append("path")
       .data([newData])
@@ -1822,70 +1114,35 @@ function clicked(d) {
         .duration(2000)
         .attrTween("stroke-dasharray", tweenDash);
 
-//  // Add the X Axis
-//  svgLineGraph.append("g")
-//      .attr("transform", "translate(0," + (height + margin.bottom) + ")")
-//      .call(d3.axisBottom(x));
-////                    .call(xAxis(x));
-    
-  // This section defines any text/labels related to the axis
-//  svgLineGraph.append("text")
-//      .attr("y", 7.4 * margin.bottom)
-//      .attr("x",width/1.87)
-//      .attr("dy", "1em")
-//      .style("text-anchor", "middle")
-//      .attr("font-weight", "bold")
-//      .attr("font-size", "14px")
-//      .text("Years");
-
-  // Add the Y Axis
+// Add the Y Axis
   svgLineGraph.append("g")
       .attr("class", "axisSteelBlue")
     .attr("id", "leftaxis")
       .call(d3.axisLeft(y));
   
-//  // This section defines any text/labels related to the axis
-//  svgLineGraph.append("text")
-//      .attr("transform", "rotate(-90)")
-//      .attr("y", 0 - margin.left)
-//      .attr("x",0 - (height / 2))
-//      .attr("dy", "1em")
-//      .style("text-anchor", "middle")
-//      .attr("font-weight", "bold")
-//      .attr("font-size", "14px")
-//      .text("Number of Honey Bee Colonies (Thousands)");
-//       console.log("collapse")
   }
   else {
       // Scale the range of the data
   x.domain(d3.extent(data, function(d) { return parseTime(d.date); }));
   y.domain([d3.min(data, function(d) {return Math.min(d.b);}), d3.max(data, function(d) {return Math.max(d.b);})]);
       
-//  console.log(y.domain())
   var ydomainLow = y.domain()[0];
   var ydomainHigh = y.domain()[1];
   var ydomainLength = ydomainHigh - ydomainLow;
   var yaddVal = ydomainLength / 2;
-// console.log(domainLength)
       
   y.domain([(ydomainLow - (3 *yaddVal)), (ydomainHigh)]);        
                     
   var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
-    
-//    var lg = calcLinear(newData, "x", "y", 1978, 1978);
   
-
   svgLineGraph.append("line")
 	        .attr("class", "regression")
-//	        .attr("x1", x(parseTime("1978")))
             .attr("x1", x(parseTime(lg.ptA.x)))
 	        .attr("y1", y(lg.ptA.y))
-//	        .attr("x2", x(parseTime(lg.ptB.x)))
             .attr("x2", x(parseTime(lg.ptB.x)))
 	        .attr("y2", y(lg.ptB.y))
             .attr("id","dotted1");
             
-
   // Add the valueline path.
   svgLineGraph.append("path")
       .data([newData])
@@ -1897,59 +1154,24 @@ function clicked(d) {
         .duration(2000)
         .attrTween("stroke-dasharray", tweenDash);
 
-//  // Add the X Axis
-//  svgLineGraph.append("g")
-//      .attr("transform", "translate(0," + (height + margin.bottom) + ")")
-//      .call(d3.axisBottom(x));
-////                    .call(xAxis(x));
-    
-  // This section defines any text/labels related to the axis
-//  svgLineGraph.append("text")
-//      .attr("y", 7.4 * margin.bottom)
-//      .attr("x",width/1.87)
-//      .attr("dy", "1em")
-//      .style("text-anchor", "middle")
-//      .attr("font-weight", "bold")
-//      .attr("font-size", "14px")
-//      .text("Years");
-
   // Add the Y Axis
   svgLineGraph.append("g")
       .attr("class", "axisSteelBlue")
     .attr("id", "leftaxis")
       .call(d3.axisLeft(y));
   
-//  // This section defines any text/labels related to the axis
-//  svgLineGraph.append("text")
-//      .attr("transform", "rotate(-90)")
-//      .attr("y", 0 - margin.left)
-//      .attr("x",0 - (height / 2))
-//      .attr("dy", "1em")
-//      .style("text-anchor", "middle")
-//      .attr("font-weight", "bold")
-//      .attr("font-size", "14px")
-//      .text("Number of Honey Bee Colonies (Thousands)");
-//      console.log("expand")
   }
 });
 
 d3.csv("data/mergedTemp.csv", types4, function(error, data){   // Parses the data from the .csv file using a d3.csv request
     
  if (error) throw error;
-
-//  // format the data
-//  data.forEach(function(d) {
-//      d.date = +d.date;
-//      d.t = +d.Temp;
-//  });
     
     var newData = [];
                     
   // format the data
   data.forEach(function(d) {
-      //console.log(d)
       if(field === d.state){
-//          console.log(d.beePop)
           d.dt = d.date
           d.date = parseTime(d.date);
           d.dateInt = parseInt(d.dt)
@@ -1957,7 +1179,6 @@ d3.csv("data/mergedTemp.csv", types4, function(error, data){   // Parses the dat
           d.stateName = d.state;
           newData.push(d);
       }
-//      console.log(d.state)
   });
 
   if(!zoomLinesToggled) {
@@ -1966,16 +1187,13 @@ d3.csv("data/mergedTemp.csv", types4, function(error, data){   // Parses the dat
   y2.domain([d3.min(data, function(d) {return Math.min(d.t);}), d3.max(data, function(d) {return Math.max(d.t); })]);   
     
   var lg = calcLinear(newData, "x", "y", 1978, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
-//    var lg = calcLinear(newData, "x", "y", 1978, 1978);
     
      d3.selectAll("#dotted2").remove();
     
     svgLineGraph.append("line")
 	        .attr("class", "regression")
-//	        .attr("x1", x(parseTime("1978")))
             .attr("x1", x(parseTime(lg.ptA.x)))
 	        .attr("y1", y2(lg.ptA.y))
-//	        .attr("x2", x(parseTime(lg.ptB.x)))
             .attr("x2", x(parseTime(lg.ptB.x)))
 	        .attr("y2", y2(lg.ptB.y))
             .attr("id","dotted2");
@@ -2005,26 +1223,21 @@ d3.csv("data/mergedTemp.csv", types4, function(error, data){   // Parses the dat
   x.domain(d3.extent(data, function(d) { return parseTime(d.date); }));
   y2.domain([d3.min(data, function(d) {return Math.min(d.t);}), d3.max(data, function(d) {return Math.max(d.t); })]);
       
-  //  console.log(y.domain())
   var ydomainLow = y2.domain()[0];
   var ydomainHigh = y2.domain()[1];
   var ydomainLength = ydomainHigh - ydomainLow;
   var yaddVal = ydomainLength / 2;
-// console.log(domainLength)
       
   y2.domain([(ydomainLow), (ydomainHigh + (3 *yaddVal))]);   
     
   var lg = calcLinear(newData, "x", "y", 1978, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
-//    var lg = calcLinear(newData, "x", "y", 1978, 1978);
     
      d3.selectAll("#dotted2").remove();
     
     svgLineGraph.append("line")
 	        .attr("class", "regression")
-//	        .attr("x1", x(parseTime("1978")))
             .attr("x1", x(parseTime(lg.ptA.x)))
 	        .attr("y1", y2(lg.ptA.y))
-//	        .attr("x2", x(parseTime(lg.ptB.x)))
             .attr("x2", x(parseTime(lg.ptB.x)))
 	        .attr("y2", y2(lg.ptB.y))
             .attr("id","dotted2");
@@ -2049,100 +1262,8 @@ d3.csv("data/mergedTemp.csv", types4, function(error, data){   // Parses the dat
       .call(d3.axisRight(y2));
     
   }    
-//  // This section defines any text/labels related to the axis
-//  svgLineGraph.append("text")
-//      .attr("transform", "rotate(90)")
-//      .attr("y", 0 - margin.left - 600)
-//      .attr("x",0 + (height / 2))
-//      .attr("dy", "1em")
-//      .style("text-anchor", "middle")
-//      .attr("font-weight", "bold")
-//      .attr("font-size", "14px")
-//      .text("Average Temperature (Fahrenheit)");
 });
-    
-                
-                
-                
-                
-                
-                
-                
-//              // update the title
-//              d3.select('#heading')
-//                .text(field.replace(/_/g, ' '));
-//
-//              // remove missing values
-//              var neigh_data = data[2].filter(function(d) {
-//                return d[field];
-//              });
-//
-//              // get min/max dates
-//              var time_extent = d3.extent(neigh_data, function(d){
-//                return format.parse(d['timestamp']);
-//              });
-//
-//              // Create x-axis scale mapping dates -> pixels
-//              var time_scale = d3.time.scale()
-//                  .range([0, width - margin])
-//                  .domain(time_extent);
-//
-//              // Create D3 axis object from time_scale for the x-axis
-//              var time_axis = d3.svg.axis()
-//                  .scale(time_scale)
-//                  .tickFormat(d3.time.format("%b '%y"));
-//
-//              // Append SVG to page corresponding to the D3 x-axis
-//              d3.select('#chart').append('g')
-//                  .attr('class', 'x axis')
-//                  .attr('transform', "translate(" + margin + ',' + (height - 15) + ")")
-//                  .call(time_axis)
-//              .selectAll("text")
-//                .attr("y", 0)
-//                .attr("x", 9)
-//                .attr("dy", ".35em")
-//                .attr("transform", "rotate(90)")
-//                .style("text-anchor", "start");
-//
-//              // define the values to map for x and y position of the line
-//              var line = d3.svg.line()
-//                           .x(function(d) { return time_scale(format.parse(d['timestamp'])); })
-//                           .y(function(d) { return measure_scale(+d[field]); });
-//
-//              // append a SVG path that corresponds to the line chart
-//              d3.select('#chart').append("path")
-//                .datum(neigh_data)
-//                .attr("class", "line")
-//                .attr("d", line)
-//                .attr('transform', 'translate(' + margin + ', -15)');
             };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
