@@ -1,9 +1,7 @@
 List of things to work on:
-- Add major crops to state tooltips
 - possibly add more legend stuff for map to show colors for negative change/add line graph legend
 - any other weird html bugs you notice
 - net colonies gain
-- chanage mouse to hand to show that it is clickable
 - Add text to tell that "Data is not available for all 40 years"
 - On tooltip add text for data unavailable
 - Center tooltip
@@ -22,3 +20,4 @@ Complete:
 - make line graph regression lines not ugly 
 - handle negatives in the tooltip with "bees gained" instead of "negative bees lost"
 - add overlap/separate functionality (path line and regression line)
+- chanage mouse to hand to show that it is clickable
