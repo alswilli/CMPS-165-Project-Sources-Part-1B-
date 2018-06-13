@@ -183,8 +183,8 @@ function tweenDash() {
         return function (t) { return i(t); };
     }
 
-// Initial load in for bee colony data from 1978 - 2018 for the line graph
-d3.csv("data/mergedBees.csv", types, function(error, data){   // Parses the data from the .csv file using a d3.csv request
+// Initial load in for bee colony data from 1978 - 2017 for the line graph
+d3.csv("data/newMergedBees.csv", types, function(error, data){   // Parses the data from the .csv file using a d3.csv request
     
  if (error) throw error;
     
@@ -341,14 +341,24 @@ var lg = calcLinear(newData, "x", "y", 1978, 2017, d3.min(newData, function(d){ 
               else break; //position found
             }
             
+            // Style the text for each line appropriately
             if(lines[i].id == "path") {
                 d3.select(this).select('text')
-              .text(y.invert(pos.y).toFixed(2));
+              .text(y.invert(pos.y).toFixed(0)).style("font-size", "22").style("font-weight", "bold").style("color", "red");
             }
             else {
                 d3.select(this).select('text')
-              .text(y2.invert(pos.y).toFixed(2));
+              .text(y2.invert(pos.y).toFixed(1)).style("font-size", "22").style("font-weight", "bold");
             }
+            
+//            if(lines[i].id == "path") {
+//                d3.select(this).select('text')
+//              .text(y.invert(pos.y).toFixed(2));
+//            }
+//            else {
+//                d3.select(this).select('text')
+//              .text(y2.invert(pos.y).toFixed(2));
+//            }
 
             return "translate(" + mouse[0] + "," + pos.y +")";
           });
@@ -490,8 +500,8 @@ function types2(d){
       return lg;
     }
 
-// Initial load in for temperature data from 1978 - 2018 for the line graph
-d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the data from the .csv file using a d3.csv request
+// Initial load in for temperature data from 1978 - 2017 for the line graph
+d3.csv("data/newMergedTemp.csv", types2, function(error, data){   // Parses the data from the .csv file using a d3.csv request
     
  if (error) throw error;
     
@@ -880,7 +890,7 @@ d3.csv("data/data.csv", function(data) {
         // Transitions/defines spacing of bloc1 text
         d3.select("#bloc1")
             .transition().duration(1000)
-            .text("\xa0 Honey Bee Colony Count Change, 1978-2018 \xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0");
+            .text("\xa0 Honey Bee Colony Count Change, 1978-2017 \xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0");
         
         // Defining Button Interactivity on map
             var togData = false;
@@ -915,7 +925,7 @@ d3.csv("data/data.csv", function(data) {
                         // Transition the bloc1 text to reflect temperature map data
                         d3.select("#bloc1")
                             .transition().duration(1000)
-                            .text("Temperature Change in Fahrenheit, 1978-2018 \xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0");
+                            .text("Temperature Change in Fahrenheit, 1978-2017 \xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0");
                         
                         // Transition bloc2 text as well
                         d3.select("#bloc2")
@@ -951,7 +961,7 @@ d3.csv("data/data.csv", function(data) {
                         // Transition bloc1 text to reflect bee data
                         d3.select("#bloc1")
                             .transition().duration(1000)
-                            .text("\xa0 Honey Bee Colony Count Change, 1978-2018 \xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0");
+                            .text("\xa0 Honey Bee Colony Count Change, 1978-2017 \xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0");
                         
                        // Transition bloc2 text as well
                         d3.select("#bloc2")
@@ -1092,7 +1102,7 @@ function clicked(d) {
                   }
                 
 // Updates the bee data line                
-d3.csv("data/mergedBees.csv", types3, function(error, data){   // Parses the data from the .csv file using a d3.csv request
+d3.csv("data/newMergedBees.csv", types3, function(error, data){   // Parses the data from the .csv file using a d3.csv request
     
  if (error) throw error;
 
@@ -1192,7 +1202,7 @@ d3.csv("data/mergedBees.csv", types3, function(error, data){   // Parses the dat
 });
 
 // Updates the temp data line                
-d3.csv("data/mergedTemp.csv", types4, function(error, data){   // Parses the data from the .csv file using a d3.csv request
+d3.csv("data/newMergedTemp.csv", types4, function(error, data){   // Parses the data from the .csv file using a d3.csv request
     
  if (error) throw error;
     
