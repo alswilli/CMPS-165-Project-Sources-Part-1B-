@@ -207,7 +207,7 @@ d3.csv("data/mergedBees.csv", types, function(error, data){   // Parses the data
   y.domain([d3.min(data, function(d) {return Math.min(d.b);}), d3.max(data, function(d) {return Math.max(d.b);})]);
 
 // Calculate the linear regression (average) line for the given data    
-var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
+var lg = calcLinear(newData, "x", "y", 1978, 2017, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
 
 // Draws the linear regression line on screen    
   svgLineGraph.append("line")
@@ -389,7 +389,7 @@ function types2(d){
 
     // Returns an object with two points, where each point is an object with an x and y coordinate
 
-    function calcLinear(data, x, y, minX, minY, maxY){
+    function calcLinear(data, x, y, minX, maxX, minY, maxY){
       /////////
       //SLOPE//
       /////////   
@@ -444,34 +444,50 @@ function types2(d){
       // y-intercept = b = (e - f) / n
       var b = (e - f) / n;
 
-			// Print the equation below the chart
-//			document.getElementsByClassName("equation")[0].innerHTML = "y = " + m + "x + " + b;
-//			document.getElementsByClassName("equation")[1].innerHTML = "x = ( y - " + b + " ) / " + m;
-        
+      // Print the equation below the chart
+      //document.getElementsByClassName("equation")[0].innerHTML = "y = " + m + "x + " + b;
+      //document.getElementsByClassName("equation")[1].innerHTML = "x = ( y - " + b + " ) / " + m;
+      
+      var lg;
+
       if(m > 0) {
-          return {
-        ptA : {
-          x: minX,
-          y: m * minX + b
-        },
-        ptB : {
-          y: maxY,
-          x: Math.floor((maxY - b) / m)
+        lg = {
+            ptA : {
+                x: minX,
+                y: m * minX + b
+            },
+            ptB : {
+                y: maxY,
+                x: Math.floor((maxY - b) / m)
+            }
         }
       }
-      }
-       else {
-           return {
-        ptA : {
-          x: minX,
-          y: m * minX + b
-        },
-        ptB : {
-          y: minY,
-          x: Math.floor((minY - b) / m)
+      else {
+        lg = {
+            ptA : {
+                x: minX,
+                y: m * minX + b
+            },
+            ptB : {
+                y: minY,
+                x: Math.floor((minY - b) / m)
+            }
         }
       }
-       }    
+      
+      // Clipping the lines from leaving the graph bounds
+      while (lg.ptB.x > maxX || lg.ptB.y > maxY){
+          if(lg.ptB.x > maxX){
+            lg.ptB.y = m * maxX + b;
+            lg.ptB.x = maxX;
+          } 
+          else if (y > maxY){
+            lg.ptB.x = (y-b)/m;
+            lg.ptB.y = maxY;
+          }
+      }
+
+      return lg;
     }
 
 // Initial load in for temperature data from 1978 - 2018 for the line graph
@@ -498,7 +514,7 @@ d3.csv("data/mergedTemp.csv", types2, function(error, data){   // Parses the dat
   y2.domain([d3.min(data, function(d) {return Math.min(d.t);}), d3.max(data, function(d) {return Math.max(d.t); })]);
     
     // Calculate the linear regression for the given data set
-    var lg = calcLinear(newData, "x", "y", 1978, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
+    var lg = calcLinear(newData, "x", "y", 1978, 2017, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
     
     // Plot the linear regresion lione for the given data set on screen
     svgLineGraph.append("line")
@@ -1100,7 +1116,7 @@ d3.csv("data/mergedBees.csv", types3, function(error, data){   // Parses the dat
   y.domain([d3.min(data, function(d) {return Math.min(d.b);}), d3.max(data, function(d) {return Math.max(d.b);})]);
    
   // Linear regression calculation      
-  var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
+  var lg = calcLinear(newData, "x", "y", 1978, 2017, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
 
   // Draws linear regression line       
   svgLineGraph.append("line")
@@ -1144,7 +1160,7 @@ d3.csv("data/mergedBees.csv", types3, function(error, data){   // Parses the dat
   y.domain([(ydomainLow - (3 *yaddVal)), (ydomainHigh)]);        
    
   // Linear regression calculation      
-  var lg = calcLinear(newData, "x", "y", 1978, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
+  var lg = calcLinear(newData, "x", "y", 1978, 2017, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
   
   // Draws linear regression line      
   svgLineGraph.append("line")
@@ -1199,7 +1215,7 @@ d3.csv("data/mergedTemp.csv", types4, function(error, data){   // Parses the dat
   x.domain(d3.extent(data, function(d) { return parseTime(d.date); }));
   y2.domain([d3.min(data, function(d) {return Math.min(d.t);}), d3.max(data, function(d) {return Math.max(d.t); })]);   
     
-  var lg = calcLinear(newData, "x", "y", 1978, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
+  var lg = calcLinear(newData, "x", "y", 1978, 2017, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
     
      d3.selectAll("#dotted2").remove();
     
@@ -1245,7 +1261,7 @@ d3.csv("data/mergedTemp.csv", types4, function(error, data){   // Parses the dat
   y2.domain([(ydomainLow), (ydomainHigh + (3 *yaddVal))]);   
   
   // Linear regression calculation      
-  var lg = calcLinear(newData, "x", "y", 1978, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
+  var lg = calcLinear(newData, "x", "y", 1978, 2017, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
     
     // Draws regression line on screen
     svgLineGraph.append("line")
