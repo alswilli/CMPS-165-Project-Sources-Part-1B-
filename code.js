@@ -105,6 +105,11 @@ var svgBee = d3.select("body")
 // Reference for use in later functionality
 var g = svgBee.append("g");
 
+var svgLegend2 = d3.select("body")
+                  .append("svg").attr("class", "svg-legends")
+                  .attr("width", width/6)
+                  .attr("height", 450);
+
 // Definition of svg for line graph
 var svgLineGraph = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right + margin.right)                       // defines the width of the "div" of where the chart can be displayed
@@ -217,6 +222,7 @@ var lg = calcLinear(newData, "x", "y", 1978, 2017, d3.min(newData, function(d){ 
             .attr("x2", x(parseTime(lg.ptB.x)))
 	        .attr("y2", y(lg.ptB.y))
             .attr("id", "dotted1");
+   
 
   // Draws the line for the data in the line graph area, with transition animation added
   svgLineGraph.append("path")
