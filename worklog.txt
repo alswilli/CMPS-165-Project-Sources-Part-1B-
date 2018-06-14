@@ -21,3 +21,25 @@ Complete:
 - handle negatives in the tooltip with "bees gained" instead of "negative bees lost"
 - add overlap/separate functionality (path line and regression line)
 - chanage mouse to hand to show that it is clickable
+
+
+
+
+
+
+
+Tasks:
+ - Putting data in .csv files (bee, temp, overall US)
+ - Data design for .csv files
+ - Writing intro paragraph
+    - Creating Bee/Temp graph svg (general map graph stuff -> includes parsing code)
+    - Declaring quantiles for data and colors
+    - Bee/Temperature data swap buttons
+    - On mouse over/mouse out tooltip and functionality
+    - On click functionality (updates map and line graph)
+        - Creating Line graph svg (general line graph stuff -> includes parsing code)
+        - Creating regression lines (includes calculations)
+        - Regression line clipping
+        - On mouse over/mouse out that displays current data for each lines
+        - separate/overlap buttons and functionality
+            - Styling/formatting of all elements on screen 

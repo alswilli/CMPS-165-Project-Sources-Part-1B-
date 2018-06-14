@@ -1,4 +1,10 @@
 /*corresponds to title element*/
+/*
+.body {
+    margin:0 auto;
+}
+*/
+
 h1 {
     text-align: left;
     color: ;
@@ -56,7 +62,7 @@ h1 {
     border-top-right-radius:0.8em;
     height:120;
     width:300;
-	margin:0 auto;
+/*	margin:0 auto;*/
 }
 
 h2 {
