@@ -61,7 +61,7 @@ h1 {
 h2 {
     color: ;
     font-size: 23px;
-	margin-top: 50px;
+	margin-top: 80px;
     margin-left: 235px;
     margin-right: 100px;
 }
@@ -82,7 +82,7 @@ p1 {
 
 span1 {
 	position: absolute;
-    font-size: 18px; 
+    font-size: 21px; 
 	width:1800px;
 	/*margin-right: 650px;*/
 }
