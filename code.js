@@ -406,6 +406,148 @@ function types2(d){
     // Returns an object with two points, where each point is an object with an x and y coordinate
 
     function calcLinear(data, x, y, minX, maxX, minY, maxY){
+        /////////
+        //SLOPE//
+        /////////   
+          
+        // Let n = the number of data points
+        var n = data.length;
+  
+        // Get just the points
+        var pts = [];
+        data.forEach(function(d,i){
+          var obj = {};
+          obj.x = d[x];
+          obj.y = d[y];
+          obj.mult = obj.x*obj.y;
+          pts.push(obj);
+        });
+  
+        // Let a equal n times the summation of all x-values multiplied by their corresponding y-values
+        // Let b equal the sum of all x-values times the sum of all y-values
+        // Let c equal n times the sum of all squared x-values
+        // Let d equal the squared sum of all x-values
+        var sum = 0;
+        var xSum = 0;
+        var ySum = 0;
+        var sumSq = 0;
+        pts.forEach(function(pt){
+          sum = sum + pt.mult;
+          xSum = xSum + pt.x;
+          ySum = ySum + pt.y;
+          sumSq = sumSq + (pt.x * pt.x);
+        });
+        var a = sum * n;
+        var b = xSum * ySum;
+        var c = sumSq * n;
+        var d = xSum * xSum;
+  
+        // Plug the values that you calculated for a, b, c, and d into the following equation to calculate the slope
+        // slope = m = (a - b) / (c - d)
+        var m = (a - b) / (c - d);
+  
+        /////////////
+        //INTERCEPT//
+        /////////////
+  
+        // Let e equal the sum of all y-values
+        var e = ySum;
+  
+        // Let f equal the slope times the sum of all x-values
+        var f = m * xSum;
+  
+        // Plug the values you have calculated for e and f into the following equation for the y-intercept
+        // y-intercept = b = (e - f) / n
+        var b = (e - f) / n;
+  
+        // Print the equation below the chart
+        //document.getElementsByClassName("equation")[0].innerHTML = "y = " + m + "x + " + b;
+        //document.getElementsByClassName("equation")[1].innerHTML = "x = ( y - " + b + " ) / " + m;
+        
+        var lg;
+  
+        if(m > 0) {
+          lg = {
+              ptA : {
+                  x: minX,
+                  y: m * minX + b
+              },
+              ptB : {
+                  y: maxY,
+                  x: Math.floor((maxY - b) / m)
+              }
+          }
+        }
+        else {
+          lg = {
+              ptA : {
+                  x: minX,
+                  y: m * minX + b
+              },
+              ptB : {
+                  y: minY,
+                  x: Math.floor((minY - b) / m)
+              }
+          }
+        }
+        
+        // Clipping the lines from leaving the graph bounds
+        while (lg.ptB.x > maxX || lg.ptB.y > maxY){
+            if(lg.ptB.x > maxX){
+              lg.ptB.y = m * maxX + b;
+              lg.ptB.x = maxX;
+            } 
+            else if (y > maxY){
+              lg.ptB.x = (y-b)/m;
+              lg.ptB.y = maxY;
+            }
+        }
+  
+      // // while (lg.ptA.x != minX || lg.ptA.y != minY){
+      //     if(lg.ptA.x != minX){
+      //         lg.ptA.y = m * minX + b;
+      //         lg.ptA.x = minX;
+      //     } 
+      //     // else 
+      //     if (lg.ptA.y < minY){
+      //         lg.ptA.x = (y-b)/m;
+      //         lg.ptA.y = minY;
+      //     }
+      // // }
+  
+  
+      // // while (lg.ptB.x != maxX || lg.ptB.y != maxY){
+      //     if(lg.ptB.x != maxX){
+      //       lg.ptB.y = m * maxX + b;
+      //       lg.ptB.x = maxX;
+      //     } 
+      // //     else 
+      // if (lg.ptB.y > maxY){
+      //       lg.ptB.x = (y-b)/m;
+      //       lg.ptB.y = maxY;
+      //     }
+      // // }
+      
+    //   while(lg.ptB.y > maxY  ||  lg.ptB.y < minY  ||  lg.ptB.x > maxX){
+    //       if(m > 0  && lg.ptB.y > maxY){ // positive slop and right end of line is over the maxY value.
+    //           lg.ptB.y = maxY;
+    //           lg.ptB.x = (y-b)/m;
+    //       }
+    //       else if(m < 0  &&  lg.ptB.y < minY){
+    //           lg.ptB.y = minY;
+    //           lg.ptB.x = (y-b)/m;
+    //       }
+  
+    //       if(lg.ptB.x > maxX){
+    //           lg.ptB.x = maxX;
+    //           lg.ptB.y = m*maxX+b;
+    //       }
+    //   }
+  
+        return lg;
+      }
+
+    function calcLinear2(data, x, y, minX, maxX, minY, maxY){
       /////////
       //SLOPE//
       /////////   
@@ -492,18 +634,59 @@ function types2(d){
       }
       
       // Clipping the lines from leaving the graph bounds
-      while (lg.ptB.x > maxX || lg.ptB.y > maxY){
-          if(lg.ptB.x > maxX){
-            lg.ptB.y = m * maxX + b;
-            lg.ptB.x = maxX;
-          } 
-          else if (y > maxY){
-            lg.ptB.x = (y-b)/m;
-            lg.ptB.y = maxY;
-          }
-      }
+    //   while (lg.ptB.x > maxX || lg.ptB.y > maxY){
+    //       if(lg.ptB.x > maxX){
+    //         lg.ptB.y = m * maxX + b;
+    //         lg.ptB.x = maxX;
+    //       } 
+    //       else if (y > maxY){
+    //         lg.ptB.x = (y-b)/m;
+    //         lg.ptB.y = maxY;
+    //       }
+    //   }
 
-      return lg;
+    // // while (lg.ptA.x != minX || lg.ptA.y != minY){
+    //     if(lg.ptA.x != minX){
+    //         lg.ptA.y = m * minX + b;
+    //         lg.ptA.x = minX;
+    //     } 
+    //     // else 
+    //     if (lg.ptA.y < minY){
+    //         lg.ptA.x = (y-b)/m;
+    //         lg.ptA.y = minY;
+    //     }
+    // // }
+
+
+    // while (lg.ptB.x != maxX || lg.ptB.y != maxY){
+        if(lg.ptB.x != maxX){
+          lg.ptB.y = m * maxX + b;
+          lg.ptB.x = maxX;
+        } 
+    //     else 
+    if (lg.ptB.y > maxY){
+          lg.ptB.x = (y-b)/m;
+          lg.ptB.y = maxY;
+        }
+    // }
+    
+    // while(lg.ptB.y > maxY  ||  lg.ptB.y < minY  ||  lg.ptB.x > maxX){
+    //     if(m > 0  &&  lg.ptB.y > maxY){ // positive slop and right end of line is over the maxY value.
+    //         lg.ptB.y = maxY;
+    //         lg.ptB.x = (y-b)/m;
+    //     }
+    //     else if(m < 0  &&  lg.ptB.y < minY){
+    //         lg.ptB.y = minY;
+    //         lg.ptB.x = (y-b)/m;
+    //     }
+
+    //     if(lg.ptB.x > maxX){
+    //         lg.ptB.x = maxX;
+    //         lg.ptB.y = m*maxX+b;
+    //     }
+    // }
+
+      return lg; //lg2
     }
 
 // Initial load in for temperature data from 1978 - 2017 for the line graph
@@ -1176,7 +1359,7 @@ d3.csv("data/newMergedBees.csv", types3, function(error, data){   // Parses the 
   y.domain([(ydomainLow - (3 *yaddVal)), (ydomainHigh)]);        
    
   // Linear regression calculation      
-  var lg = calcLinear(newData, "x", "y", 1978, 2017, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
+  var lg = calcLinear2(newData, "x", "y", 1978, 2017, d3.min(newData, function(d){ return d.b}), d3.max(newData, function(d){ return d.b}));
   
   // Draws linear regression line      
   svgLineGraph.append("line")
@@ -1277,7 +1460,7 @@ d3.csv("data/newMergedTemp.csv", types4, function(error, data){   // Parses the 
   y2.domain([(ydomainLow), (ydomainHigh + (3 *yaddVal))]);   
   
   // Linear regression calculation      
-  var lg = calcLinear(newData, "x", "y", 1978, 2017, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
+  var lg = calcLinear2(newData, "x", "y", 1978, 2017, d3.max(newData, function(d){ return d.t}), d3.max(newData, function(d){ return d.t}));
     
     // Draws regression line on screen
     svgLineGraph.append("line")
