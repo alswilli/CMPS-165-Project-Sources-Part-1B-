@@ -2,78 +2,197 @@
 <html>
 
 <head>
-    <h1 style = "text-align:center; font-size:40px"><bold> The Effects of Climate Change on U.S. Bee Population </bold></h1>
+        <link rel="stylesheet" type="text/css" href="d3.slider.css">
+        <link rel="stylesheet" type="text/css" href="dependencies/d3.geomap.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+
+    <h6 style = "text-align:center; font-size:40px"><bold> The Effects of Climate Change on the U.S. Honey Bee Population </bold></h6>
         <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://d3js.org/d3-color.v1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+        <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
         <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
         <script src="https://d3js.org/topojson.v2.min.js"></script>
-<!--        <script src="dependencies/d3.geomap.dependencies.min.js"></script>-->
         <script src="dependencies/d3.geomap.js"></script>
         <script type="text/javascript" src="d3.slider.js"></script>
-<!--
-    <script src="https://unpkg.com/d3-simple-slider@0.2.1/build/d3-simple-slider.js"></script>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-  crossorigin="anonymous">
--->
-<!--        <script type="text/javascript" src="code.js"></script>-->
-<!--        <script type="text/javascript" src="sliderCode.js"></script>-->
 </head>
     <body>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <span1 id="text"> Honey Bees are the most major pollinators in the world, helping pollinate 90% of 
+                          all wild plants in the United States. However, honey bees are now dying off at a rapid rate due to a gradual increase in our planet’s temperature. Despite their numbers stabilizing in the U.S. within the last 10 years due to increased conservation efforts, the signs are clear that even hotter weather in the coming years will put increased pressure on their colonies. The following visualization provides and in-depth look at how staggering their decline has been, compared with increasing temperatures throughout the entire United States over the last 40 years.  </span1>
+        <p></p>
         
-        <div id="slider"></div>
+        <p></p>
+        <h2>
+            &nbsp;
+            <div id="bloc1"></div>
+        
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;
+            <div id="bloc2"> United States </div>  
+        </h2>
     
-<!--    <input type="range" name="points" min="0" max="208" step="1" value="0" id="slider-time" style="width:1235px">-->
-    <script>
-//    // tick formatter
-//    var formatter = d3.format("");
-//    var tickFormatter = function(d) {
-//    return formatter(d);
-//    }    
-//        
-//    var slider = d3.slider().min(1976).max(2018).tickValues([1976, 1981, 1986, 1991, 1996, 2001, 2006, 2011, 2016, 2018])
-//                        .stepValues([1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,
-//                                    1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018])
-//                        .tickFormat(tickFormatter)
-//                        .showRange(true).value(1981);
-//    d3.select('#slider').call(slider);
-//        
-//        d3.select(window).on("resize", function() {
-//        slider.resize();
-//    });
-    </script>
         
         <script type="text/javascript" src="code.js"></script>
+        
+        <div id="tooltip" class = "hidden">
+        
+            <h1 class = "state-title"></h1>
+            <h3 class = "tooltip-values bees"></h3>
+            <h3 class = "tooltip-values temps"></h3>
     
-    <p></p>
-    <p><b>Title for Project:</b> "The Affects of Climate Change on U.S. Bee Population"</p>
-    <p><b>Purpose of Project:</b> The main purpose of this project is to highlight how climate change has contributed to the decline of Bees throughout the U.S. over the last 30 years.
-                                  Through this visualization, people can better view how staggering the decline has been, the causes of the decline, and how the decline affects the health of our planet. </p>
-    <p><b>Data Sources:</b></p>
-        <ul>
-            <li><a href="http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1191">Bee Colony Population and Economic Data: 1980s-Present Day --- (United States Department of Agriculture)</a></li>
-            <li><a href="https://www.ncdc.noaa.gov/cag/statewide/mapping">Temperature Averages and other climate data by State: 1980s-Present Day --- (National Centers for Environmental Information)</a></li>
-            <li><a href="http://science.sciencemag.org/content/349/6244/177">Evidence of Bee decline being linked to changes in climate in the U.S. --- (American Association for the Advancement of Science)</a></li>
-            <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2863439/">Evidence of increased Bee decline from parasite linked to changes in temperature --- (National Center For Biotechnology Information)</a></li>
-        </ul>
-    <p><b>Visualization Sources:</b></p>
-        <ul>
-            <li><a href="http://bl.ocks.org/tomschulze/961d57bd1bbd2a9ef993f2e8645cb8d2">"d3.js slider map - Number of Deaths caused by Storms" --- (bl.ocks.org; September 6th, 2017)</a></li>
-            <li><a href="https://balakrishna-k.github.io/WildLifeTrafficking/">(Past Project) "Illegal Wildlife Trafficking: Which Species, Why, and Where"</a></li>
-            <li><a href="https://sureshlodha.github.io/CMPS165_Spring2016_FinalProjects/projects/CALife/index.html">(Past Project) "California's Quality of Life"</a></li>
-            <li><a href="https://sureshlodha.github.io/CMPS165_Spring2016_FinalProjects/projects/humanTrafficking/index.html">(Past Project) "Human Trafficking: Sex Trade and Forced Labor"</a></li>
-        </ul>
-    <p><b>Additional References</b></p>
-        <ul>
-            <li><a href="https://www.sciencedaily.com/releases/2017/09/170929093356.htm">https://www.sciencedaily.com/releases/2017/09/170929093356.htm</a></li>
-            <li><a href="https://www.smithsonianmag.com/smart-news/how-climate-change-messing-bees-ability-pollinate-180956523/">https://www.smithsonianmag.com/smart-news/how-climate-change-messing-bees-ability-pollinate-180956523/</a></li>
-            <li><a href="http://time.com/3951339/bees-climate-change/">http://time.com/3951339/bees-climate-change/</a></li>
-            <li><a href="https://beeinformed.org/research/">https://beeinformed.org/research/</a></li>
-            <li><a href="https://blog.conservation.org/2017/08/the-buzz-on-climate-change-its-bad-for-bees/">https://blog.conservation.org/2017/08/the-buzz-on-climate-change-its-bad-for-bees/</a></li>
-            <li><a href="https://beependent.wordpress.com/climate-change/#_ftnref">https://beependent.wordpress.com/climate-change/#_ftnref</a></li>
-            <li><a href="https://earthobservatory.nasa.gov/Features/GlobalWarming/page1.php">https://earthobservatory.nasa.gov/Features/GlobalWarming/page1.php</a></li>
-        </ul>
-    <span><b>Project Lead:</b> Alex Williamson (alswilli@ucsc.edu)</span><br><br>
-    <span><b>Weblink to GitHub:</b><a href="https://github.com/alswilli/CMPS-165-Project-Sources-Part-1B-">https://github.com/alswilli/CMPS-165-Project-Sources-Part-1B-</a></span><br>
+        </div>
+        
+        <div class="verticalLine"></div>
+       
+		<div class = "button-container">  
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <div id="bloc3">
+             &nbsp;
+            
+            <button class="button toggleData">Honey Bees</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="button toggleCity">Temperature</button>
+            </div>
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+			
+			&nbsp;&nbsp;
+			
+             <div id="bloc4">
+            &nbsp;
+<!--            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-->
+            
+            
+            
+            <button class="button toggleOverlap">Overlap Lines</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;
+<!--
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-->
+            <button class="button toggleSeparation">Separate Lines</button>
+                 &nbsp;
+            </div>
+        </div> 
+        <div id="bloc5">
+            <h1 class = "state-title2">United States</h1>
+            <h3 class = "tooltip-values bees2">Net Honey Bee Loss |&nbsp; 1,421,000 colonies</h3>
+            <h3 class = "tooltip-values temps2">Net Temp. Increase &nbsp;|&nbsp; 3.5 degrees</h3>
+            </div>
+    
+    <p></p>          
+        
+<div>
+    <br>
+</div>        
+                
+                
+    <div id ="ending" class="footer">
+
+            <div id = "endingtext">
+
+                <p><b>Created by: </b></p>
+                <span>Alex Williamson (alswilli@ucsc.edu),</span>
+                <span>Brooke Dalton (bdalton@ucsc.edu),</span>
+                <span>Kevin Serrano (kfserran@ucsc.edu)</span>
+                <p><b>In Collaboration with </b>Suresh K Lodha and Karthik Balakrishna</p>
+                <p></p><br><br>
+                <p><b>Github Link: </b><a href="https://github.com/alswilli/CMPS-165-Project-Sources-Part-1B-">https://github.com/alswilli/CMPS-165-Project-Sources-Part-1B-</a></p>
+                <p></p><br><br>
+                <p><b>Designed for:</b></p>
+                <span> CMPS 165: Data programming for Visualization, Spring 2018 </span>
+
+            </div>
+
+            <div class="columnFooter">
+
+                <p><em><b>Files Submitted</b></em></p>
+                    <ul>
+                        <li>index.html</li>
+
+                        <li>style.css</li>
+
+                        <li>data/usanew.json</li>
+                        
+                        <li>code.js</li>
+                        
+                        <li>data/newMergedBees.csv</li>
+                        
+                        <li>data/newMergedTemp.csv</li>
+                        
+                        <li>data/data.csv</li>
+                    </ul>
+
+            </div>
+            <div class="columnFooter">
+
+                <p><em><b>Data Sources</b></em></p>
+                    <ul>
+                        <li><a href="http://usda.mannlib.cornell.edu/MannUsda/viewDocumentInfo.do?documentID=1191">Bee Colony Population and Economic Data: 1980s-Present Day </a>--- (United States Department of Agriculture)</li>
+            <li><a href="https://www.ncdc.noaa.gov/cag/statewide/mapping">Temperature Averages and other climate data by State: 1980s-Present Day </a>--- (National Centers for Environmental Information)</li>
+<!--
+            <li><a href="https://web.archive.org/web/20070930020735/http://gears.tucson.ars.ag.gov/beeclass/Pollination.pdf">List of crops solely pollinated by Bees </a>--- (Beekeeper's Handbook, Sammataro/Avitabile ©1998.)</li>
+                    <li><a href="https://www.nass.usda.gov/Statistics_by_State/Ag_Overview/">State Agricultural Overviews 2017 </a>--- (United States Department of Agriculture)</li>
+-->
+                    </ul>
+
+            </div>
+            <div class="columnFooter">
+
+                <p><em><b>Relevant Visualizations</b></em></p>
+                    <ul>
+                        
+                        
+                        <li><a href="https://bip2.beeinformed.org/loss-map/">Bee Loss Map of U.S.</a> </li>
+                        <li><a href="https://www.ncdc.noaa.gov/cag/statewide/mapping">Temperature Change Map of U.S.</a> </li>
+<!--                        <li><a href="https://monsanto.com/innovations/modern-agriculture/articles/crop-map/">Major Crop Map of U.S.</a> </li>-->
+                    </ul>
+
+            </div>
+            <div class="columnFooter">
+
+                <p><em><b>Code Sources</b></em></p>
+                    <ul>
+            
+                        <li>Multiline Graph by <a href="https://stackoverflow.com/questions/34886070/multiseries-line-chart-with-mouseover-tooltip">Mark</a> </li>
+                        <li>Zoomable Map of U.S. by <a href="https://balakrishna-k.github.io/USData/">Karthik Balakrishna</a> </li>
+                        <li>Linear Regression Lines by <a href="https://bl.ocks.org/HarryStevens/be559bed98d662f69e68fc8a7e0ad097">Harry Stevens</a></li>
+                        <li>Line Loading Animation by <a href="https://bl.ocks.org/mbostock/5649592">Mike Bostock</a></li>
+                    </ul>
+
+            </div>
+
+                    
+        <div id = "endingtext">
+
+            <p><b>***</b>Bee data from 1982-1985 is interpolated<b>***</b></p>
+        </div>
+
+        </div>            
+                    
 </body>    
     
 </html>
+
