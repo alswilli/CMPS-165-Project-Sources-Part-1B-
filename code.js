@@ -926,7 +926,7 @@ d3.csv("data/data.csv", function(data) {
             
                             //Get this bar's x/y values, then augment for the tooltip
                             var xPosition = parseFloat(d3.select(this).attr("x")) + 140.0;// augmented to the right of the circle it defines
-                            var yPosition = parseFloat(d3.select(this).attr("y")) + 320;
+                            var yPosition = parseFloat(d3.select(this).attr("y")) + 120;
                            
                            // Make cursor look like the "clickable" icon
                            d3.select(this).style("cursor", "pointer"); 
